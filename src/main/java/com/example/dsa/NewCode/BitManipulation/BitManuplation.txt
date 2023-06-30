@@ -1,0 +1,345 @@
+
+
+(274) -> 2x10^2 + 7x10^1 + 4*10^0  :: base 10
+(101) -> 1*2^2 + 1*2^1 + 1*2^0  :: base 2
+
+
+2's complement :
+     9 + (-3) = 6 :- (1. invert all bits 2. Add one {to 3})
+     3= 00000000000000011 -> 1111111111111100 -> 1111111111111101
+
+     1001
+     1101 : all ones after 4 digit
+     0110 : 6
+
+
+
+
+In total there are 6 Operators, AND(&), OR(|), XOR(^), NOT(~), LEFT SHIFT(<<), RIGHT SHIFT(>>)
+
+  AND &               OR !                 NOT ~            XOR ^
+0   0   : 0          0   0   : 0          0   : 1          0   0   : 0
+0   1   : 0          0   1   : 1          1   : 0          0   1   : 1
+1   0   : 0          1   0   : 1                           1   0   : 1
+1   1   : 1          1   1   : 1                           1   1   : 0
+
+
+
+Left shift: 5<<1
+    000000000101 -> 0000000001010 (5-10)
+    add 0 bit in the last
+
+Right shift : 5>>1
+    000000000101 -> 00000000010 (5-2)
+        remove last
+
+
+
+System.out.println("AND Operation " + (a & b)); // 0101 && 1001 :: 0001
+
+System.out.println("Or Operation " + (a | b)); // 0101 & 1001 :: 1101
+
+System.out.println("XOR Operation " + (a ^ b)); // 0101 & 1001 :: 1100
+
+System.out.println("NOR Operation " + (~a)); // 101 :: -010
+
+System.out.println("LeftShift Operation " + (a<<1)); // 101 :: 1010
+
+System.out.println("RightShift Operation " + (a>>1)); // 101 :: 10
+
+
+swap 2 number:
+a = 5
+b = 7
+
+a = a^b: 5^7 = 2
+b = a^b: 2^7 = 5
+a = a^b: 2^5 = 7
+
+
+2's complement: => 1: invert all bits -> 2: Add one
+eg: 101 -> 010+001 -> 011
+
+
+-------------------------------------------- Bit Masking ------------------------------------------
+
+1. Find ith bit: (number & mask) { and operation }
+                 100110101
+      mask  :    000010000     (taking one and left shift n times) i=5 :  1<<5
+      result:    000010000     (1<<ith)
+      if number[ith] & mask == 0 number is 0 and if 1 number is 1;
+
+      { // doing with 2 ways
+            int no = 16;
+            int ith = 2;
+            int newNO = 1;
+            int temp = no;
+            while (no != 0 && --ith >= 0) {
+                newNO <<= 1;
+                no >>>= 1;
+            }
+            System.out.println((no & 1));
+            System.out.println((temp&1));
+
+      }
+
+
+------------------------------------------------------------------------------------------
+
+
+2. Set ith bit: (number | mask) { Or operation }
+                 100110101
+      mask  :    000001000     (taking one and left shift n times) i=4 :  1<<4
+      result:    100111101     (1<<ith)
+
+
+       int no = 16;
+       int ith = 2;
+       int i = 1;
+
+       i <<= ith;
+
+       // 1111 | 100 : 1111
+       // 10000 | 100 : 10100
+
+       System.out.println(no + " " + i + " " + (no | i));
+
+
+------------------------------------------------------------------------------------------
+
+
+3. Clear ith but (number ~ mask) { not operation}
+                 100110101
+       mask  :   000001000     (taking one and left shift n times) i=4 :  1<<4 and the take and ~ the number
+       return:   100100101      (1<<ith)
+
+
+        int no = 15; // 1111
+        int ith = 2;
+        int temp = no;
+        int newNo = 1;
+
+        while (temp != 0 && --ith > 0) {
+            newNo <<= 1;
+            temp >>>= 1;
+        }
+
+        newNo = ~newNo;
+
+        System.out.println(no + " " + newNo + " ->" + (no & newNo));
+
+
+------------------------------------------------------------------------------------------
+
+
+4. Find the number of bits to convert a to b: (a^b): {xor, it is used to find the difference , 00,11 the result will be 0 else 1}
+       a:        10110
+       b:        11011
+       return :  01101 : count number of one : 3
+                         (right shit result and count the 1 by & with 1 : 1&1=1 else 0) {O(logN)}
+
+    
+     prog(){
+        while(a!=0 && b!=0){
+        int count =0;
+        if((a XOR b) != 0) count += 1;
+
+            a >>>= 1;
+            b >>>= 1;
+        }
+    }
+
+
+------------------------------------------------------------------------------------------
+
+
+ n & (n-1) -> turn least significant set bit (last bit) to zero.
+ int a = 13 --> 1101
+         12 --> 1100  : 13 & 12
+         11 --> 1011  : 12 & 11
+          8 --> 1000  : 08 & 07
+          7 --> 0111  :
+          0 --> 0000  : 
+
+     prog(){
+     int count=0;
+        while(a!=0){
+        int a = setbit(a)-setbit(a-1);
+        count++;
+
+        }
+     }
+
+
+Interview bit : bit maniplation question :: https://www.interviewbit.com/courses/programming/bit-manipulation/
+--------------------------------------------------------------------------------------------
+
+
+XOR:
+
+A ^ A = 0 (same number xor will always be zero)
+eg. [5 1 3 2 1 4]
+
+        // single repeating element
+        int arr[] = {5, 1, 3, 2, 1, 4};
+        int xor = 1;
+        int i = 0;
+        while (i < arr.length) {
+            xor ^= arr[i++];
+        }
+        System.out.println("duplicate num: " + xor);
+
+****************************************************
+
+Q. find Non duplicate number from duplicate list
+
+
+        int arr[] = {5, 1, 2, 3, 5, 2, 3};
+        int xor = arr[0];
+        int i = 1;
+        while (i < arr.length) {
+            System.out.print(i + " " + arr[i] + " ");
+            xor ^= arr[i++];
+            System.out.println(xor);
+        }
+        System.out.println("Non duplicate num: " + xor);
+
+
+--------------------------------------------------------------------------------------------
+
+
+Q. find 2 duplicates [5 4 1 4 3 5 1 2]
+3^2: 11^10: 1
+
+(find right most set bit)
+(we know that the last element of one number must be 0 and other is 1 that why the result is 1)
+we will divide array in 2 parts . 1 with last element as 0 and other with last element as 1
+[5 3 5 1 1] [4 4 2] : now xor result (1) with both the arrays
+    3          2
+
+
+Solution:
+         public static void findDuplicated(int arr[]) {
+
+            // find the xor
+                int xor = arr[0];
+                for (int i = 1; i < arr.length; i++)  //O(n)
+                    xor ^= arr[i];
+
+
+                // find the first 1 from the last
+                int temp = xor;
+                int i = 0;
+                while (temp != 0) {   //O(n)
+                    if ((temp & 1) == 1) break;
+                    i++;
+                    temp >>>= 0;
+                }
+
+                // seperate left and right using the i we find above
+                int left = 1;
+                int right = 1;
+                int count = 0;
+                while (count != arr.length) {  //O(n)
+                    int[] data = decimalToBinary(arr[count]); // O(1)
+                    if (data[i] == 1)
+                        left ^= arr[count++]; // xor with existing data
+                    else
+                        right ^= arr[count++]; // xor with exiting data
+                }
+
+                System.out.println("left : " + left + " right : " + right);
+
+
+            }
+
+
+______________________________________________________________________________
+
+ public static int[] binaryToDecimal(int num) {
+         int[] bits = new int[31];
+         if (num == 0) return bits;
+         int i = 0;
+         while (num != 0) {
+             bits[i++] = (num & 1);
+             num >>>= 1;
+         }
+
+         return bits;
+     }
+
+****************************************************
+
+     public static int getXor(int[] arr) {
+         int xor = 1;
+         int i = 0;
+         while (i != arr.length) {
+             xor ^= arr[i++];
+         }
+
+         return xor;
+     }
+
+****************************************************
+
+     public static int getFirstIthBitPosition(int xor) {
+         int count = 0;
+         while (xor != 0) {
+             if ((xor & 1) == 1) return count;
+             count += 1;
+             xor >>>= 1;
+         }
+         return count;
+     }
+
+****************************************************
+
+
+     public static void leftRightNumber(int count, int[] arr) {
+         int left = 0;
+         int right = 0;
+         int i = 0;
+         while (i != arr.length) {
+             int[] newArr = binaryToDecimal(arr[i]);
+             if (newArr[count] == 1) left ^= arr[i++];
+             else right ^= arr[i++];
+         }
+
+         System.out.println("left: " + left);
+         System.out.println("right: " + right);
+     }
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+Q. find 3 times duplicates [ 2 2 1 5 1 2 1] : direct xor will not work here
+ the solution is  take 32 bit array [32] and convert the number binary and add the number in there respected place.
+
+   10, 10, 01, 101, 01, 10, 01 -> [.... 1| 3| 4] /3-> [.... 1|0|1] -> 5
+   now divide number by 3 and convert the remainder to decimal: 101 -> 5
+
+
+Solution:
+        public static void tripleElement(int[] arr) {
+
+                int[] l = new int[32];
+                for (int i : arr) {
+                    int[] numArr = decimalToBinary(i);
+                    for (int j = 0; j < 32; j++) {
+                        l[j]+=numArr[j];
+                    }
+                }   // eg :: [000000000134]%3 : [000000000101]    
+                int p=0;
+                int result = 0;
+                for(int z: l){
+                    result += (int) ((z%3) * Math.pow(2,p++));
+                }
+                System.out.println(result);
+            }
+
+
+
+--------------------------------------------------------------------------------------------

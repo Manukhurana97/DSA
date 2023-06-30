@@ -1,0 +1,7 @@
+linear data structure
+
+in array data is store in a continuous fashion
+int LL data is stored in the random fashion
+[data|next pointer] -> [data|next pointer] -> [data|next pointer] -> [data|next pointer] -> [data|next pointer]
+
+inserting element in array is very difficult, need to do the right shift

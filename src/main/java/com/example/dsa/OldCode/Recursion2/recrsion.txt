@@ -1,0 +1,20 @@
+
+OldCode.Recursion2: A function which call itself again and again
+steps:
+    1. Find base case
+    2. find the relation b/w the problem and sub problem
+    3. generalize the relation
+
+    or create a decision tree
+
+
+4 approach:
+    1: input/output method (When we know the decision)
+    2: base condition ->induction -> Hypothesis  (Make input Smaller) { Linked list, Tree}
+    3: choice diagram
+
+        2: base condition:  when to terminate eg : n=0, root==null
+           hypothesis:  what is the logic eg: getHeight(root) -> height of tree
+           induction : implementation of login
+
+
