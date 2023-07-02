@@ -1,4 +1,4 @@
-package OldCode.Arrays;
+package com.example.dsa.OldCode.Arrays;
 
 public class CelebrityProb {
 
@@ -16,8 +16,6 @@ public class CelebrityProb {
             if( i!=j && (M[j][i]==1 || M[i][j]==0)) return -1;
         }
         return j;
-
-
     }
 
 }

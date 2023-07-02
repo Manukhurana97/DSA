@@ -24,5 +24,8 @@ public class DNF {
     public static void main(String[] args) {
         int[] arr = {0, 2, 1, 2, 0};
         sort012(arr, arr.length);
+
+        for (var a : arr)
+            System.out.println(a);
     }
 }

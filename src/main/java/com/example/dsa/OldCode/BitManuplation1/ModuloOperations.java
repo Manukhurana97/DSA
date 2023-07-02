@@ -1,4 +1,4 @@
-package OldCode.BitManuplation1;
+package com.example.dsa.OldCode.BitManuplation1;
 
 public class ModuloOperations {
 
@@ -45,11 +45,13 @@ public class ModuloOperations {
     }
 
 
+
+
 //    catalanNumber, pigeonhole principle, Inclusion Exclusion principle
 
     public static void main(String[] args) {
-//        System.out.println("mod "+findGCP(24, 1024));
-//        System.out.println(fastpower(3, 2));
+        System.out.println("mod "+findGCP(24, 1024));
+        System.out.println(fastpower(3, 2));
          System.out.println(fastpower(3978432, 5, 1000000007));
     }
 }
