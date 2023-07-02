@@ -259,13 +259,59 @@ public class Recursion {
 
     private void func2(int n, int limit) {
         if (limit == 0 || n == 0) return;
-        if (n > limit ) return;
+        if (n > limit) return;
 
         System.out.print(String.format("%d ", n));
-        func2(n*2, limit);
+        func2(n * 2, limit);
         System.out.print(String.format("%d ", n));
     }
 
+
+    private void func3(int n) {
+
+        if (n > 0) {
+
+            func3(--n);
+            System.out.print(n + " ");
+            func3(--n);
+        }
+    }
+
+
+    private int func4(int a[], int n) {
+        int x;
+        if(n==1) return a[0];
+        else x = func4(a, n-1);
+
+        if(x>a[n-1]) return x;
+        else return a[n-1];
+    }
+
+
+    private void print1toN(int n){
+        if(n==0)
+            return ;
+
+        print1toN(n-1);
+
+        System.out.print(n+" ");
+
+    }
+
+    private void printNto1(int n){
+        if(n==0)
+            return ;
+
+        System.out.print(n+" ");
+        printNto1(n-1);
+    }
+
+    private int sumOfDigit(int no){
+        if(no==0) return 0;
+
+
+        return no%10 + sumOfDigit(no/10);
+    }
 
 
     public static void main(String[] args) {
@@ -287,9 +333,17 @@ public class Recursion {
          *  recursion.sudoku();
          *  var i = recursion.func1(5, 2);
          *  recursion.printStar(5);
+         *  recursion.func2(2, 100);
+         *  recursion.func3(4);
+         *  int arr[] = {12, 10, 30, 50, 100};
+         *  var j = recursion.func4(arr, arr.length);
+         *  recursion.print1toN(10);
+         *  recursion.printNto1(10);
          */
 
-        recursion.func2(2, 100);
+        var k = recursion.sumOfDigit(123);
+        System.out.println("sum "+ k);
+
 
     }
 }
