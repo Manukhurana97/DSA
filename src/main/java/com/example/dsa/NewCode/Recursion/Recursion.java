@@ -112,6 +112,7 @@ public class Recursion {
         powerSetOfString(s, 0, "");
     }
 
+
     private String swap(String s, int l, int r) {
         char[] ch = s.toCharArray();
         var temp = ch[l];
@@ -150,13 +151,8 @@ public class Recursion {
     }
 
 
-    private boolean checkQueenPositionValidRow(int row, int size, int[][] arr) {
-        for (int i = 0; i < size; i++) if (arr[row][i] == 1) return false;
-        return true;
-    }
-
-    private boolean checkQueenPositionValidCol(int col, int size, int[][] arr) {
-        for (int i = 0; i < size; i++) if (arr[i][col] == 1) return false;
+    private boolean checkQueenPositionValidRow(int row, int col, int size, int[][] arr) {
+        for (int i = 0; i < size; i++) if (arr[row][i] == 1 || arr[i][col] == 1) return false;
         return true;
     }
 
@@ -174,8 +170,9 @@ public class Recursion {
 
     private boolean checkQueenPos(int r, int c, int size, int[][] arr) {
 
-        return this.checkQueenPositionValidRow(r, size, arr) && this.checkQueenPositionValidCol(c, size, arr) && checkQueenPositionValidDig(r, c, size, arr);
+        return this.checkQueenPositionValidRow(r, c, size, arr) && checkQueenPositionValidDig(r, c, size, arr);
     }
+
 
     private boolean nQueen(int size, int c, int[][] arr) {
         if (c >= size) return true;
@@ -234,7 +231,6 @@ public class Recursion {
                         if (checkSudokuData(arr, r, c, i)) {
                             arr[r][c] = i;
                             if (sudoku(arr)) return true;
-
                             arr[r][c] = 0;
                         }
                     }
@@ -280,6 +276,9 @@ public class Recursion {
     }
 
 
+    /**
+     * print star pattern using recursion
+     */
     private void printStar(int s) {
         if (s == 0) return;
 
@@ -291,12 +290,15 @@ public class Recursion {
     }
 
 
+    /**
+     * multiply by 2 before it reach limit
+     */
     private void func2(int n, int limit) {
         if (limit == 0 || n == 0) return;
         if (n > limit) return;
 
         System.out.print(String.format("%d ", n));
-        func2(n * 2, limit);
+        func2(n << 1, limit);
         System.out.print(String.format("%d ", n));
     }
 
@@ -312,13 +314,33 @@ public class Recursion {
     }
 
 
-    private int func4(int a[], int n) {
+    private int getMaxElement(int a[], int n) {
         int x;
         if (n == 1) return a[0];
-        else x = func4(a, n - 1);
+        else x = getMaxElement(a, n - 1);
 
-        if (x > a[n - 1]) return x;
-        else return a[n - 1];
+
+        return Math.max(x, a[n - 1]);
+    }
+
+
+    /**
+     * sort an array using recursion :- do a recursion till your reaches a 2 element
+     * now compare 1 element with 2 , print max(1, 2)
+     */
+    private int sortArray(int a[], int n) {
+        int x;
+        if (n == 1) return 0;
+        else x = sortArray(a, n - 1);
+
+        if (a[x] > a[n - 1]) {
+            swap(a, x, n-1);
+            return x;
+        }
+        else {
+            return n - 1;
+        }
+
     }
 
 
@@ -379,15 +401,14 @@ public class Recursion {
          *  recursion.func2(2, 100);
          *  recursion.func3(4);
          *  int arr[] = {12, 10, 30, 50, 100};
-         *  var j = recursion.func4(arr, arr.length);
+         *  var j = recursion.getMaxElement(arr, arr.length);
+         *  recursion.sortArray(arr, arr.length);
          *  recursion.print1toN(10);
          *  recursion.printNto1(10);
          *  var k = recursion.sumOfDigit(123);
          *   int[] arr = {5, 4, 3, 2, 1};
          *   arr = recursion.reverseAnArray(arr, arr.length);
          */
-
-        recursion.powerSetOfInteger(213, 3);
 
     }
 }

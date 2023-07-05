@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f87adb4-0118-4e4f-a6dc-1040d59eb039" name="Changes" comment="DSA">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/RecursionSumUptoKSeries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java" afterDir="false" />
     </list>
@@ -112,9 +113,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RecursionSumUptoKSeries" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion.RecursionSumUptoKSeries" />
+      <module name="DSA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Recursion" />
+        <item itemvalue="Application.RecursionSumUptoKSeries" />
         <item itemvalue="Application.BitManipulation" />
         <item itemvalue="Application.DNF" />
         <item itemvalue="Application.HelloApplication" />
@@ -134,6 +149,8 @@
       <workItem from="1687972844489" duration="122000" />
       <workItem from="1687972986055" duration="34050000" />
       <workItem from="1688322579501" duration="10334000" />
+      <workItem from="1688557604947" duration="5032000" />
+      <workItem from="1688583620904" duration="3499000" />
     </task>
     <task id="LOCAL-00001" summary="DSA">
       <created>1688292529241</created>
@@ -156,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688322257926</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DSA">
+      <created>1688557633670</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688557633670</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,5 +214,29 @@
     <MESSAGE value="DSA Old Code" />
     <MESSAGE value="DSA" />
     <option name="LAST_COMMIT_MESSAGE" value="DSA" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java</url>
+          <line>380</line>
+          <properties class="com.example.dsa.NewCode.Recursion.Recursion" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java</url>
+          <line>158</line>
+          <properties class="com.example.dsa.NewCode.Recursion.Recursion" method="checkQueenPositionValidDig">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
