@@ -3,7 +3,7 @@ package com.example.dsa.NewCode.Recursion;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Recursion {
+public class Recursion1 {
 
     private int print(int n) {
         if (n == 0) return n;
@@ -379,7 +379,7 @@ public class Recursion {
     }
 
     public static void main(String[] args) {
-        Recursion recursion = new Recursion();
+        Recursion1 recursion1 = new Recursion1();
         /**
          * var a = recursion.print(5);
          * var b = recursion.sum_of_n_natural_numbers(5);

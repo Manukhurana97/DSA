@@ -3,7 +3,7 @@ package com.example.dsa.NewCode.Recursion;
 import java.util.LinkedList;
 import java.util.List;
 
-public class RecursionSumUptoKSeries {
+public class RecursionSumUptoKSeries2 {
 
     /**
      * 1 2 1
@@ -111,7 +111,7 @@ public class RecursionSumUptoKSeries {
 
 
     public static void main(String[] args) {
-        RecursionSumUptoKSeries kSeries = new RecursionSumUptoKSeries();
+        RecursionSumUptoKSeries2 kSeries = new RecursionSumUptoKSeries2();
         int[] arr = {1, 2, 1};
         kSeries.sumOfElementUpToK(arr, 2);
         kSeries.sumOfElementUpToKV1(arr, 2);
