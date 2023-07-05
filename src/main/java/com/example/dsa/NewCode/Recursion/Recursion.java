@@ -1,5 +1,8 @@
 package com.example.dsa.NewCode.Recursion;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Recursion {
 
     private int print(int n) {
@@ -24,7 +27,6 @@ public class Recursion {
         if (n == 1 || n == 2) return 1;
 
         return (fibonarcci(n - 1) + fibonarcci(n - 2));
-
     }
 
 
@@ -72,20 +74,42 @@ public class Recursion {
     }
 
 
+    /*O(2^n) , O(n)*/
+    private void powerSetOfInteger(List<Integer> lst, int i, int len, int num) {
+        if (i == len) {
+            System.out.println(lst);
+            return;
+        }
+
+        /*Take the element/ number*/
+        lst.add(num % 10);
+        num /= 10;
+        powerSetOfInteger(lst, i + 1, len, num);
+        lst.remove(lst.size() - 1);
+
+        /*Not take the element/number */
+        powerSetOfInteger(lst, i + 1, len, num);
+    }
+
+    /*O(2^n) , O(1)*/
+    private void powerSetOfInteger(int num, int len) {
+        this.powerSetOfInteger(new LinkedList<>(), 0, len, num);
+    }
+
     private void powerSetOfString(String s, int i, String c) {
         if (i == s.length()) {
             System.out.println(c);
             return;
         }
 
+        /*take the element */
         powerSetOfString(s, i + 1, c + s.charAt(i));
+        /* not take the element */
         powerSetOfString(s, i + 1, c);
     }
 
     private void powerSetOfString(String s) {
-
         powerSetOfString(s, 0, "");
-
     }
 
     private String swap(String s, int l, int r) {
@@ -95,6 +119,15 @@ public class Recursion {
         ch[r] = temp;
 
         return new String(ch);
+    }
+
+    private int[] swap(int[] arr, int l, int r) {
+
+        var temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
+
+        return arr;
     }
 
     private void allPermutation(String s, int l, int r) {
@@ -237,6 +270,7 @@ public class Recursion {
 
 
     /**
+     * {Parameterized}
      * (x! + y) -> !5+2 -> 15+2 -> 17
      */
     private int func1(int x, int y) {
@@ -280,39 +314,47 @@ public class Recursion {
 
     private int func4(int a[], int n) {
         int x;
-        if(n==1) return a[0];
-        else x = func4(a, n-1);
+        if (n == 1) return a[0];
+        else x = func4(a, n - 1);
 
-        if(x>a[n-1]) return x;
-        else return a[n-1];
+        if (x > a[n - 1]) return x;
+        else return a[n - 1];
     }
 
 
-    private void print1toN(int n){
-        if(n==0)
-            return ;
+    private void print1toN(int n) {
+        if (n == 0)
+            return;
 
-        print1toN(n-1);
+        print1toN(n - 1);
 
-        System.out.print(n+" ");
+        System.out.print(n + " ");
 
     }
 
-    private void printNto1(int n){
-        if(n==0)
-            return ;
+    private void printNto1(int n) {
+        if (n == 0)
+            return;
 
-        System.out.print(n+" ");
-        printNto1(n-1);
+        System.out.print(n + " ");
+        printNto1(n - 1);
     }
 
-    private int sumOfDigit(int no){
-        if(no==0) return 0;
+    private int sumOfDigit(int no) {
+        if (no == 0) return 0;
 
 
-        return no%10 + sumOfDigit(no/10);
+        return no % 10 + sumOfDigit(no / 10);
     }
 
+
+    private int[] reverseAnArray(int[] arr, int n) {
+        if (arr.length == 1 || n == arr.length / 2) return arr;
+
+        swap(arr, arr.length - n, n - 1);
+
+        return reverseAnArray(arr, n - 1);
+    }
 
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
@@ -328,6 +370,7 @@ public class Recursion {
          *  var g = recursion.josephusProblem(5, 3);
          *  var h = recursion.palindrome("raccars");
          *  recursion.powerSetOfString("abc");
+         *  recursion.powerSetOfInteger(123, 3);
          *  recursion.allPermutation("abc");
          *  recursion.nQueen(4);
          *  recursion.sudoku();
@@ -339,11 +382,12 @@ public class Recursion {
          *  var j = recursion.func4(arr, arr.length);
          *  recursion.print1toN(10);
          *  recursion.printNto1(10);
+         *  var k = recursion.sumOfDigit(123);
+         *   int[] arr = {5, 4, 3, 2, 1};
+         *   arr = recursion.reverseAnArray(arr, arr.length);
          */
 
-        var k = recursion.sumOfDigit(123);
-        System.out.println("sum "+ k);
-
+        recursion.powerSetOfInteger(213, 3);
 
     }
 }
