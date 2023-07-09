@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f87adb4-0118-4e4f-a6dc-1040d59eb039" name="Changes" comment="DSA">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/RecursionSumUptoKSeries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/CombinationSum1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/CombinationSum2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/MergeSort3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Permutations7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/QuickSort4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/SubsetSum5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/SubsetSum6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation/BitManipulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation1/BitManipulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation/BitManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation1/BitManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation/BitManuplation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation1/BitManuplation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation/InterviewBitsManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation1/InterviewBitsManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation/Modulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/BitManipulation1/Modulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/MergeSort3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Recursion1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/RecursionSumUptoKSeries2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/RecursionSumUptoKSeries2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +67,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -59,14 +76,17 @@
       <recent name="C:\Users\ritak\OneDrive\Desktop\Codes\DSA\src\main\java\com\example\dsa\NewCode\BitManipulation" />
       <recent name="C:\Users\ritak\OneDrive\Desktop\Codes\DSA" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.dsa.NewCode.Recursion2" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Recursion">
-    <configuration name="BitManipulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.BitManipulation.BitManipulation" />
+  <component name="RunManager" selected="Application.Permutations7">
+    <configuration name="CombinationSum1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CombinationSum1" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.BitManipulation.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DNF" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OldCode.Arrays.DNF" />
+    <configuration name="CombinationSum2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CombinationSum2" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="OldCode.Arrays.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.HelloApplication" />
+    <configuration name="Permutations7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.Permutations7" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +120,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Recursion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion.Recursion" />
+    <configuration name="SubsetSum5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum5" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,12 +133,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecursionSumUptoKSeries" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion.RecursionSumUptoKSeries" />
+    <configuration name="SubsetSum6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum6" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Recursion" />
-        <item itemvalue="Application.RecursionSumUptoKSeries" />
-        <item itemvalue="Application.BitManipulation" />
-        <item itemvalue="Application.DNF" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Permutations7" />
+        <item itemvalue="Application.SubsetSum5" />
+        <item itemvalue="Application.SubsetSum6" />
+        <item itemvalue="Application.CombinationSum2" />
+        <item itemvalue="Application.CombinationSum1" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +170,9 @@
       <workItem from="1687972986055" duration="34050000" />
       <workItem from="1688322579501" duration="10334000" />
       <workItem from="1688557604947" duration="5032000" />
-      <workItem from="1688583620904" duration="3499000" />
+      <workItem from="1688583620904" duration="26590000" />
+      <workItem from="1688849068553" duration="555000" />
+      <workItem from="1688890216176" duration="2078000" />
     </task>
     <task id="LOCAL-00001" summary="DSA">
       <created>1688292529241</created>
@@ -180,7 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688557633670</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DSA">
+      <created>1688587148995</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688587148995</updated>
+    </task>
+    <task id="LOCAL-00006" summary="DSA">
+      <created>1688587208451</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688587208451</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,23 +255,36 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Recursion1.java</url>
           <line>380</line>
-          <properties class="com.example.dsa.NewCode.Recursion.Recursion" method="main">
+          <properties class="com.example.dsa.NewCode.Recursion2.Recursion1" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion/Recursion.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Recursion1.java</url>
           <line>158</line>
-          <properties class="com.example.dsa.NewCode.Recursion.Recursion" method="checkQueenPositionValidDig">
+          <properties class="com.example.dsa.NewCode.Recursion2.Recursion1" method="checkQueenPositionValidDig">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/QuickSort4.java</url>
+          <line>5</line>
+          <properties class="com.example.dsa.NewCode.Recursion2.QuickSort4" method="swap">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

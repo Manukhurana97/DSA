@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.BitManipulation;
+package com.example.dsa.NewCode.BitManipulation1;
 
 public class BitManipulation {
 
