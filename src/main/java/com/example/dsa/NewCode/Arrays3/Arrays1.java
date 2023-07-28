@@ -1,6 +1,8 @@
 package com.example.dsa.NewCode.Arrays3;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Arrays1 {
 
@@ -94,21 +96,53 @@ public class Arrays1 {
     }
 
     private static int[] moveZerosToEnd(int[] arr, int n) {
-        int last = n ;
-        for (int i = 0; i < last; i++) {
+        int last = n - 1;
+        for (int i = 0; i < n; i++) {
             if (arr[i] == 0) {
-                if (arr[last-1] != 0) {
-                    swap(arr, i, last-1);
+                if (arr[last] != 0) {
+                    swap(arr, i, last);
+                    last -= 1;
                 } else {
-                    while (last-1 != i && arr[last-1] == 0) {
+                    while (last != i && arr[last] == 0) {
                         last -= 1;
                     }
-                    if(last-1>i && arr[last-1]!=0)
-                        swap(arr, i, last-1);
+                    if (last > i && arr[last] != 0) {
+                        swap(arr, i, last);
+                        last -= 1;
+                    }
                 }
             }
+            n = last;
         }
         return arr;
+    }
+
+    public static Set<Integer> unionSortedArray(int[] arr1, int[] arr2) {
+        Set<Integer> set = new HashSet<>();
+        int i = 0, j = 0;
+
+        while (i < arr1.length && j < arr2.length) set.add((arr1[i] < arr2[j] ? arr1[i++] : arr2[j++]));
+        while (i < arr1.length) set.add(arr1[i++]);
+        while (j < arr2.length) set.add(arr2[j++]);
+
+
+        return set;
+    }
+
+    public static Set<Integer> intersectionSortedArray(int[] arr1, int[] arr2) {
+        Set<Integer> set = new HashSet<>();
+        int i = 0, j = 0;
+
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] == arr2[j]) {
+                set.add(arr1[i]);
+                i++;
+                j++;
+            } else if (arr1[i] < arr2[2]) i++;
+            else j++;
+        }
+
+        return set;
     }
 
     public static void main(String[] args) {
@@ -126,11 +160,27 @@ public class Arrays1 {
         arr = leftShift(arr, arr.length, 7);
         for (int i : arr)
             System.out.print(i + " ");
-*/
 
-        int[] arr = {1,2,0,0,3,4,5,0};
+
+        int[] arr = {1, 2, 0, 0, 3, 4, 5, 0};
         arr = moveZerosToEnd(arr, arr.length);
         for (int i : arr)
             System.out.print(i + " ");
+
+        int arr1[] = {1, 2, 2, 3, 4, 5, 6};
+        int arr2[] = {1, 3, 4, 4, 7};
+
+        var sData = unionSortedArray(arr1, arr2);
+        System.out.println(sData);
+
+
+        int arr1[] = {1, 2, 2, 3, 4, 5, 6};
+        int arr2[] = {1, 3, 4, 4, 7};
+
+        var sData = intersectionSortedArray(arr1, arr2);
+        System.out.println(sData);
+*/
+
+
     }
 }
