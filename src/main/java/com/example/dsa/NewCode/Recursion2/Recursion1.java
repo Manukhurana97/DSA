@@ -334,10 +334,9 @@ public class Recursion1 {
         else x = sortArray(a, n - 1);
 
         if (a[x] > a[n - 1]) {
-            swap(a, x, n-1);
+            swap(a, x, n - 1);
             return x;
-        }
-        else {
+        } else {
             return n - 1;
         }
 
