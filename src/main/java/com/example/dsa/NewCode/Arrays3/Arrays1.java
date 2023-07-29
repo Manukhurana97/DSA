@@ -145,6 +145,55 @@ public class Arrays1 {
         return set;
     }
 
+    public static int findMissing(int[] arr, int n) {
+
+        /*for (int i = 0; i < n-1; i++) {
+            if(arr[i]+1 != arr[i+1]) return arr[i]+1;
+
+        }*/
+
+        /*int expected = (n*(n+1)/2);
+
+        for (int i = 0; i < n-1; i++) {
+            expected-=arr[i];
+        }*/
+
+        int xor1 = 0;
+        int xor2 = 0;
+        for (int i = 0; i < n - 1; i++) {
+            xor2 ^= arr[i];
+            xor2 ^= (i + 1);
+        }
+        xor2 ^= n;
+
+        return xor2 - xor1;
+    }
+
+
+    private static int maxConsecutiveOnce(int[] arr, int n) {
+        int maxOnce = 0;
+
+       /* for (int i = 0; i < n; i++) {
+            if (arr[i] == 1) {
+                int localMax = 1;
+                for (int j = i + 1; j < n; j++) {
+                    if (arr[j] == 1) {
+                        localMax += 1;
+                    } else {
+                        maxOnce = Math.max(localMax, maxOnce);
+                        i = j;
+                        break;
+                    }
+                }
+
+            }
+        }*/
+
+
+
+        return maxOnce;
+    }
+
     public static void main(String[] args) {
 /*
         System.out.println(largestElement(new int[]{3,2,1,5,2}));
@@ -179,8 +228,13 @@ public class Arrays1 {
 
         var sData = intersectionSortedArray(arr1, arr2);
         System.out.println(sData);
+
+        int arr[] = {1, 2, 3, 4, 6};
+
+        System.out.println(findMissing(arr, arr.length));
 */
 
-
+        int[] arr = {1, 1, 0, 1, 1, 1, 1, 0};
+        System.out.println(maxConsecutiveOnce(arr, arr.length));
     }
 }
