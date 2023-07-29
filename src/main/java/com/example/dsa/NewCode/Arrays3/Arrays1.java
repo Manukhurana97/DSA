@@ -189,7 +189,15 @@ public class Arrays1 {
             }
         }*/
 
-
+        int localMax = 0;
+        for (int i = 0; i < n; i++) {
+            if(arr[i]==1){
+                localMax+=1;
+            }else{
+                maxOnce = Math.max(localMax, maxOnce);
+                localMax=0;
+            }
+        }
 
         return maxOnce;
     }

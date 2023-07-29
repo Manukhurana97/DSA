@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f87adb4-0118-4e4f-a6dc-1040d59eb039" name="Changes" comment="DSA">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Arrays1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Arrays1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +158,7 @@
       <workItem from="1688849068553" duration="555000" />
       <workItem from="1688890216176" duration="3774000" />
       <workItem from="1688899536566" duration="39665000" />
-      <workItem from="1690436332392" duration="16193000" />
+      <workItem from="1690436332392" duration="16267000" />
     </task>
     <task id="LOCAL-00001" summary="DSA">
       <created>1688292529241</created>
@@ -252,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690568500572</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DSA">
+      <created>1690617843078</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1690617843078</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
