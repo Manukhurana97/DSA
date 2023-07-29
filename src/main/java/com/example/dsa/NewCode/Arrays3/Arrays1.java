@@ -1,8 +1,6 @@
 package com.example.dsa.NewCode.Arrays3;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Arrays1 {
 
@@ -191,15 +189,24 @@ public class Arrays1 {
 
         int localMax = 0;
         for (int i = 0; i < n; i++) {
-            if(arr[i]==1){
-                localMax+=1;
-            }else{
+            if (arr[i] == 1) {
+                localMax += 1;
+            } else {
                 maxOnce = Math.max(localMax, maxOnce);
-                localMax=0;
+                localMax = 0;
             }
         }
 
         return maxOnce;
+    }
+
+
+    public static int nonDuplicateInDuplicateList(int[] arr) {
+        int xor = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            xor ^= arr[i];
+        }
+        return xor;
     }
 
     public static void main(String[] args) {
@@ -238,11 +245,13 @@ public class Arrays1 {
         System.out.println(sData);
 
         int arr[] = {1, 2, 3, 4, 6};
-
         System.out.println(findMissing(arr, arr.length));
-*/
 
         int[] arr = {1, 1, 0, 1, 1, 1, 1, 0};
         System.out.println(maxConsecutiveOnce(arr, arr.length));
+*/
+
+        int[] arr = {1, 1, 2, 3, 3,4, 4, 5, 5};
+        System.out.println(nonDuplicateInDuplicateList(arr));
     }
 }
