@@ -1,6 +1,9 @@
 package com.example.dsa.NewCode.Arrays3;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Arrays1 {
 
@@ -229,9 +232,8 @@ public class Arrays1 {
 
         }*/
 
-//        int[] arr = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
 
-        Map<Integer, Integer> map = new HashMap<>();
+        /*Map<Integer, Integer> map = new HashMap<>();
         int sum = 0;
         int len = 0;
         for (int i = 0; i < n; i++) {
@@ -248,6 +250,20 @@ public class Arrays1 {
             if (!map.containsKey(rem))
             map.put(sum, i);
 
+        }*/
+
+
+        int i = 0, j = 0, sum = 0;
+        while (i <n) {
+            sum += arr[i];
+            while (sum > k && i >= j) {
+                sum -= arr[j];
+                j++;
+            }
+            if (sum == k) {
+                System.out.println(j + " " + i);
+            }
+            i++;
         }
 
         return result;

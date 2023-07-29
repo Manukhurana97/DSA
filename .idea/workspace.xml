@@ -159,7 +159,7 @@
       <workItem from="1688849068553" duration="555000" />
       <workItem from="1688890216176" duration="3774000" />
       <workItem from="1688899536566" duration="39665000" />
-      <workItem from="1690436332392" duration="24635000" />
+      <workItem from="1690436332392" duration="28164000" />
     </task>
     <task id="LOCAL-00001" summary="DSA">
       <created>1688292529241</created>
@@ -273,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690619180377</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="DSA">
+      <created>1690629351101</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690629351101</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +347,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Arrays1.java</url>
-          <line>72</line>
+          <line>75</line>
           <properties class="com.example.dsa.NewCode.Arrays3.Arrays1" method="leftShift">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
