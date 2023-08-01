@@ -61,6 +61,33 @@ public class MostElementInArray {
     }
 
 
+    /**
+     * Time: O(n)
+     * Space : O(1)
+     */
+    public static int mooseVotingAlgo(int[] arr) {
+        int el = 0;
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (count == 0) {
+                count = 1;
+                el = arr[i];
+            } else if (arr[i] == el) {
+                count += 1;
+            } else {
+                count -= 1;
+            }
+        }
+
+        count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == el) count += 1;
+        }
+        if (count > arr.length / 2) return el;
+
+
+        return -1;
+    }
 
 
     public static void main(String[] args) {
@@ -68,5 +95,6 @@ public class MostElementInArray {
         System.out.println(mostElement1(arr));
         System.out.println(mostElement2(arr));
         System.out.println(mostElement3(arr));
+        System.out.println(mooseVotingAlgo(arr));
     }
 }
