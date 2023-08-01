@@ -131,6 +131,7 @@ public class Recursion1 {
         return arr;
     }
 
+    /*abc : abc, acb, bac, bca, cab, cba*/
     private void allPermutation(String s, int l, int r) {
 
         if (l == r) {
@@ -302,11 +303,11 @@ public class Recursion1 {
         System.out.print(String.format("%d ", n));
     }
 
+    /* 4: (3,2,1,0) -> {0} --> {1} --> {2}--> (2,1) -> {0} --> (3,2,1) --> {3} ->(2,1) ->{0}*/
 
     private void func3(int n) {
 
         if (n > 0) {
-
             func3(--n);
             System.out.print(n + " ");
             func3(--n);
@@ -390,7 +391,7 @@ public class Recursion1 {
          *  var f = recursion.waysInMatrix(3, 3);
          *  var g = recursion.josephusProblem(5, 3);
          *  var h = recursion.palindrome("raccars");
-         *  recursion.powerSetOfString("abc");
+         *  recursion.C
          *  recursion.powerSetOfInteger(123, 3);
          *  recursion.allPermutation("abc");
          *  recursion.nQueen(4);
@@ -409,5 +410,8 @@ public class Recursion1 {
          *   arr = recursion.reverseAnArray(arr, arr.length);
          */
 
+        int arr[] = {12, 10, 30, 50, 100};
+        var j = recursion1.getMaxElement(arr, arr.length);
+        System.out.println(j);
     }
 }

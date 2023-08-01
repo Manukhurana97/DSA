@@ -7,7 +7,6 @@ public class CombinationSum2 {
 
     private void getPairs1(HashSet<List<Integer>> set, List<Integer> lst, int[] arr, int i, int n, int sum, int target) {
 
-
         if (i == n) {
             if (sum == target) {
                 set.add(new ArrayList<>(lst));
@@ -51,7 +50,7 @@ public class CombinationSum2 {
     private List<List<Integer>> getPairs2(int[] arr, int target) {
         HashSet<List<Integer>> set = new HashSet<>();
         Arrays.sort(arr);
-        getPairs1(set, new ArrayList<>(), arr, 0, arr.length - 1, 0, target);
+//        getPairs1(set, new ArrayList<>(), arr, 0, arr.length - 1, 0, target);
         getPairs2(set, new ArrayList<>(), arr, 0, target);
 
         return new LinkedList<>(set);

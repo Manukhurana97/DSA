@@ -144,7 +144,7 @@ public class BitManipulation {
     /*-------------------------------------------------------------------------------------------------------------------*/
 
     /**
-     * find non duplicate element from lis of duplicate element
+     * find non duplicate element from list of duplicate element
      * <p>
      * N XOR N = 0;
      */
@@ -230,19 +230,26 @@ public class BitManipulation {
 
     }
 
-    public static int findNonDuplicatefrom3RepeatingElement(int[] arr) {
+    /* 3 3 3 1*/
+    /*
+    1 pass: {1, 1, 1, 1}
+    2 pass: {1, 1, 1, 0}
+    3 pass: {0, 0, 0, 0}
+    */
+    public static int findNonDuplicateFrom3RepeatingElement(int[] arr) {
 
         int k, ans = 0;
         for (int i = 0; i < 32; i++) {
             k = 0;
             for (int j = 0; j < arr.length; j++) {
-                if ((arr[i] & (1 << j)) == 0) {
+                if ((arr[j] & (1 << i)) == 0) {
                     k++;
                 }
             }
             ans += k % 3 << i;
         }
         return ans;
+
     }
 
 
@@ -269,6 +276,9 @@ public class BitManipulation {
         // System.out.println(findNonDeplicatefrom3RepeatingElement(arr));
 
 
+        int[] arr = {3,3,3,1};
+       var a =  findNonDuplicateFrom3RepeatingElement(arr);
+        System.out.println(a);
     }
 
 }

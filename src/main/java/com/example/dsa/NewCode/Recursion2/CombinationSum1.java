@@ -60,7 +60,7 @@ public class CombinationSum1 {
 
     public static void main(String[] args) {
         CombinationSum1 combinationSum1 = new CombinationSum1();
-        int arr[] = {2, 2, 3, 4, 6, 7};
+        int[] arr = {2, 2, 3, 4, 6, 7};
 
         List<List<Integer>> response = combinationSum1.combinationSum(arr, 7);
         for (var i : response)

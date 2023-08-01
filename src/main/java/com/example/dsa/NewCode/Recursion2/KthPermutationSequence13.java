@@ -12,6 +12,7 @@ import java.util.List;
 public class KthPermutationSequence13 {
 
     public String getFactorialNumbers(int n) {
+        System.out.println(n);
         String perm = "";
         for (int i = 1; i <= n; i++) {
             perm += i;
@@ -34,7 +35,6 @@ public class KthPermutationSequence13 {
             resp.add(perm);
             return;
         }
-
         for (int i = j; i < perm.length(); i++) {
             perm = swap(perm, i, j);
             allPermutation(perm, j + 1, resp);
@@ -49,7 +49,6 @@ public class KthPermutationSequence13 {
 
         allPermutation(lst, 0, resp);
 
-
         return resp.get(k - 1);
 
     }
@@ -60,13 +59,13 @@ public class KthPermutationSequence13 {
     * 4: 1234, fac = 6
      * k = 17-1
      * while(true)
-     *      res += lst.get(k / fact):: lst. lst.get(16 /6)):: rest = 3
+     *      res += lst.get(k / fact):: lst. lst.get(16 /6))=2:: rest = 3
      *      lst.remove(k / fact):: lst.remove(16/6):: lst = 124
      *      k =  k % fact:: 16%6:: k=4
      *      fac = fact/lst.size(): fac=2
      *
      * ----------------------------------------
-     *      res+= lst.get(4/2):: rest = 34
+     *      res+= lst.get(4/2)=2:: rest = 34
      *      lst.remove(4/2):: lst = 12
      *      k = 4/2:: k=2
      *      fact = fact/lst.size():: fac=0
@@ -88,6 +87,7 @@ public class KthPermutationSequence13 {
             fact *= i;
             lst.add(i);
         }
+
         lst.add(n);
         String ans = "";
         k = k - 1;
@@ -107,7 +107,7 @@ public class KthPermutationSequence13 {
 
     public static void main(String[] args) {
         KthPermutationSequence13 kthPermutationSequence13 = new KthPermutationSequence13();
-//        kthPermutationSequence13.KthPermutationSequence(3, 4);
+//        var a = kthPermutationSequence13.KthPermutationSequence(4, 17);
        var a =  kthPermutationSequence13.compute(4, 17);
         System.out.println(a);
 

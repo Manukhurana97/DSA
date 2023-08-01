@@ -42,6 +42,8 @@ public class Arrays2 {
 
     public static void main(String[] args) {
         int[] arr = {2, 6, 8, 5, 11, 12};
-        twoSum(arr, 14);
+       var a =  twoSum(arr, 14);
+       for(int i: a)
+           System.out.println(i);
     }
 }

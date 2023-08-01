@@ -57,7 +57,6 @@ public class NQueens8 {
                     return true;
                 }
                 arr[r][c] = 0;
-
             }
         }
         return false;
