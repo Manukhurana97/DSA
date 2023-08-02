@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class KadanesAlgo {
 
-    public static int maxSubArraySum(int[] arr) {
+    public static int KadaneAlgo(int[] arr) {
 
         int max = Integer.MIN_VALUE, localMax = 0;
         for (int j : arr) {
@@ -46,10 +46,10 @@ public class KadanesAlgo {
 
 
     public static void main(String[] args) {
-//        int[] arr = {-1, -2, -3, -4};
-//        System.out.println(maxSubArraySum(arr));
+        int[] arr = {-1, -2, -3, -4};
+        System.out.println(KadaneAlgo(arr));
 //
-        int arr[] = {1,2,3,4,2};
-        duplicates(arr, arr.length);
+//        int arr[] = {1,2,3,4,2};
+//        duplicates(arr, arr.length);
     }
 }

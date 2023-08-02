@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MostElementInArray {
+public class MostElementInArray4 {
 
     /**
      * Time: O(n^2)

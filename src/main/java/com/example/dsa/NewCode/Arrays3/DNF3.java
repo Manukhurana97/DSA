@@ -15,7 +15,6 @@ public class DNF3 {
                 swap(arr,  m, l);
                 l++;
                 m++;
-
             } else if (arr[m] == 1) {
                 m++;
             } else {
