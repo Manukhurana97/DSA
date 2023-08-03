@@ -47,15 +47,41 @@ public class RearrangeArrayBySign {
     }
 
     /* when pos & neg and negative are not equal*/
+    public static int[] rearrangeArray2(int[] nums) {
+        int[] pos = new int[nums.length];
+        int[] neg = new int[nums.length];
 
+        int k = 0, i = 0, j = 0;
+        while (k < nums.length) {
+            if (nums[k] > 0) pos[i++] = nums[k++];
+            else neg[j++] = nums[k++];
+        }
+
+        k = 0;
+        int i1 = 0;
+        int j1 = 0;
+        while (i1 < i && j1 < j) nums[k++] = (k % 2 != 0) ? pos[i1++] : neg[j1++];
+        while (i1 < i) nums[k++] = pos[i1++];
+        while (j1 < j) nums[k++] = neg[j1++];
+
+
+        return nums;
+    }
 
 
     public static void main(String[] args) {
         int[] arr = {3, 1, -2, -5, 2, -4};
         arr = rearrangeArray(arr);
         for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+
         arr = rearrangeArray1(arr);
         for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+
+        int[] arr1 = {3, 1, -2, -5, 2, -4, -1, -2};
+        arr1 = rearrangeArray2(arr1);
+        for (int i : arr1) System.out.print(i + " ");
 
     }
 }

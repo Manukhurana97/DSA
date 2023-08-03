@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f87adb4-0118-4e4f-a6dc-1040d59eb039" name="Changes" comment="DSA" />
+    <list default="true" id="9f87adb4-0118-4e4f-a6dc-1040d59eb039" name="Changes" comment="DSA">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/RearrangeArrayBySign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/RearrangeArrayBySign.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +159,7 @@
       <workItem from="1688849068553" duration="555000" />
       <workItem from="1688890216176" duration="3774000" />
       <workItem from="1688899536566" duration="39665000" />
-      <workItem from="1690436332392" duration="70904000" />
+      <workItem from="1690436332392" duration="73249000" />
     </task>
     <task id="LOCAL-00001" summary="DSA">
       <created>1688292529241</created>
@@ -326,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691085366715</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="DSA">
+      <created>1691086129310</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1691086129310</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
