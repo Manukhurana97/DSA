@@ -8,8 +8,8 @@ public class RearrangeArrayBySign {
 
 
     public static int[] rearrangeArray(int[] nums) {
-        int[] pos = new int[nums.length / 2];
-        int[] neg = new int[nums.length / 2];
+        int[] pos = new int[nums.length];
+        int[] neg = new int[nums.length];
 
         int i = 0, j = 0, k = 0;
         while (k < nums.length) {
@@ -46,9 +46,14 @@ public class RearrangeArrayBySign {
         return aux;
     }
 
+    /* when pos & neg and negative are not equal*/
+
+
 
     public static void main(String[] args) {
         int[] arr = {3, 1, -2, -5, 2, -4};
+        arr = rearrangeArray(arr);
+        for (int i : arr) System.out.print(i + " ");
         arr = rearrangeArray1(arr);
         for (int i : arr) System.out.print(i + " ");
 
