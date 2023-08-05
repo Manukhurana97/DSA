@@ -1,6 +1,6 @@
 package com.example.dsa.NewCode.Arrays3;
 
-public class RearrangeArrayBySign {
+public class RearrangeArrayBySign6 {
 
     /**
      * 3, 1, -2, -5, 2, -4
