@@ -7,33 +7,30 @@ public class SpiralMatrix12 {
 
     public static List<Integer> spiralMatrix(int[][] arr) {
 
+        List<Integer> result = new ArrayList<>();
+
+        if (arr == null || arr.length == 0 || arr[0].length == 0) {
+            return result;
+        }
+
         int col = arr.length;
         int row = arr[0].length;
         int upLeft = 0, upRight = row - 1, downRight = col - 1, downLeft = 0;
-        List<Integer> result = new ArrayList<>();
 
-        while (result.size() < row * col) {
 
-            for (int i = upLeft; i <= upRight; i++) {
-                result.add(arr[upLeft][i]);
-            }
+        while (upLeft<=upRight && downLeft<=downRight) {
+
+            for (int i = upLeft; i <= upRight; i++) result.add(arr[upLeft][i]);
             upLeft += 1;
 
-            for (int i = upLeft; i <= downRight; i++) {
-                result.add(arr[i][upRight]);
-            }
+            for (int i = upLeft; i <= downRight; i++) result.add(arr[i][upRight]);
             upRight -= 1;
 
-            for (int i = upRight; i >= downLeft; i--) {
-                result.add(arr[downRight][i]);
-            }
+            for (int i = upRight; i >= downLeft; i--) result.add(arr[downRight][i]);
             downRight -= 1;
 
-            for (int i = downRight; i >= upLeft; i--) {
-                result.add(arr[i][downLeft]);
-            }
+            for (int i = downRight; i >= upLeft; i--) result.add(arr[i][downLeft]);
             downLeft += 1;
-
         }
         return result;
     }
