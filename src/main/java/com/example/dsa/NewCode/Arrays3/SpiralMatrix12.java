@@ -14,16 +14,24 @@ public class SpiralMatrix12 {
 
         while (result.size() < row * col) {
 
-            for (int i = upLeft; i <= upRight; i++) result.add(arr[upLeft][i]);
+            for (int i = upLeft; i <= upRight; i++) {
+                result.add(arr[upLeft][i]);
+            }
             upLeft += 1;
 
-            for (int i = upLeft; i <= downRight; i++) result.add(arr[i][upRight]);
+            for (int i = upLeft; i <= downRight; i++) {
+                result.add(arr[i][upRight]);
+            }
             upRight -= 1;
 
-            for (int i = upRight; i >= downLeft; i--) result.add(arr[downRight][i]);
+            for (int i = upRight; i >= downLeft; i--) {
+                result.add(arr[downRight][i]);
+            }
             downRight -= 1;
 
-            for (int i = downRight; i >= upLeft; i--) result.add(arr[i][downLeft]);
+            for (int i = downRight; i >= upLeft; i--) {
+                result.add(arr[i][downLeft]);
+            }
             downLeft += 1;
 
         }
