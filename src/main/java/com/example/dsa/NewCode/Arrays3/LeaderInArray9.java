@@ -46,7 +46,11 @@ public class LeaderInArray9 {
 
     public static void main(String[] args) {
         int[] arr = {7, 22, 15, 3, 0, 6};
-        var result = findLeader1(arr);
+        var result = findLeader(arr);
+        for (int i : result) System.out.print(i + " ");
+
+
+        result = findLeader1(arr);
         for (int i : result) System.out.print(i + " ");
     }
 }
