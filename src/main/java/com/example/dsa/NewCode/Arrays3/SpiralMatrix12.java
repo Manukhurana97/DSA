@@ -15,31 +15,40 @@ public class SpiralMatrix12 {
 
         int col = arr.length;
         int row = arr[0].length;
-        int upLeft = 0, upRight = row - 1, downRight = col - 1, downLeft = 0;
+        int left = 0, right = row - 1, bottom = col - 1, top = 0;
 
+        while (left <= right && top <= bottom) {
 
-        while (upLeft<=upRight && downLeft<=downRight) {
+            for (int i = left; i <= right; i++) result.add(arr[top][i]);
+            top += 1;
 
-            for (int i = upLeft; i <= upRight; i++) result.add(arr[upLeft][i]);
-            upLeft += 1;
+            for (int i = top; i <= bottom; i++) result.add(arr[i][right]);
+            right -= 1;
 
-            for (int i = upLeft; i <= downRight; i++) result.add(arr[i][upRight]);
-            upRight -= 1;
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) result.add(arr[bottom][i]);
+                bottom -= 1;
+            }
 
-            for (int i = upRight; i >= downLeft; i--) result.add(arr[downRight][i]);
-            downRight -= 1;
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) result.add(arr[i][left]);
+                left += 1;
+            }
 
-            for (int i = downRight; i >= upLeft; i--) result.add(arr[i][downLeft]);
-            downLeft += 1;
         }
+
         return result;
     }
 
     public static void main(String[] args) {
-        int[][] arr = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12}};
+//        int[][] arr = {
+//                {1, 2, 3, 4},
+//                {5, 6, 7, 8},
+//                {9, 10, 11, 12}};
+
+//        int[][] arr = {{1,2}, {3,4}};
+        int[][] arr = {{2, 5, 8}, {4, 0, -1}};
+
         var result = spiralMatrix(arr);
         System.out.println(result);
     }
