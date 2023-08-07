@@ -30,20 +30,31 @@ public class PascalTriangle14 {
     }
 
 
-    public static int getRowFromTriangle(int r) {
+    public static List<Integer> getRowFromTriangle(int row) {
         int ans = 1;
 
         List<Integer> lst = new ArrayList<>();
         lst.add(ans);
 
-        for (int i = 1; i <= r - 1; i++) {
-            ans = (ans * (r - i)) / i;
+        for (int col = 1; col < row; col++) {
+            ans = (ans * (row - col)) / col;
             lst.add(ans);
         }
 
 
-        System.out.println(lst);
-        return ans;
+        return lst;
+    }
+
+
+    public static List<List<Integer>> printPascalTriangle(int r) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        for (int i = 1; i < r; i++) {
+            result.add(getRowFromTriangle(i));
+        }
+
+        return result;
     }
 
 
@@ -52,6 +63,11 @@ public class PascalTriangle14 {
 //        System.out.println(getElementFromTriangle(7, 2));
 //        System.out.println(getElementFromTriangle(10, 3));
 
-        System.out.println(getRowFromTriangle(6));
+//        System.out.println(getRowFromTriangle(6));
+
+        for (var row : printPascalTriangle(7)) {
+            System.out.println(row);
+        }
+
     }
 }
