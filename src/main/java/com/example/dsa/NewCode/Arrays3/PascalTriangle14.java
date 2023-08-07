@@ -36,11 +36,10 @@ public class PascalTriangle14 {
         List<Integer> lst = new ArrayList<>();
         lst.add(ans);
 
-        for (int i = 1; i < r - 1; i++) {
+        for (int i = 1; i <= r - 1; i++) {
             ans = (ans * (r - i)) / i;
             lst.add(ans);
         }
-        lst.add(1);
 
 
         System.out.println(lst);
