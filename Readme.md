@@ -46,6 +46,7 @@ Welcome to the Alert-Self-Service-tool project. This sophisticated tool empowers
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Description](#introduction)
 - [Modules](#modules)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
@@ -56,7 +57,22 @@ Welcome to the Alert-Self-Service-tool project. This sophisticated tool empowers
 
 ## Introduction
 
-The Alert- Self Service-tool is a comprehensive solution that allows users to establish alerts utilizing mnemonics, categories, types, and specific criteria. Users have the flexibility to designate their preferred communication channels, such as email, SMS, or on-screen notifications. This modular project is meticulously designed to streamline the management of alerts.
+The Alert Self-Service Tool represents a significant leap forward in streamlining data management and deployment processes. No longer constrained by manual interventions, this tool empowers users to seamlessly contribute, deploy, and manage data entries in a structured manner. By automating the entry of data and facilitating seamless migration, the Alert Self-Service Tool alleviates the need for manual scripting, enabling users to efficiently manage various aspects of data promotion.
+
+## Description
+
+The Alert Self-Service Tool revolutionizes the conventional data management landscape by providing an innovative platform for effortlessly contributing and deploying data entries. This transformative solution eradicates the labor-intensive practice of manually scripting data into databases. Instead, users can now avail themselves of a user-friendly interface to furnish essential details that are seamlessly inserted into the database.
+
+The process commences with users furnishing fundamental information. First, users input Mnemonic details (e.g., ZTN/MFD), which serve as key identifiers. Second, users define the category and alert type, categorizing data entries for logical organization. Moreover, users discern whether the entry pertains to a pre-defined type or subscribable category.
+
+Importantly, the tool accommodates diverse criteria configurations. Users can determine whether an entry requires specific criteria, such as text boxes, radio buttons, checkboxes, or even more intricate criteria like account details. This fine-grained control allows for versatile data entry catering to various contexts.
+
+Enhancing communication customization, users define how they prefer to be notified—via email, SMS, on-screen notifications, or a distinctive bell icon. The tool acknowledges the diversity of communication preferences to cater to individualized user experiences.
+
+Further diversifying the utility, users decide whether the entry pertains to Kafka or MQ type. For Kafka, JSON data is generated automatically, streamlining the process further. In the case of MQ, Copybook details are solicited, ensuring the tool's adaptability to multiple data formats.
+
+  
+
 
 ## Modules
 
