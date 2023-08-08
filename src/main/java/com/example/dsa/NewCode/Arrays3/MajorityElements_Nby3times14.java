@@ -10,16 +10,14 @@ public class MajorityElements_Nby3times14 {
         int element1 = 0, element2 = 0;
 
         for (int i : arr) {
-            if (element1 == 0) {
+            if (element1 == i) {count1 += 1;
+            } else if (element2 == i) {count2++;
+            } else if (count1 == 0) {
                 element1 = i;
                 count1 = 1;
-            } else if (element2 == 0 ) {
+            } else if (count2 == 0) {
                 element2 = i;
                 count2 = 1;
-            } else if (i == element1) {
-                count1 += 1;
-            } else if (i == element2) {
-                count2++;
             } else {
                 count1--;
                 count2--;
