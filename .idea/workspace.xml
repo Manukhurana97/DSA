@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/CountInversion21.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/ReversePair22.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +43,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.CountInversion21">
+  <component name="RunManager" selected="Application.ReversePair22">
     <configuration name="CountInversion21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.CountInversion21" />
       <module name="DSA" />
@@ -96,8 +96,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubarraywithXorK17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.SubarraywithXorK17" />
+    <configuration name="ReversePair22" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.ReversePair22" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -111,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ReversePair22" />
         <item itemvalue="Application.CountInversion21" />
         <item itemvalue="Application.Merge2SortedArray19" />
         <item itemvalue="Application.MergeOverlappingInterval18" />
         <item itemvalue="Application.OverlappingInterval18" />
-        <item itemvalue="Application.SubarraywithXorK17" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +164,7 @@
       <updated>1691418882847</updated>
       <workItem from="1691418883384" duration="20295000" />
       <workItem from="1692119056326" duration="54000" />
-      <workItem from="1692119124992" duration="12120000" />
+      <workItem from="1692119124992" duration="14087000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -208,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692213801124</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="dsa">
+      <created>1692254925689</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1692254925689</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
