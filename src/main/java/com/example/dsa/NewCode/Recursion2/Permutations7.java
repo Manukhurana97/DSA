@@ -45,7 +45,7 @@ public class Permutations7 {
     }
 
     private void printAllPermutations(int[] arr) {
-//        this.printAllPermutations(arr, 0, arr.length - 1);
+        this.printAllPermutations(arr, 0, arr.length - 1);
 
         this.printAllPermutationsWithSpace(new ArrayList<>(), new boolean[arr.length], arr);
     }
