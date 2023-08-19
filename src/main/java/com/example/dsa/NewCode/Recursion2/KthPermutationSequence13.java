@@ -91,9 +91,9 @@ public class KthPermutationSequence13 {
         lst.add(n);
         String ans = "";
         k = k - 1;
+
         while (true) {
-            ans += lst.get(k / fact);
-            lst.remove(k / fact);
+            ans += lst.remove(k / fact);
 
             if (lst.isEmpty()) {
                 break;

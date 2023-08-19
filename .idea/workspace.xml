@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Permutations7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Permutations7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/KthPermutationSequence13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/KthPermutationSequence13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/MColoration10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/MColoration10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/RatInMaze12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/RatInMaze12.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +45,9 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Permutations7">
-    <configuration name="CombinationSum1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CombinationSum1" />
+  <component name="RunManager" selected="Application.CountInversions14">
+    <configuration name="CountInversions14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CountInversions14" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -57,8 +59,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CombinationSum2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CombinationSum2" />
+    <configuration name="KthPermutationSequence13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.KthPermutationSequence13" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -70,8 +72,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Permutations7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.Permutations7" />
+    <configuration name="MColoration10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.MColoration10" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -83,8 +85,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubsetSum5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum5" />
+    <configuration name="RatInMaze12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.RatInMaze12" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -96,8 +98,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubsetSum6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum6" />
+    <configuration name="palandromepartiton11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.palandromepartiton11" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -111,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Permutations7" />
-        <item itemvalue="Application.SubsetSum6" />
-        <item itemvalue="Application.SubsetSum5" />
-        <item itemvalue="Application.CombinationSum2" />
-        <item itemvalue="Application.CombinationSum1" />
+        <item itemvalue="Application.CountInversions14" />
+        <item itemvalue="Application.KthPermutationSequence13" />
+        <item itemvalue="Application.RatInMaze12" />
+        <item itemvalue="Application.palandromepartiton11" />
+        <item itemvalue="Application.MColoration10" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +166,7 @@
       <updated>1691418882847</updated>
       <workItem from="1691418883384" duration="20295000" />
       <workItem from="1692119056326" duration="54000" />
-      <workItem from="1692119124992" duration="28080000" />
+      <workItem from="1692119124992" duration="30803000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -236,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692465816161</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="dsa">
+      <created>1692471935990</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1692471935990</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

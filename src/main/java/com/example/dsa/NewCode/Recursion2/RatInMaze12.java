@@ -11,32 +11,32 @@ package com.example.dsa.NewCode.Recursion2;
 public class RatInMaze12 {
 
 
-    private void solveMaze(int[][] arr, boolean[][] flag, int r, int c, String path) {
-        if (r == arr.length - 1 && c == arr.length - 1) {
+    private void solveMaze(int[][] arr, boolean[][] flag, int col, int row, String path) {
+        if (col == arr.length - 1 && row == arr.length - 1) {
             System.out.println(path);
             return;
         }
 
 
-        if (c + 1 < arr.length && !flag[c + 1][r] && arr[c + 1][r] == 1) {
-            flag[c][r] = true;
-            solveMaze(arr, flag, r, c + 1, path + "D");
-            flag[c][r] = false;
+        if (row + 1 < arr.length && !flag[row + 1][col] && arr[row + 1][col] == 1) {
+            flag[row][col] = true;
+            solveMaze(arr, flag, col, row + 1, path + "D");
+            flag[row][col] = false;
         }
-        if (r - 1 >= 0 && !flag[c][r - 1] && arr[c][r - 1] == 1) {
-            flag[c][r] = true;
-            solveMaze(arr, flag, r - 1, c, path + "L");
-            flag[c][r] = false;
+        if (col - 1 >= 0 && !flag[row][col - 1] && arr[row][col - 1] == 1) {
+            flag[row][col] = true;
+            solveMaze(arr, flag, col - 1, row, path + "L");
+            flag[row][col] = false;
         }
-        if (r + 1 < arr.length && !flag[c][r + 1] && arr[c][r + 1] == 1) {
-            flag[r][c] = true;
-            solveMaze(arr, flag, r + 1, c, path + "R");
-            flag[r][c] = false;
+        if (col + 1 < arr.length && !flag[row][col + 1] && arr[row][col + 1] == 1) {
+            flag[col][row] = true;
+            solveMaze(arr, flag, col + 1, row, path + "R");
+            flag[col][row] = false;
         }
-        if (c - 1 >= 0 && !flag[c - 1][r] && arr[c - 1][r] == 1) {
-            flag[r][c] = true;
-            solveMaze(arr, flag, r, c - 1, path + "U");
-            flag[r][c] = false;
+        if (row - 1 >= 0 && !flag[row - 1][col] && arr[row - 1][col] == 1) {
+            flag[col][row] = true;
+            solveMaze(arr, flag, col, row - 1, path + "U");
+            flag[col][row] = false;
         }
 
 

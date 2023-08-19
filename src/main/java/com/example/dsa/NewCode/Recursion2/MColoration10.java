@@ -16,9 +16,9 @@ public class MColoration10 {
         if (node == noOfNodes) return true;
 
         /* iterate over each color*/
-        for (int i = 1; i <= noOfColors; i++) {
-            if (checkGraphColorPossible(node, graph, color, noOfNodes, i)) { // check if that color is possible
-                color[node] = i;
+        for (int col = 1; col <= noOfColors; col++) {
+            if (checkGraphColorPossible(node, graph, color, noOfNodes, col)) { // check if that color is possible
+                color[node] = col;
                 if (graphColoring(node + 1, graph, color, noOfColors, noOfNodes)) { // check for next node
                     return true;
                 }
@@ -42,8 +42,8 @@ public class MColoration10 {
                 {false, false, false, true},
                 {true, false, false, false}
         };
-//        var a = mColoration10.graphColoring(graph, 3, 4);
-//        System.out.println(a);
+        var a = mColoration10.graphColoring(graph, 3, 4);
+        System.out.println(a);
 
         boolean[][] graph1 = {
                 {false, true, true},
