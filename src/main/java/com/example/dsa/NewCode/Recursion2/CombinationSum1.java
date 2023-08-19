@@ -25,10 +25,7 @@ public class CombinationSum1 {
             lst.remove(lst.size() - 1);
         }
 
-
         combinationSum(resp, lst, arr, i + 1, n, sum, target);
-
-
     }
 
     private void combinationSum(List<List<Integer>> resp, List<Integer> lst, int[] arr, int i, int n, int target) {
@@ -40,14 +37,13 @@ public class CombinationSum1 {
             return;
         }
 
-
         if (arr[i] <= target) {
             lst.add(arr[i]);
             combinationSum(resp, lst, arr, i, n, target - arr[i]);
             lst.remove(lst.size() - 1);
         }
-        combinationSum(resp, lst, arr, i + 1, n, target);
 
+        combinationSum(resp, lst, arr, i + 1, n, target);
     }
 
 

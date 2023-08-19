@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Recursion1 {
 
+    /*5: 5,4,3,2,1*/
     private int print(int n) {
         if (n == 0) return n;
 
@@ -13,13 +14,12 @@ public class Recursion1 {
         return this.print(n - 1);
     }
 
-
-    private int sum_of_n_natural_numbers(int n) {
+    /*5: 5+4+3+2+1<-*/
+    private int sumOfNNaturalNumbers(int n) {
         if (n == 1) return 1;
 
-        return n + sum_of_n_natural_numbers(n - 1);
+        return n + sumOfNNaturalNumbers(n - 1);
     }
-
 
     private int fibonarcci(int n) {
         if (n == 0) return 0;
@@ -29,7 +29,6 @@ public class Recursion1 {
         return (fibonarcci(n - 1) + fibonarcci(n - 2));
     }
 
-
     private int factor(int n) {
         if (n == 1) return 1;
 
@@ -38,21 +37,20 @@ public class Recursion1 {
         return n * factor(n - 1);
     }
 
-
     private int power(int a, int b) {
         if (b == 1) return a;
 
         return a * power(a, b - 1);
     }
 
-
+    /* start from n and m and reach to 0, 0: find total ways*/
     private int waysInMatrix(int n, int m) {
         if (n == 1 || m == 1) return 1;
 
         return (waysInMatrix(n - 1, m) + waysInMatrix(n, m - 1));
     }
 
-
+    /* fire and pass*/
     private int josephusProblem(int n, int k) {
         if (n == 1) return n;
 
@@ -60,7 +58,6 @@ public class Recursion1 {
 
         return ((josephusProblem(n - 1, k) + k) % n);
     }
-
 
     private boolean palindromeCheck(int pos, String p) {
         if (p.length() == 1 || p.length() / 2 <= pos) return true;
@@ -170,19 +167,16 @@ public class Recursion1 {
     }
 
     private boolean checkQueenPos(int r, int c, int size, int[][] arr) {
-
         return this.checkQueenPositionValidRow(r, c, size, arr) && checkQueenPositionValidDig(r, c, size, arr);
     }
 
-
-    private boolean nQueen(int size, int c, int[][] arr) {
+    private boolean CreatenQueenBoard(int size, int c, int[][] arr) {
         if (c >= size) return true;
-
 
         for (int r = 0; r < size; r++) {
             if (checkQueenPos(r, c, size, arr)) {
                 arr[r][c] = 1;
-                if (nQueen(size, c + 1, arr)) {
+                if (CreatenQueenBoard(size, c + 1, arr)) {
                     return true;
                 }
                 arr[r][c] = 0;
@@ -192,10 +186,10 @@ public class Recursion1 {
         return false;
     }
 
-    private void nQueen(int size) {
+    private void CreatenQueenBoard(int size) {
 
         var data = new int[size][size];
-        nQueen(size, 0, data);
+        CreatenQueenBoard(size, 0, data);
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -224,14 +218,14 @@ public class Recursion1 {
         return true;
     }
 
-    private boolean sudoku(int arr[][]) {
+    private boolean sudokuSolver(int arr[][]) {
         for (int r = 0; r < 9; r++) {
             for (int c = 0; c < 9; c++) {
                 if (arr[r][c] == 0) {
                     for (int i = 1; i <= 9; i++) {
                         if (checkSudokuData(arr, r, c, i)) {
                             arr[r][c] = i;
-                            if (sudoku(arr)) return true;
+                            if (sudokuSolver(arr)) return true;
                             arr[r][c] = 0;
                         }
                     }
@@ -242,7 +236,7 @@ public class Recursion1 {
         return true;
     }
 
-    private void sudoku() {
+    private void sudokuSolver() {
         int[][] arr = {
                 {5, 3, 0, 0, 7, 0, 0, 0, 0},
                 {6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -254,7 +248,7 @@ public class Recursion1 {
                 {0, 0, 0, 4, 1, 9, 0, 0, 5},
                 {0, 0, 0, 0, 8, 0, 0, 7, 9}
         };
-        sudoku(arr);
+        sudokuSolver(arr);
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -410,8 +404,6 @@ public class Recursion1 {
          *   arr = recursion.reverseAnArray(arr, arr.length);
          */
 
-        int arr[] = {12, 10, 30, 50, 100};
-        var j = recursion1.getMaxElement(arr, arr.length);
-        System.out.println(j);
+        recursion1.func3(4);
     }
 }

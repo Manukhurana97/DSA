@@ -6,29 +6,51 @@ import java.util.List;
 
 public class SubsetSum6 {
 
-    private void subsetSum(List<Integer> lst, int[] arr, int i, int sum) {
+//    private void generateAllSubsetsSum(List<Integer> lst, int[] arr, int i, int sum) {
+//
+//        if (i == arr.length) {
+//            lst.add(sum);
+//            return;
+//        }
+//
+//        int e = arr[i];
+//        sum += e;
+//        generateAllSubsetsSum(lst, arr, i + 1, sum);
+//
+//        sum -= e;
+//        generateAllSubsetsSum(lst, arr, i + 1, sum);
+//    }
+//
+//    private List<Integer> subsetSum(int[] arr, int n) {
+//        List<Integer> listOfSums = new ArrayList<>();
+//
+//        generateAllSubsetsSum(listOfSums, arr, 0, 0);
+//
+//        Collections.sort(listOfSums);
+//        return listOfSums;
+//    }
 
-        if (i == arr.length) {
+
+    private void generateAllSubsetsSum(List<Integer> lst, int[] arr, int i, int sum) {
+
+        if(i==arr.length){
             lst.add(sum);
             return;
         }
 
-        int e = arr[i];
-        sum += e;
-        subsetSum(lst, arr, i + 1, sum);
+        generateAllSubsetsSum(lst, arr, i+1, sum+arr[i]);
+        generateAllSubsetsSum(lst, arr, i+1, sum);
 
-        sum -= e;
-        subsetSum(lst, arr, i + 1, sum);
     }
-
     private List<Integer> subsetSum(int[] arr, int n) {
         List<Integer> listOfSums = new ArrayList<>();
 
-        subsetSum(listOfSums, arr, 0, 0);
+        generateAllSubsetsSum(listOfSums, arr, 0, 0);
 
         Collections.sort(listOfSums);
         return listOfSums;
     }
+
 
 
     public static void main(String[] args) {

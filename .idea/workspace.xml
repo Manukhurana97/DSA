@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/MaxProductSubarray23.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/ReversePair22.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/ReversePair22.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/CombinationSum1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/CombinationSum1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/CombinationSum2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/CombinationSum2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Recursion1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/Recursion1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/SubsetSum6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/SubsetSum6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +46,13 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MaxProductSubarray23">
-    <configuration name="CountInversion21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.CountInversion21" />
+  <component name="RunManager" selected="Application.SubsetSum6">
+    <configuration name="CombinationSum1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CombinationSum1" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -58,12 +60,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxProductSubarray23" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.MaxProductSubarray23" />
+    <configuration name="CombinationSum2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.CombinationSum2" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,12 +73,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Merge2SortedArray19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.Merge2SortedArray19" />
+    <configuration name="Recursion1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.Recursion1" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeOverlappingInterval18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.MergeOverlappingInterval18" />
+    <configuration name="SubsetSum5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum5" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReversePair22" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.ReversePair22" />
+    <configuration name="SubsetSum6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum6" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MaxProductSubarray23" />
-        <item itemvalue="Application.ReversePair22" />
-        <item itemvalue="Application.CountInversion21" />
-        <item itemvalue="Application.Merge2SortedArray19" />
-        <item itemvalue="Application.MergeOverlappingInterval18" />
+        <item itemvalue="Application.SubsetSum6" />
+        <item itemvalue="Application.SubsetSum5" />
+        <item itemvalue="Application.CombinationSum2" />
+        <item itemvalue="Application.CombinationSum1" />
+        <item itemvalue="Application.Recursion1" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +167,7 @@
       <updated>1691418882847</updated>
       <workItem from="1691418883384" duration="20295000" />
       <workItem from="1692119056326" duration="54000" />
-      <workItem from="1692119124992" duration="18260000" />
+      <workItem from="1692119124992" duration="24964000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -223,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692257201469</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="dsa">
+      <created>1692436491350</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1692436491350</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
