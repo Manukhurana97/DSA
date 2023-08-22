@@ -1,27 +1,36 @@
-public static Map<String, List<String>> createGroupToMnemonicMap(Set<String> userDetails) {
-        Map<String, List<String>> groupToMnemonicMap = new HashMap<>();
-        Map<String, String> mnemonicToGroupMap = new HashMap<>();
-        
-        for (String userDetail : userDetails) {
-            String[] parts = userDetail.split(":");
-            if (parts.length == 2) {
-                String mnemonic = parts[0];
-                String group = parts[1];
+import java.security.SecureRandom;
+import java.util.Base64;
 
-                if (group.equalsIgnoreCase("BUSINESS")) {
-                    group = "APPOWNER"; // Change BUSINESS to APPOWNER
-                }
+public class BalancedEncoder {
+    public static void main(String[] args) {
+        int length = 15;
+        String allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_#$";
+        int numberOfCharacters = allowedCharacters.length();
+        int lettersCount = length / 3;
+        int digitsCount = length / 3;
+        int specialCharsCount = length / 3;
 
-                if (mnemonicToGroupMap.containsKey(mnemonic) && mnemonicToGroupMap.get(mnemonic).equals("TECHMEMBER")) {
-                    // Remove mnemonic from TECHMEMBER list
-                    groupToMnemonicMap.get("TECHMEMBER").remove(mnemonic);
-                }
+        SecureRandom random = new SecureRandom();
+        StringBuilder balancedString = new StringBuilder();
 
-                mnemonicToGroupMap.put(mnemonic, group);
-
-                groupToMnemonicMap.computeIfAbsent(group, k -> new ArrayList<>()).add(mnemonic);
-            }
+        for (int i = 0; i < lettersCount; i++) {
+            int randomIndex = random.nextInt(numberOfCharacters);
+            balancedString.append(allowedCharacters.charAt(randomIndex));
         }
 
-        return groupToMnemonicMap;
+        for (int i = 0; i < digitsCount; i++) {
+            int randomIndex = random.nextInt(10) + 52; // Index for digits in the allowedCharacters string
+            balancedString.append(allowedCharacters.charAt(randomIndex));
+        }
+
+        for (int i = 0; i < specialCharsCount; i++) {
+            int randomIndex = random.nextInt(4) + 62; // Index for special characters in the allowedCharacters string
+            balancedString.append(allowedCharacters.charAt(randomIndex));
+        }
+
+        byte[] encodedBytes = Base64.getEncoder().encode(balancedString.toString().getBytes());
+        String encodedString = new String(encodedBytes);
+
+        System.out.println("Balanced encoded string: " + encodedString);
     }
+}
