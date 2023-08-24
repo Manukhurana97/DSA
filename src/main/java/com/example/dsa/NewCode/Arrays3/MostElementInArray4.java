@@ -14,7 +14,9 @@ public class MostElementInArray4 {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
             int count = 0;
-            for (int j = i + 1; j < n; j++) count += (arr[j] == arr[i]) ? 1 : 0;
+            for (int j = i + 1; j < n; j++) {
+                count += (arr[j] == arr[i]) ? 1 : 0;
+            }
 
             if (count > (n / 2)) return arr[i];
         }

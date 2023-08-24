@@ -13,14 +13,14 @@ public class LeaderInArray9 {
         List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
-            boolean flag = false;
+            boolean isLeader = true;
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] < arr[j]) {
-                    flag = true;
+                    isLeader = false;
                     break;
                 }
             }
-            if (!flag) result.add(arr[i]);
+            if (isLeader) result.add(arr[i]);
         }
 
         return result.stream().mapToInt(i -> i).toArray();
@@ -29,14 +29,15 @@ public class LeaderInArray9 {
     private static int[] findLeader1(int[] arr) {
 
         int n = arr.length;
-        int maxTilNow = arr[n - 1];
+        int leaderTilNow = arr[n - 1];
+
         List<Integer> result = new LinkedList<>();
-        result.add(maxTilNow);
+        result.add(leaderTilNow);
 
         for (int i = n - 1; i > 0; i--) {
-            if (maxTilNow < arr[i]) {
+            if (leaderTilNow < arr[i]) {
                 result.add(0, arr[i]);
-                maxTilNow = arr[i];
+                leaderTilNow = arr[i]; // new leader
             }
         }
 
@@ -48,9 +49,10 @@ public class LeaderInArray9 {
         int[] arr = {7, 22, 15, 3, 0, 6};
         var result = findLeader(arr);
         for (int i : result) System.out.print(i + " ");
-
+        System.out.println();
 
         result = findLeader1(arr);
         for (int i : result) System.out.print(i + " ");
+        System.out.println();
     }
 }

@@ -1,9 +1,6 @@
 package com.example.dsa.NewCode.Arrays3;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Arrays1 {
 
@@ -30,19 +27,20 @@ public class Arrays1 {
 //       return slar;
 //    }
     private static int secondLargest(int[] arr) {
-        int lar = arr[0];
-        int slar = -1;
+        int largest = arr[0];
+        int secondLargest = -1;
+
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > lar) {
-                slar = lar;
-                lar = arr[i];
+            if (arr[i] > largest) {
+                secondLargest = largest;
+                largest = arr[i];
             } else {
-                if (arr[i] < lar && arr[i] > slar) {
-                    slar = arr[i];
+                if (arr[i] < largest && arr[i] > secondLargest) {
+                    secondLargest = arr[i];
                 }
             }
         }
-        return slar;
+        return secondLargest;
     }
 
 
@@ -97,23 +95,24 @@ public class Arrays1 {
     }
 
     private static int[] moveZerosToEnd(int[] arr, int n) {
-        int last = n - 1;
-        for (int i = 0; i < n; i++) {
+        int lastNonZeroIndex = n - 1;
+
+        for (int i = 0; i <= lastNonZeroIndex; i++) {
             if (arr[i] == 0) {
-                if (arr[last] != 0) {
-                    swap(arr, i, last);
-                    last -= 1;
+                if (arr[lastNonZeroIndex] != 0) {
+                    swap(arr, i, lastNonZeroIndex);
+                    lastNonZeroIndex -= 1;
                 } else {
-                    while (last != i && arr[last] == 0) {
-                        last -= 1;
+                    while (lastNonZeroIndex != i && arr[lastNonZeroIndex] == 0) {
+                        lastNonZeroIndex -= 1;
                     }
-                    if (last > i && arr[last] != 0) {
-                        swap(arr, i, last);
-                        last -= 1;
+                    if (lastNonZeroIndex > i && arr[lastNonZeroIndex] != 0) {
+                        swap(arr, i, lastNonZeroIndex);
+                        lastNonZeroIndex -= 1;
                     }
                 }
             }
-            n = last;
+
         }
         return arr;
     }
@@ -216,45 +215,45 @@ public class Arrays1 {
     public static List<List<Integer>> largestSumSubarray(int[] arr, int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
 
-        /*for (int i = 0; i < arr.length; i++) {
-            int sum = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            int sum = 0;
+//
+//            for (int j = i; j < arr.length; j++) {
+//                sum += arr[j];
+//                if(sum==k){
+//                    List<Integer> list = new ArrayList<>();
+//                    for (int z = i; z <= j; z++) list.add(arr[z]);
+//                    result.add(list);
+//                    break;
+//                }
+//                else if ((sum + arr[j]) > k) break;
+//            }
+//
+//        }
 
-            for (int j = i; j < arr.length; j++) {
-                sum += arr[j];
-                if(sum==k){
-                    List<Integer> list = new ArrayList<>();
-                    for (int z = i; z <= j; z++) list.add(arr[z]);
-                    result.add(list);
-                    break;
-                }
-                else if ((sum + arr[j]) > k) break;
-            }
-
-        }*/
-
-
-        /*Map<Integer, Integer> map = new HashMap<>();
-        int sum = 0;
-        int len = 0;
-        for (int i = 0; i < n; i++) {
-            sum += arr[i];
-            if (sum == k) {
-                len = Math.max(len, i + 1);
-            }
-
-            int rem = sum - k;
-            if (map.containsKey(rem)) {
-                int mlen = i - map.get(rem);
-                len = Math.max(len, mlen);
-            }
-            if (!map.containsKey(rem))
-            map.put(sum, i);
-
-        }*/
+//
+//        Map<Integer, Integer> map = new HashMap<>();
+//        int sum = 0;
+//        int len = 0;
+//        for (int i = 0; i < n; i++) {
+//            sum += arr[i];
+//            if (sum == k) {
+//                len = Math.max(len, i + 1);
+//            }
+//
+//            int rem = sum - k;
+//            if (map.containsKey(rem)) {
+//                int mlen = i - map.get(rem);
+//                len = Math.max(len, mlen);
+//            }
+//            if (!map.containsKey(rem))
+//                map.put(sum, i);
+//
+//        }
 
 
         int i = 0, j = 0, sum = 0;
-        while (i <n) {
+        while (i < n) {
             sum += arr[i];
             while (sum > k && i >= j) {
                 sum -= arr[j];
@@ -312,12 +311,19 @@ public class Arrays1 {
 
         int[] arr = {1, 1, 2, 3, 3,4, 4, 5, 5};
         System.out.println(nonDuplicateInDuplicateList(arr));
-*/
+
+
+        int[] arr = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
+        var data = largestSumSubarray(arr, arr.length, 4);
+        for (var lst : data) {
+            System.out.println(lst);
+        }*/
 
         int[] arr = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
         var data = largestSumSubarray(arr, arr.length, 4);
         for (var lst : data) {
             System.out.println(lst);
         }
+
     }
 }

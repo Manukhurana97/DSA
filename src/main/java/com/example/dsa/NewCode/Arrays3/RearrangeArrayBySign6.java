@@ -71,6 +71,8 @@ public class RearrangeArrayBySign6 {
 
     public static void main(String[] args) {
         int[] arr = {3, 1, -2, -5, 2, -4};
+        int[] arr1 = {3, 1, -2, -5, 2, -4, -1, -2};
+
         arr = rearrangeArray(arr);
         for (int i : arr) System.out.print(i + " ");
         System.out.println();
@@ -79,9 +81,10 @@ public class RearrangeArrayBySign6 {
         for (int i : arr) System.out.print(i + " ");
         System.out.println();
 
-        int[] arr1 = {3, 1, -2, -5, 2, -4, -1, -2};
-        arr1 = rearrangeArray2(arr1);
-        for (int i : arr1) System.out.print(i + " ");
+        arr = rearrangeArray2(arr);
+        for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+
 
     }
 }

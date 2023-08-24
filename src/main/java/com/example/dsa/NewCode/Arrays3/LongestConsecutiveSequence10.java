@@ -18,6 +18,7 @@ public class LongestConsecutiveSequence10 {
         int largestSequence = 0;
         int smallestElement = arr[0];
 
+
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] == smallestElement + 1) {
                 count++;
@@ -61,7 +62,6 @@ public class LongestConsecutiveSequence10 {
                 }
 
                 largestSequence = Math.max(count, largestSequence);
-
             }
         }
 
@@ -74,7 +74,7 @@ public class LongestConsecutiveSequence10 {
 //        int[] arr = {100,4,200,1,3,2};
         int[] arr = {0, 3, 7, 2, 5, 8, 4, 6, 0, 1};
 
-        var longestConsecutiveSequence = longestConsecutive1(arr);
+        var longestConsecutiveSequence = longestConsecutive(arr);
         System.out.println("Length of longest consecutive subsequence: " + longestConsecutiveSequence);
 
     }
