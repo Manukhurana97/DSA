@@ -11,10 +11,8 @@ public class BalancedEncoder {
         int specialCharsCount = length / 3;
 
         SecureRandom random = new SecureRandom();
-        StringBuilder balancedString = new StringBuilder();
+        StringBuilder balancedString = new Currently, the update draft and rerequest process allows only requesters or delegates to update requests. A recent issue uncovered unauthorized updates. To prevent this, we need to implement an API check that ensures authorized users with "edit" action can only modify the corresponding request identified by its unique MNE.
 
-        for (int i = 0; i < lettersCount; i++) {
-            int randomIndex = random.nextInt(numberOfCharacters);
             balancedString.append(allowedCharacters.charAt(randomIndex));
         }
 
