@@ -1,22 +1,146 @@
-
-Certainly! Here's a concise overview of the Alert Self-Service UI structure you've described:
-
----
-
-**Alert Self-Service UI Overview**
-
-The Alert Self-Service UI consists of two main sections: Create and Update Request, and Search and Person One Action. The Create form encompasses eight key sections:
-
-1. **Lob Details**: Captures mnemonic details, entitlement source, requester, and delegate. Based on the source, enables specific fields.
-2. **Alerts Category**: Records category name and description for alerts.
-3. **Alert Type**: Gathers alert type details, including product code and toggles for subscription settings.
-4. **Subscription Criteria**: Defines subscription details with dynamic/static criteria options.
-5. **Lob UI Parameters**: Collects UI parameters linked to the Line of Business.
-6. **Email Parameter**: Includes email-related fields and an ID/account number toggle.
-7. **Reference Field**: Allows optional selection from created lists based on criteria.
-8. **Communication Channels**: Offers email, onscreen, mobile, summary, and bell icon channels, each with distinct parameters.
-9. **MQ/Kafka**: Displays read-only MQ/Kafka information for reference.
+Absolutely, here's a description for the "Lob Details" section:
 
 ---
 
-Feel free to refine this brief overview as needed, and integrate it into your document to provide a clear and concise introduction to the Alert Self-Service UI.
+**Section 1: Lob Details**
+
+The "Lob Details" section serves as the initial segment of the Alert Self-Service UI, capturing essential information related to Line of Business (LOB) details. This section encompasses the following components:
+
+1. **Mnemonic Details**: This field automatically retrieves mnemonic details from the IDIP system based on the entered mnemonic. It facilitates the seamless integration of relevant data into the alert creation process.
+
+2. **Entitlement Source**: Capturing the source of entitlement, this field assists in determining the subsequent operations and configurations. Depending on the chosen entitlement source, the UI adjusts its behavior accordingly.
+
+3. **Requester and Delegate**: This part allows users to specify the requester and delegate associated with the alert. These details are sourced from the Profile Service, ensuring accurate user attribution.
+
+4. **Conditional Operations**: The behavior of the UI adapts based on the entitlement source. If the source is "Ceep," specific fields like Ceep ID, resource, action ID, and action name are enabled. For "CIW" as the source, the UI activates the "Predicate" field in the Subscription Criteria section.
+
+The "Lob Details" section serves as a pivotal foundation for subsequent segments, ensuring accurate data entry and enabling conditional features based on the provided information.
+
+
+
+Certainly, here's a description for the "Alerts Category" section:
+
+---
+
+**Section 2: Alerts Category**
+
+The "Alerts Category" section is a fundamental component of the Alert Self-Service UI, designed to capture and categorize the nature of the alerts. This section comprises the following elements:
+
+1. **Category Name**: This field allows users to enter a descriptive name for the category to which the alert belongs. The category name serves as a quick reference for identifying the type of alert being created.
+
+2. **Category Description**: Users can provide a brief description that elaborates on the purpose and scope of the category. This description aids in better understanding the context and relevance of the alerts within the chosen category.
+
+By meticulously defining the "Alerts Category," users ensure that alerts are organized logically, making it easier to manage and filter relevant information during the alert creation and management processes.
+
+
+Certainly, here's a description for the "Alert Type" section:
+
+---
+
+**Section 3: Alert Type**
+
+The "Alert Type" section plays a pivotal role in tailoring the behavior of alerts within the Alert Self-Service UI. This section is designed to accommodate a range of attributes and configurations for each alert type. Key components of this section include:
+
+1. **Alert Type Name**: Users can define a clear and descriptive name for the specific alert type. This name serves as a reference point for distinguishing between different alert types.
+
+2. **Description**: The description field allows users to provide additional context and details about the purpose or characteristics of the chosen alert type.
+
+3. **Product Code**: Here, users can input the product code associated with the alert type. This code aids in proper categorization and alignment of alerts within the system.
+
+4. **Ceep Fields**: For specific cases, the Ceep fields become relevant. These fields include Ceep ID, resource, action ID, and action name. Their activation is tied to the selection of certain entitlement sources.
+
+5. **Radio Buttons**: Users can toggle between options using radio buttons, influencing various aspects of the alert type:
+   - Auto Subscribed/Manual Subscription: Determines if subscription criteria will be enabled or disabled.
+   - UI at Alert End/UI at Lob End: Influences the activation of either subscription fields or Lob UI fields.
+   - Subscription Criteria/No Criteria: Governs the activation of the Subscription Criteria section.
+   - Threshold Involved/Threshold Not Involved: Pertains to UI configuration based on alert type location.
+
+The "Alert Type" section empowers users to define the core attributes of different alert types, customizing their behavior, subscription options, and UI configurations as needed.
+
+---
+
+Feel free to modify and adapt this description to fit your document's context and 
+
+
+
+
+
+
+Certainly, here's a description for the "Subscription Criteria" section:
+
+---
+
+**Section 4: Subscription Criteria**
+
+The "Subscription Criteria" section provides a versatile platform for defining the conditions under which alerts are subscribed to. This section encompasses the following elements:
+
+1. **Subscription Details**: Users can outline the specific details of the subscription criteria, guiding the system in determining when an alert should be subscribed to.
+
+2. **Criteria Name**: This field allows users to assign a meaningful name to the subscription criteria, aiding in quick identification and selection.
+
+3. **Criteria Type (Static/Dynamic)**: Users can choose between static and dynamic criteria types to govern the nature of the subscription conditions.
+
+4. **Dynamic Criteria**: For dynamic criteria types, such as account or dynamic drop-down, a set of specific options becomes available. This enhances the adaptability and precision of the criteria.
+
+5. **Static and Dynamic Sections**: Based on the selected criteria type, the appropriate sections for static or dynamic criteria are enabled or disabled, streamlining the user experience.
+
+The "Subscription Criteria" section empowers users to precisely define the conditions that trigger alert subscriptions, ensuring that alerts are received by the right recipients at the right times.
+
+---
+
+Feel free to adjust the wording and details to match your document's style and content.
+
+
+
+Of course, here's a description for the "Email Parameter" section:
+
+---
+
+**Section 5: Email Parameter**
+
+The "Email Parameter" section offers users the ability to configure email-related settings for alerts within the Alert Self-Service UI. This section comprises the following components:
+
+1. **Field Name**: Users can specify a name for the email-related field, allowing for easy identification and association with the email configuration.
+
+2. **ID Account Number Toggle**: This toggle empowers users to decide whether to include an ID/account number in the email parameters. Activating this toggle enhances the specificity of the email content.
+
+By leveraging the "Email Parameter" section, users can customize email settings to align with their communication preferences and ensure that alerts are delivered with the necessary details and context.
+
+---
+
+Feel free to modify this description to match your document's tone and content style.
+
+
+
+
+
+
+
+
+Certainly, here's a description for the "Communication Channels" section:
+
+---
+
+**Section 7: Communication Channels**
+
+The "Communication Channels" section serves as a comprehensive hub for configuring the various channels through which alerts are communicated within the Alert Self-Service UI. This multifaceted section includes the following elements:
+
+1. **Email**: This channel allows users to configure email notifications for alerts. It involves setting up tables that determine the content of the email, including fields sourced from Subscription Criteria, Lob UI Parameters, and Email Parameters.
+
+2. **Onscreen**: The onscreen channel facilitates the display of alerts directly on-screen. Users can define how the alert information will be presented for immediate viewing.
+
+3. **Mobile**: Tailored for mobile devices, this channel involves setting up the body of alerts to be displayed on mobile screens.
+
+4. **Summary**: Users can configure a summary of alerts to provide a concise overview of alert-related information.
+
+5. **Bell Icon**: This channel pertains to the display of notifications using a bell icon, ensuring that users are promptly informed about new alerts.
+
+The "Communication Channels" section empowers users to fine-tune how alerts are disseminated across different platforms, optimizing communication efficiency and ensuring that recipients receive alerts in a format that suits their preferences.
+
+---
+
+Feel free to adjust and customize this description as needed to match your document's style and context.
+
+
+
+
