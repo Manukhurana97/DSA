@@ -1,34 +1,59 @@
-import java.security.SecureRandom;
-import java.util.Base64;
 
-public class BalancedEncoder {
-    public static void main(String[] args) {
-        int length = 15;
-        String allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_#$";
-        int numberOfCharacters = allowedCharacters.length();
-        int lettersCount = length / 3;
-        int digitsCount = length / 3;
-        int specialCharsCount = length / 3;
+Of course, I'd be happy to provide you with a sample template in a rough format. You can then work on beautifying it and adding your content. Here's a basic template that you can use as a starting point:
 
-        SecureRandom random = new SecureRandom();
-        StringBuilder balancedString = new Currently, the update draft and rerequest process allows only requesters or delegates to update requests. A recent issue uncovered unauthorized updates. To prevent this, we need to implement an API check that ensures authorized users with "edit" action can only modify the corresponding request identified by its unique MNE.
+---
 
-            balancedString.append(allowedCharacters.charAt(randomIndex));
-        }
+**Alert Self-Service UI Documentation**
 
-        for (int i = 0; i < digitsCount; i++) {
-            int randomIndex = random.nextInt(10) + 52; // Index for digits in the allowedCharacters string
-            balancedString.append(allowedCharacters.charAt(randomIndex));
-        }
+**Section 1: Lob Details**
+- Mnemonic Details (retrieved from IDIP based on mnemonic)
+- Entitlement Source
+- Requester and Delegate (from Profile Service)
+- Conditional operations based on Entitlement Source:
+  - If Source is Ceep:
+    - Enable fields: Ceep ID, Resource, Action ID, Action Name
+  - If Source is CIW:
+    - Enable Predicate in Subscription Criteria field
 
-        for (int i = 0; i < specialCharsCount; i++) {
-            int randomIndex = random.nextInt(4) + 62; // Index for special characters in the allowedCharacters string
-            balancedString.append(allowedCharacters.charAt(randomIndex));
-        }
+**Section 2: Alert Category**
+- Category Name
+- Category Description
 
-        byte[] encodedBytes = Base64.getEncoder().encode(balancedString.toString().getBytes());
-        String encodedString = new String(encodedBytes);
+**Section 3: Alert Type**
+- Alert Type Name
+- Description
+- Product Code
+- Ceep Fields
+- Radio Buttons:
+  - Auto Subscribed/Manual Subscription (toggle for Subscription Criteria)
+  - UI at Alert End/UI at Lob End (toggle for Lob UI field)
+  - Subscription Criteria/No Criteria (toggle for Subscription Criteria section)
+  - Threshold Involved/Threshold Not Involved (toggle for Threshold fields)
 
-        System.out.println("Balanced encoded string: " + encodedString);
-    }
-}
+**Section 4: Subscription Criteria**
+- Subscription Details
+- Criteria Name
+- Criteria Type (Static/Dynamic)
+- Dynamic Criteria (Account, Dynamic Drop-Down, Hidden)
+- Static and Dynamic sections
+
+**Section 5: Email Parameter**
+- Field Name
+- ID Account Number Toggle
+
+**Section 6: Reference Field**
+- Create list based on Subscription Criteria and Email Parameter field names
+- Optional section
+
+**Section 7: Communication Channels**
+- Channels: Email, Onscreen, Mobile, Summary, Bell Icon
+- Email, Onscreen, and Summary tables based on various parameters
+- Mobile section for body
+- Email section with header, header disclaimer table, and footer
+
+**Section 8: MQ/Kafka**
+- Read-only section displaying MQ/Kafka details
+
+---
+
+Feel free to adapt and beautify this template according to your preferences and the specific content you have. Once you're satisfied with the formatting and content, I'd be happy to review the final document for you.
