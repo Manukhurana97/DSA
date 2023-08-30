@@ -1,59 +1,22 @@
 
-Of course, I'd be happy to provide you with a sample template in a rough format. You can then work on beautifying it and adding your content. Here's a basic template that you can use as a starting point:
+Certainly! Here's a concise overview of the Alert Self-Service UI structure you've described:
 
 ---
 
-**Alert Self-Service UI Documentation**
+**Alert Self-Service UI Overview**
 
-**Section 1: Lob Details**
-- Mnemonic Details (retrieved from IDIP based on mnemonic)
-- Entitlement Source
-- Requester and Delegate (from Profile Service)
-- Conditional operations based on Entitlement Source:
-  - If Source is Ceep:
-    - Enable fields: Ceep ID, Resource, Action ID, Action Name
-  - If Source is CIW:
-    - Enable Predicate in Subscription Criteria field
+The Alert Self-Service UI consists of two main sections: Create and Update Request, and Search and Person One Action. The Create form encompasses eight key sections:
 
-**Section 2: Alert Category**
-- Category Name
-- Category Description
-
-**Section 3: Alert Type**
-- Alert Type Name
-- Description
-- Product Code
-- Ceep Fields
-- Radio Buttons:
-  - Auto Subscribed/Manual Subscription (toggle for Subscription Criteria)
-  - UI at Alert End/UI at Lob End (toggle for Lob UI field)
-  - Subscription Criteria/No Criteria (toggle for Subscription Criteria section)
-  - Threshold Involved/Threshold Not Involved (toggle for Threshold fields)
-
-**Section 4: Subscription Criteria**
-- Subscription Details
-- Criteria Name
-- Criteria Type (Static/Dynamic)
-- Dynamic Criteria (Account, Dynamic Drop-Down, Hidden)
-- Static and Dynamic sections
-
-**Section 5: Email Parameter**
-- Field Name
-- ID Account Number Toggle
-
-**Section 6: Reference Field**
-- Create list based on Subscription Criteria and Email Parameter field names
-- Optional section
-
-**Section 7: Communication Channels**
-- Channels: Email, Onscreen, Mobile, Summary, Bell Icon
-- Email, Onscreen, and Summary tables based on various parameters
-- Mobile section for body
-- Email section with header, header disclaimer table, and footer
-
-**Section 8: MQ/Kafka**
-- Read-only section displaying MQ/Kafka details
+1. **Lob Details**: Captures mnemonic details, entitlement source, requester, and delegate. Based on the source, enables specific fields.
+2. **Alerts Category**: Records category name and description for alerts.
+3. **Alert Type**: Gathers alert type details, including product code and toggles for subscription settings.
+4. **Subscription Criteria**: Defines subscription details with dynamic/static criteria options.
+5. **Lob UI Parameters**: Collects UI parameters linked to the Line of Business.
+6. **Email Parameter**: Includes email-related fields and an ID/account number toggle.
+7. **Reference Field**: Allows optional selection from created lists based on criteria.
+8. **Communication Channels**: Offers email, onscreen, mobile, summary, and bell icon channels, each with distinct parameters.
+9. **MQ/Kafka**: Displays read-only MQ/Kafka information for reference.
 
 ---
 
-Feel free to adapt and beautify this template according to your preferences and the specific content you have. Once you're satisfied with the formatting and content, I'd be happy to review the final document for you.
+Feel free to refine this brief overview as needed, and integrate it into your document to provide a clear and concise introduction to the Alert Self-Service UI.
