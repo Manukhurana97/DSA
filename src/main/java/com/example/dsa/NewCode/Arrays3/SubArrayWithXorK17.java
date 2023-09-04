@@ -5,12 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SubarraywithXorK17 {
+public class SubArrayWithXorK17 {
 
+    /**
+     * O(n)
+     * */
     public static List<List<Integer>> getList(int[] arr, int target) {
 
         List<List<Integer>> result = new ArrayList<>();
         int n = arr.length;
+
         for (int i = 0; i < n; i++) {
             int xor = arr[i];
 

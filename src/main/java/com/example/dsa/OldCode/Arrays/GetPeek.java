@@ -1,19 +1,21 @@
-package OldCode.Arrays;
+package com.example.dsa.OldCode.Arrays;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GetPeek {
     public static int peakElement(int[] arr, int n) {
-        int peek = 0, temp = 0;
+        int localPeek = 0, globalPeek = 0;
         if (n == 1) return 0;
-        if (arr[0] > arr[1]) peek = 0;
-        if (arr[n - 1] > arr[peek]) peek = n - 1;
+        if (arr[0] > arr[1]) localPeek = 0;
+        if (arr[n - 1] > arr[localPeek]) localPeek = n - 1;
 
-
-        for (int i = 1; i < n - 1; i++)
-            peek = (arr[i] >= arr[i + 1] && arr[i] >= arr[i - 1] && arr[i] > peek) ? i : peek;
-
-        return peek;
+        for (int i = 1; i < n - 1; i++) {
+            localPeek = (arr[i] >= arr[i + 1] && arr[i] >= arr[i - 1] && arr[i] > localPeek) ? i : localPeek;
+            globalPeek = (arr[globalPeek] < arr[localPeek]) ? localPeek : globalPeek;
+        }
+        return arr[globalPeek];
     }
 
     static int getPairsCount(int[] arr, int n, int k) {
@@ -22,18 +24,17 @@ public class GetPeek {
 
         for (int i = 0; i < n; i++) {
             if (map.containsKey((k - arr[i]))) {
-                System.out.println(map.get((k - arr[i])));
                 count += map.get((k - arr[i])); // get the value
             }
-            map.putIfAbsent(arr[i], 0);// if not exist the add
-            map.put(arr[i], (map.get(arr[i]) + 1)); // increment the value by 1
+
+            map.put(arr[i], (map.getOrDefault(arr[i], 0) + 1));
         }
         return count;
 
     }
 
 
-    public static int equilibriumPoint(long arr[], int n) {
+    public static int equilibriumPoint(int arr[], int n) {
 
 //        if (n == 1) return 1;
 //        long index = 0;
@@ -85,14 +86,16 @@ public class GetPeek {
     }
 
     public static void main(String[] args) {
-//        int[] arr = {17, 19, 9, 5, 3, 6, 17, 7, 18, 16, 18, 11, 3, 15, 2};
-//        int[] arr = {1, 2, 2, 1};
-//        System.out.println(peakElement(arr, arr.length));
+        int[] arr = {17, 19, 9, 5, 3, 6, 17, 7, 18, 16, 18, 11, 3, 15, 2};
+        System.out.println("peek " + peakElement(arr, arr.length));
+        int[] arr1 = {1, 2, 2, 1};
+        System.out.println("peek " + peakElement(arr1, arr1.length));
 
-//        int[] arr = {1, 1, 1, 1};
-//        System.out.println("res " + getPairsCount(arr, 4, 2));
+        int[] arr2 = {1, 1, 1, 1};
+        int arr3[] = {1, 3, 5, 2, 2};
+        System.out.println("pairs count " + getPairsCount(arr2, arr2.length, 2));
+        System.out.println("pairs count " + getPairsCount(arr3, arr3.length, 4));
 
-        long arr[] = {1, 3, 5, 2, 2};
         System.out.println(equilibriumPoint(arr, arr.length));
 
     }

@@ -23,7 +23,7 @@ Size                   Time Complexity
 < 400                   O(n^3)
 < 2000                  O(n^2 * logn)
 < 10^4                  O(n^2 )
-< 10^6                  O(n*logn )
+< 10^6                  O(n*logn)
 < 10^8                  O(n), O(logn)
 
 

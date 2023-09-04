@@ -1,28 +1,27 @@
 package com.example.dsa.NewCode.Arrays3;
 
-import java.util.Arrays;
-
 public class Merge2SortedArray19 {
+
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
 
-        int i = m - 1, j = 0;
-        while (i >= 0 && j < n) {
-            if (nums1[i] > nums2[j]) {
-                int temp = nums1[i];
-                nums1[i] = nums2[j];
-                nums2[j] = temp;
-                i--;
-                j++;
-            } else {
-                break;
-            }
+        int i = m - n - 1;
+        int j = n - 1;
+        int k = m - 1;
 
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] < nums2[j]) {
+                nums1[k--] = nums2[j--];
+            } else {
+                nums1[k--] = nums1[i--];
+            }
         }
 
-        Arrays.sort(nums1);
-        Arrays.sort(nums2);
+        while (j >= 0) {
+            nums1[k--] = nums2[j--];
+        }
 
+        for (int i1 : nums1) System.out.println(i1);
     }
 
     public static void main(String[] args) {

@@ -4,16 +4,16 @@ public class MaxProductSubarray23 {
 
     public static void getProduct(int[] arr) {
         int n = arr.length;
-        int max = 0;
+        int maxProduct = 0;
         for (int i = 0; i < n; i++) {
-            int product = arr[i];
+            int maxProductTillNow = arr[i];
             for (int j = i + 1; j < n; j++) {
-                product = product * arr[j];
-                max = Math.max(max, product);
+                maxProductTillNow = maxProductTillNow * arr[j];
+                maxProduct = Math.max(maxProduct, maxProductTillNow);
             }
         }
 
-        System.out.println(max);
+        System.out.println(maxProduct);
     }
 
     public static void getProduct1(int[] arr) {
@@ -33,7 +33,7 @@ public class MaxProductSubarray23 {
         int prod = 0;
         int prodLeft = arr[0];
         int prodRight = arr[n - 1];
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n/2; i++) {
             prodLeft *= arr[i];
             prodRight *= arr[n - i - 1];
 
@@ -50,8 +50,8 @@ public class MaxProductSubarray23 {
     public static void main(String[] args) {
         int[] arr = {2, 3, -2, 4};
 
-//        getProduct(arr);
-//        getProduct1(arr);
+        getProduct(arr);
+        getProduct1(arr);
         getProduct2(arr);
     }
 }

@@ -87,4 +87,49 @@ public class RearrangeArrayBySign6 {
 
 
     }
+
+    public static class CelebrityProb24 {
+
+
+        public static int celebrity(int M[][], int n) {
+
+            for (int i = 0; i < n; i++) {
+                int count = 0;
+                for (int j = 0; j < n; j++) {
+                    if (M[i][j] == 1) {
+                        break;
+                    } else {
+                        if (i != j && M[i][j] == 0 && M[j][i] == 1) count++;
+                    }
+                }
+
+                if (count == n - 1) return i;
+            }
+
+            return -1;
+        }
+
+        public static int celebrity1(int[][] arr, int n) {
+
+            int col = 0, row = 0;
+
+            while (col < n && row < n) {
+                if (arr[col][row] == 0) row++;
+                else col++;
+            }
+
+            for (row = 0; row <n; row++) {
+                if (row != col && arr[col][row] != 0 && arr[row][col] != 1) return -1;
+            }
+
+            return col;
+        }
+
+        public static void main(String[] args) {
+            int[][] arr = {{0, 0, 1, 0}, {0, 0, 1, 0}, {0, 0, 0, 0}, {0, 0, 1, 0}};
+            System.out.println("->" + celebrity(arr, arr.length));
+            System.out.println("->" + celebrity1(arr, arr.length));
+        }
+
+    }
 }

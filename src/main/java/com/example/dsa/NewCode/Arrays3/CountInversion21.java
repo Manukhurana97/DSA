@@ -16,6 +16,7 @@ public class CountInversion21 {
         return count;
     }
 
+    /* using merge sort*/
     public static int sort(int[] arr, int start, int mid, int end) {
 
         int i = start, j = mid + 1, k = start;
@@ -61,6 +62,6 @@ public class CountInversion21 {
     public static void main(String[] args) {
         int[] arr = {5, 3, 2, 4, 1};
         System.out.println(count(arr));
-        System.out.println(count1(arr));
+//        System.out.println(count1(arr));
     }
 }

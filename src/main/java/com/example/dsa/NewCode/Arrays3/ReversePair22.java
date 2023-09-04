@@ -47,12 +47,15 @@ public class ReversePair22 {
     public static int countPairs(int[] arr, int start, int mid, int end) {
         int count = 0;
         int temp_mid = mid + 1;
+
         for (int i = start; i <= mid; i++) {
             while (temp_mid <= end && arr[i] > 2 * arr[temp_mid]) {
-                count++;
                 temp_mid++;
             }
+
+            count += (i + 1) - mid;
         }
+
         return count;
     }
 
@@ -62,8 +65,8 @@ public class ReversePair22 {
             int mid = start + (end - start) / 2;
             count += mergeElement(arr, start, mid);
             count += mergeElement(arr, mid + 1, end);
-//            count += countPairs(arr, start, mid, end);
-            count += sortElement(arr, start, mid, end);
+            count += countPairs(arr, start, mid, end);
+//            count += sortElement(arr, start, mid, end);
         }
 
         return count;
