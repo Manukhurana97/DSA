@@ -3,8 +3,6 @@ l
 <src/main/java/com/example/dsa/OldCode/Sorting/MergeSort.java,8\e\8eb85590c3eab0f90648cbb092f9b699b8c17d0d
 p
 @src/main/java/com/example/dsa/OldCode/Sorting/InsertionSort.java,6\e\6e0848417114da9678be402cec99571297a38ee7
-9
-	Readme.md,0\c\0c1945d7443c2e154bd3e421c0d438bd4086d8c3
 q
 Asrc/main/java/com/example/dsa/NewCode/Arrays3/SpiralMatrix12.java,8\1\810727bccaf93af2336ed73b9be67b1829b61f5a
 q
@@ -39,5 +37,3 @@ r
 Bsrc/main/java/com/example/dsa/NewCode/BitManipulation1/Modulo.java,7\8\781f150805fd10810084bf22350f65c16f12500e
 {
 Ksrc/main/java/com/example/dsa/NewCode/BitManipulation1/BitManipulation.java,4\c\4c801d56d90c88e50b101a84f8c856f4ec7d8604
-y
-Isrc/main/java/com/example/dsa/NewCode/BitManipulation1/BitManuplation.txt,6\8\6893f63e6ce8410f8c55f00198cc5058c1dbb883

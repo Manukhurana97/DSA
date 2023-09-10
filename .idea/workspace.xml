@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/LinkedList/FindMiddle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/LinkedList/MyHashSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/LinkedList/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/LinkedList/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/CountInversion21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/CountInversion21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/MaxProductSubarray23.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/MaxProductSubarray23.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Merge2SortedArray19.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Merge2SortedArray19.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/RearrangeArrayBySign6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/RearrangeArrayBySign6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/ReversePair22.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/ReversePair22.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/SubarraywithXorK17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/SubArrayWithXorK17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Triplet15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Arrays3/Triplet15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/OldCode/Arrays/CelebrityProb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/OldCode/Arrays/GetPeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/OldCode/Arrays/GetPeek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/SpaceAndTimeComplexity.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/SpaceAndTimeComplexity.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +31,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2Tf0YQ2tYmcmyJ8OiAuCeiYjsN8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,13 +55,13 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.test">
-    <configuration name="MaximumIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OldCode.Arrays.MaximumIndex" />
+  <component name="RunManager" selected="Application.FindMiddle">
+    <configuration name="FindMiddle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.LinkedList.FindMiddle" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="OldCode.Arrays.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.LinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,12 +69,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PascalTriangle14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.PascalTriangle14" />
+    <configuration name="MidElement1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.LinkedList.MidElement1" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.LinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,12 +82,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SlidingWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OldCode.Arrays.SlidingWindow" />
+    <configuration name="MyHashSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.LinkedList.MyHashSet" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="OldCode.Arrays.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.LinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Triplet15" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Arrays3.Triplet15" />
+    <configuration name="checkPalandrome2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.LinkedList.checkPalandrome2" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Arrays3.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.LinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.test" />
+    <configuration name="com.example.dsa.NewCode.test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.test" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.LinkedList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.test" />
-        <item itemvalue="Application.Triplet15" />
-        <item itemvalue="Application.PascalTriangle14" />
-        <item itemvalue="Application.SlidingWindow" />
-        <item itemvalue="Application.MaximumIndex" />
+        <item itemvalue="Application.FindMiddle" />
+        <item itemvalue="Application.MyHashSet" />
+        <item itemvalue="Application.checkPalandrome2" />
+        <item itemvalue="Application.MidElement1" />
+        <item itemvalue="Application.com.example.dsa.NewCode.test" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +182,7 @@
       <workItem from="1693134016108" duration="2334000" />
       <workItem from="1693245951398" duration="9983000" />
       <workItem from="1693591924495" duration="9670000" />
-      <workItem from="1693731036369" duration="15147000" />
+      <workItem from="1693731036369" duration="45946000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -277,7 +275,21 @@
       <option name="project" value="LOCAL" />
       <updated>1692905729698</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="dsa">
+      <created>1693832203388</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1693832203388</updated>
+    </task>
+    <task id="LOCAL-00020" summary="dsa">
+      <created>1693832311817</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1693832311817</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,14 +318,10 @@
           <line>79</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/test.java</url>
-          <line>6</line>
-          <properties class="com.example.dsa.test" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/LinkedList/MyHashSet.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
