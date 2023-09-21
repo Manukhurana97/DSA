@@ -11,3 +11,11 @@ WHERE (
         WHERE categorycode IN (SELECT column_value FROM TABLE(string_to_table(:categoryCodeList, ',')))
     )
 );
+
+SELECT request_id
+FROM alertsCategory
+WHERE category_code IN (
+    SELECT TRIM(regexp_substr(:categoryCodeString, '[^,]+', 1, LEVEL))
+    FROM dual
+    CONNECT BY LEVEL <= REGEXP_COUNT(:categoryCodeString, ',') + 1
+);
