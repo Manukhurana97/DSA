@@ -1,9 +1,13 @@
 SELECT *
 FROM alerts_onboard ad
-WHERE
-    CASE
-        WHEN :categoryCodeList IS NULL OR LENGTH(TRIM(:categoryCodeList)) = 0 THEN
-            ad.request IN (SELECT requestid FROM categorytable)
-        ELSE
-            ad.request IN (SELECT requestid FROM categorytable WHERE categorycode IN (:categoryCodeList))
-    END;
+WHERE (
+    (:categoryCodeList IS NULL OR LENGTH(TRIM(:categoryCodeList)) = 0)
+    AND ad.request IN (SELECT requestid FROM categorytable)
+) OR (
+    (:categoryCodeList IS NOT NULL AND LENGTH(TRIM(:categoryCodeList)) > 0)
+    AND ad.request IN (
+        SELECT requestid
+        FROM categorytable
+        WHERE categorycode IN (SELECT column_value FROM TABLE(string_to_table(:categoryCodeList, ',')))
+    )
+);
