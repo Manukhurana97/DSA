@@ -1,0 +1,53 @@
+SELECT *
+FROM alerts_onboard ad
+WHERE (
+    (:categoryCodeList IS NULL OR LENGTH(TRIM(:categoryCodeList)) = 0)
+    AND ad.request IN (SELECT requestid FROM categorytable)
+) OR (
+    (:categoryCodeList IS NOT NULL AND LENGTH(TRIM(:categoryCodeList)) > 0)
+    AND ad.request IN (
+        SELECT requestid
+        FROM categorytable
+        WHERE categorycode IN (SELECT column_value FROM TABLE(string_to_table(:categoryCodeList, ',')))
+    )
+);
+
+SELECT request_id
+FROM alertsCategory
+WHERE category_code IN (
+    SELECT TRIM(regexp_substr(:categoryCodeString, '[^,]+', 1, LEVEL))
+    FROM dual
+    CONNECT BY LEVEL <= REGEXP_COUNT(:categoryCodeString, ',') + 1
+);
+
+
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+// Assuming you have a class "CeepData" with methods like getServiceName(), getResourceName(), and getEntitlementAttributes().
+// Also, assuming you have a class "CeepEntitlementData" with a method "getActionName".
+
+List<CeepData> ceepDataList = ceepAccountsResponse.getData(); // Assuming you have a list of CeepData objects
+
+Map<String, Set<String>> action = ceepDataList.stream()
+    .filter(ceepData ->
+        UtilsConstants.EAF.SELFSERVICE.equalsIgnoreCase(ceepData.getServiceName()) &&
+        UtilsConstants.EAF_LOB_ONBOARDING.equalsIgnoreCase(ceepData.getResourceName())
+    )
+    .flatMap(ceepData ->
+        ceepData.getEntitlementAttributes().getMnemonic().stream()
+            .map(mnemonic ->
+                new AbstractMap.SimpleEntry<>(mnemonic, ceepData)
+            )
+    )
+    .collect(Collectors.groupingBy(
+        Map.Entry::getKey,
+        Collectors.mapping(
+            entry -> entry.getValue().getEntitlementAttributes().getActionName(),
+            Collectors.toSet()
+        )
+    ));
+
+// Now you have a map where the keys are mnemonics, and the values are sets of action names.
+
