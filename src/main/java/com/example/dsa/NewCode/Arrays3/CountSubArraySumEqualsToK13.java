@@ -89,10 +89,10 @@ public class CountSubArraySumEqualsToK13 {
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, -3, 1, 1, 1, 4, 2, -3};
-//          var result = countSumValue(arr, 3);
-//        var result1 = countSumLen(arr, 3);
+        var result = countSumValue(arr, 3);
+        var result1 = countSumLen(arr, 3);
         var result2 = countSumLen1(arr, 3);
-//        var result3 = countSumLen2(arr, 3);
+        var result3 = countSumLen2(arr, 3);
         System.out.println(result2);
 
 

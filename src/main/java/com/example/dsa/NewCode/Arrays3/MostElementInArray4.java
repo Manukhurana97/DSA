@@ -10,7 +10,7 @@ public class MostElementInArray4 {
      * Time: O(n^2)
      * Space: O(1)
      */
-    public static int mostElement1(int[] arr) {
+    public static int  mostElement1(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
             int count = 0;

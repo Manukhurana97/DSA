@@ -4,12 +4,16 @@ import java.util.Collection;
 
 public class MyLinkedList<T> {
 
-    Node head;
-    Node tail;
+    Node<T> head;
+    Node<T> tail;
 
 
     MyLinkedList() {
         head = tail = null;
+    }
+
+    MyLinkedList(T val) {
+        this.add(val);
     }
 
 
@@ -30,7 +34,6 @@ public class MyLinkedList<T> {
             this.addAllValue(list);
         }
     }
-
 
     public void addValue(T val) {
 
@@ -59,7 +62,7 @@ public class MyLinkedList<T> {
         }
     }
 
-    public Node getTop() {
+    public Node<T> getTop() {
         return (head == null) ? null : head;
     }
 

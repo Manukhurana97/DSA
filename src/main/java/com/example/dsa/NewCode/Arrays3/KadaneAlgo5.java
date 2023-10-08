@@ -2,6 +2,7 @@ package com.example.dsa.NewCode.Arrays3;
 
 public class KadaneAlgo5 {
 
+    /*get the max element*/
     public static int maxSubArraySum(int[] arr) {
         int sum = 0;
         int max = Integer.MIN_VALUE;
@@ -13,6 +14,7 @@ public class KadaneAlgo5 {
         return max;
     }
 
+    /*get the position of start and end*/
     public static int maxSubArraySum1(int[] arr) {
         int sum = 0;
         int max = Integer.MIN_VALUE;
