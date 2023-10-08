@@ -11,13 +11,13 @@ public class NearestGreaterElementToRight {
         for(int i: arr) System.out.print(i+" ");
     }
 
-    public static int[] getGreaterElement(int[] arr) {
+    private static int[] getGreaterElement(int[] arr) {
         Stack<Integer> stack = new Stack();
 
         for (int i = arr.length - 1; i >=0; i--) {
             int value = arr[i];
 
-            while (!stack.isEmpty() && stack.peek() < value) {
+            while (!stack.isEmpty() && stack.peek() <= value) {
                 stack.pop();
             }
 
