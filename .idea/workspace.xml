@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/NearestGreaterToLeft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/NearestSmallerElementRight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/NearestSmallerElementToLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/MaxAreaOfHistogram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/MinElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/RainWaterHarvesting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/StackSpanProblem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/maxAreaOfRectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/NearestGreaterElementToRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/NearestGreaterElementToRight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +67,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.NearestSmallerElementToLeft">
-    <configuration name="NearestGreaterElementToRight" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.NearestGreaterElementToRight" />
+  <component name="RunManager" selected="Application.MinElement">
+    <configuration name="MaxAreaOfHistogram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.MaxAreaOfHistogram" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -79,21 +81,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NearestGreaterToLeft" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.NearestGreaterToLeft" />
-      <module name="DSA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Stack_Queue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NearestSmallerElementRight" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.NearestSmallerElementRight" />
+    <configuration name="MinElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.MinElement" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -118,12 +107,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubsetSum5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Recursion2.SubsetSum5" />
+    <configuration name="StackSpanProblem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.StackSpanProblem" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Recursion2.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Stack_Queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maxAreaOfRectangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.maxAreaOfRectangle" />
+      <module name="DSA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dsa.NewCode.Stack_Queue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MinElement" />
+        <item itemvalue="Application.maxAreaOfRectangle" />
+        <item itemvalue="Application.MaxAreaOfHistogram" />
+        <item itemvalue="Application.StackSpanProblem" />
         <item itemvalue="Application.NearestSmallerElementToLeft" />
-        <item itemvalue="Application.NearestSmallerElementRight" />
-        <item itemvalue="Application.NearestGreaterToLeft" />
-        <item itemvalue="Application.NearestGreaterElementToRight" />
-        <item itemvalue="Application.SubsetSum5" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +206,9 @@
       <workItem from="1695983060657" duration="20507000" />
       <workItem from="1696418226845" duration="7716000" />
       <workItem from="1696615458068" duration="3421000" />
-      <workItem from="1696753251579" duration="4484000" />
+      <workItem from="1696753251579" duration="10395000" />
+      <workItem from="1696876878152" duration="6770000" />
+      <workItem from="1697132355726" duration="5769000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -325,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696754112280</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="dsa">
+      <created>1696759356150</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1696759356150</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
