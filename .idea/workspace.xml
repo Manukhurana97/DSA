@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/LRU_cache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/LFU_cache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/SlidingWindowMaximum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/LRU_cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/LRU_cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/MaxAreaOfHistogram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Stack_Queue/MaxAreaOfHistogram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,20 +65,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.NextGreaterElement">
-    <configuration name="ImplementStackAndQeueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.ImplementStackAndQeueue" />
-      <module name="DSA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Stack_Queue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.SlidingWindowMaximum">
     <configuration name="ImplementStackAndQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.ImplementStackAndQueue" />
       <module name="DSA" />
@@ -89,8 +79,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.MinElement" />
+    <configuration name="LRU_cache" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.LRU_cache" />
+      <module name="DSA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dsa.NewCode.Stack_Queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MaxAreaOfHistogram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.MaxAreaOfHistogram" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -115,8 +118,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="maxAreaOfRectangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.maxAreaOfRectangle" />
+    <configuration name="SlidingWindowMaximum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Stack_Queue.SlidingWindowMaximum" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -130,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SlidingWindowMaximum" />
+        <item itemvalue="Application.MaxAreaOfHistogram" />
+        <item itemvalue="Application.LRU_cache" />
         <item itemvalue="Application.NextGreaterElement" />
         <item itemvalue="Application.ImplementStackAndQueue" />
-        <item itemvalue="Application.ImplementStackAndQeueue" />
-        <item itemvalue="Application.MinElement" />
-        <item itemvalue="Application.maxAreaOfRectangle" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +207,7 @@
       <workItem from="1696753251579" duration="10395000" />
       <workItem from="1696876878152" duration="6770000" />
       <workItem from="1697132355726" duration="7218000" />
-      <workItem from="1697277595191" duration="6750000" />
+      <workItem from="1697277595191" duration="20259000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -346,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697281004414</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="dsa">
+      <created>1697287854450</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1697287854450</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
