@@ -36,6 +36,18 @@ Help: https://algo.monster/flowchart
 
 
 
+Yes, you can certainly add your accomplishments such as building the "Alert Self Service" tool and creating the contract for V4 to your review statement. Here's how you can incorporate these achievements into the review section:
 
+"In the past year, I've consistently demonstrated a strong commitment to our core values, which are the foundation of our success. These values have been central to our achievements and have shaped our approach to work, ultimately contributing to the success and cohesiveness of our team.
+
+1. Courage to Lead: I've shown the courage to embrace necessary risks, fostering innovation, enabling our team to lead in the industry, and building the 'Alert Self Service' tool, which streamlined our processes and reduced onboarding times significantly. We've also learned from failures, using them as stepping stones for future growth.
+
+2. Integrity: Upholding integrity has been paramount in my actions. I've consistently done what is right, even when faced with challenging decisions. This included creating a robust contract for the V4 notification service, ensuring that we maintain the highest ethical standards. I actively encourage and engage in open dialogue within the team.
+
+3. Passion for Excellence: We've consistently achieved outstanding results by getting things done efficiently, striving for excellence, and developing the 'Alert Self Service' tool that not only met but exceeded our expectations. This passion for excellence drives us to reach extraordinary heights.
+
+4. Strength in Diversity: I've made it a point to seek out and include individuals who may be missing from our conversations and activities, including them in the development of the 'Alert Self Service' tool and the contract for V4. We've invested in each other's success, creating an inclusive and supportive environment where everyone has the opportunity to thrive."
+
+This way, you highlight both your adherence to core values and your specific accomplishments.
 
 
