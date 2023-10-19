@@ -1,3 +1,25 @@
+For this section, you can create a review statement that highlights your commitment to the core values or principles described in each point. Here's a template for your review statement:
+
+"In the past year, I've consistently demonstrated a strong commitment to our core values, which are the foundation of our success.
+
+1. Courage to Lead: I've shown the courage to embrace necessary risks, fostering innovation, and enabling our team to lead in the industry. We've also learned from failures, using them as stepping stones for future growth.
+
+2. Integrity: Upholding integrity has been paramount in my actions. I've consistently done what is right, even when faced with challenging decisions. I actively encourage and engage in open dialogue within the team to ensure we maintain the highest ethical standards.
+
+3. Passion for Excellence: We've consistently achieved outstanding results by getting things done efficiently and striving for excellence in everything we do. This passion for excellence drives us to reach extraordinary heights.
+
+4. Strength in Diversity: I've made it a point to seek out and include individuals who may be missing from our conversations and activities. We've invested in each other's success, creating an inclusive and supportive environment where everyone has the opportunity to thrive.
+
+These values have been central to our achievements and have shaped our approach to work, ultimately contributing to the success and cohesiveness of our team."
+
+Feel free to adjust these statements as needed to align with your specific experiences and contributions.
+
+
+
+
+
+
+
 SELECT *
 FROM alerts_onboard ad
 WHERE (
