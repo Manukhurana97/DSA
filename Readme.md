@@ -36,18 +36,23 @@ Help: https://algo.monster/flowchart
 
 
 
-Yes, you can certainly add your accomplishments such as building the "Alert Self Service" tool and creating the contract for V4 to your review statement. Here's how you can incorporate these achievements into the review section:
-
-"In the past year, I've consistently demonstrated a strong commitment to our core values, which are the foundation of our success. These values have been central to our achievements and have shaped our approach to work, ultimately contributing to the success and cohesiveness of our team.
-
-1. Courage to Lead: I've shown the courage to embrace necessary risks, fostering innovation, enabling our team to lead in the industry, and building the 'Alert Self Service' tool, which streamlined our processes and reduced onboarding times significantly. We've also learned from failures, using them as stepping stones for future growth.
-
-2. Integrity: Upholding integrity has been paramount in my actions. I've consistently done what is right, even when faced with challenging decisions. This included creating a robust contract for the V4 notification service, ensuring that we maintain the highest ethical standards. I actively encourage and engage in open dialogue within the team.
-
-3. Passion for Excellence: We've consistently achieved outstanding results by getting things done efficiently, striving for excellence, and developing the 'Alert Self Service' tool that not only met but exceeded our expectations. This passion for excellence drives us to reach extraordinary heights.
-
-4. Strength in Diversity: I've made it a point to seek out and include individuals who may be missing from our conversations and activities, including them in the development of the 'Alert Self Service' tool and the contract for V4. We've invested in each other's success, creating an inclusive and supportive environment where everyone has the opportunity to thrive."
-
-This way, you highlight both your adherence to core values and your specific accomplishments.
 
 
+
+In the past year, I have consistently embodied a strong culture of ethics, accountability, and risk management, aligning my actions with our company's core values. I have actively contributed to our company's success by:
+
+- Behaving in an ethical manner, upholding the highest standards of integrity in all my actions, including the development of the 'Alert Self Service' tool and the creation of the V4 notification service API contract.
+
+- Adhering to BNY Mellon's standards, including our Code of Conduct, and relevant laws, policies, and controls, ensuring that these principles were not only followed but exemplified in my work.
+
+- Demonstrating personal ownership and accountability for risk management, both in understanding and mitigating risks, such as vulnerabilities fixed for enhanced security and the 'Alert Self Service' tool, which reduced onboarding times.
+
+- Promptly escalating any risk, compliance, or ethics matters, a practice I applied consistently in all my projects, fostering transparency and swift issue resolution.
+
+- Engaging in open and transparent relationships with control functions, involving them early in business decisions, which was evident in the collaboration during the creation of the V4 notification service contract.
+
+- Furnishing complete, accurate, and timely responses to regulatory and audit inquiries, a commitment I extended to my work, ensuring that all aspects were thoroughly addressed.
+
+- Completing mandatory training and certifications on time, demonstrating a commitment to ongoing learning, which was a hallmark of my approach to the 'Alert Self Service' tool and the V4 contract.
+
+This alignment with our company's culture has not only been integral to my work but has consistently contributed to our team's success.
