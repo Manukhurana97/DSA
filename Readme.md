@@ -39,66 +39,7 @@ Help: https://algo.monster/flowchart
 
 
 
-SELECT
-    sq1.requestId,
-    sq1.requestStatus,
-    sq1.requesterId,
-    sq1.requesterName,
-    sq1.delegateld,
-    sq1.delegateName,
-    sq1.mnemonic,
-    sq1.appName,
-    sq1.createDate,
-    sq1.reviewerld,
-    sq1.reviewerName,
-    sq1.updateDate,
-    sq1.version,
-    sq1.remarks,
-    sq1.isRollback,
-    sq1.rfc_number,
-    sq1.next_regionId,
-    sq2.deployedVersion,
-    at.TYPE_CODE,
-    at.TYPE_NAME
-FROM
-    (SELECT
-        aow.request_id AS requestId,
-        aow.request_status AS requestStatus,
-        aso.app_mnemonic AS mnemonic,
-        aso.app_name AS appName,
-        aso.create_date AS createDate,
-        aow.requester_id AS requesterId,
-        aow.REQUESTER_FULL_NAME AS requesterName,
-        aow.DELEGATE_ID AS delegateld,
-        aow.DELEGATE_FULL_NAME AS delegateName,
-        aow.reviewer_id AS reviewerId,
-        aow.REVIEWER_FULL_NAME AS reviewerName,
-        aow.update_date AS updateDate,
-        aow.VERSION AS version,
-        aow.REMARKS AS remarks,
-        aow.ISROLLBACK AS isRollback,
-        aow.RFC_NUMBER AS rfc_number,
-        aow.NEXT_REGION_ID AS next_regionId,
-        ROW_NUMBER() OVER (PARTITION BY aow.request_id ORDER BY aow.workflow_id DESC) AS ROW_NUMBER
-    FROM
-        alerts_onboarding_workflow aow
-    INNER JOIN
-        alerts_ss_onboarding aso ON aow.request_id = aso.request_id
-    ) sq1
-LEFT JOIN
-    (SELECT
-        REQUEST_ID,
-        workflow_id,
-        VERSION AS deployedVersion,
-        ROW_NUMBER() OVER (PARTITION BY REQUEST_ID ORDER BY workflow_id DESC) AS ROW_NUMBER1
-    FROM
-        ALERTS_ONBOARDING_WORKFLOW
-    WHERE
-        request_status = 'DEPLOYED'
-    ) sq2 ON sq1.requestId = sq2.REQUEST_ID
-LEFT JOIN
-    ALERTS_TYPE at ON at.REQUEST_ID = sq1.requestId
-WHERE
-    sq1.ROW_NUMBER = 1;
+
+        
 
 
