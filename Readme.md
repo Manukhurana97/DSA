@@ -39,20 +39,66 @@ Help: https://algo.monster/flowchart
 
 
 
-In the past year, I have consistently embodied a strong culture of ethics, accountability, and risk management, aligning my actions with our company's core values. I have actively contributed to our company's success by:
+SELECT
+    sq1.requestId,
+    sq1.requestStatus,
+    sq1.requesterId,
+    sq1.requesterName,
+    sq1.delegateld,
+    sq1.delegateName,
+    sq1.mnemonic,
+    sq1.appName,
+    sq1.createDate,
+    sq1.reviewerld,
+    sq1.reviewerName,
+    sq1.updateDate,
+    sq1.version,
+    sq1.remarks,
+    sq1.isRollback,
+    sq1.rfc_number,
+    sq1.next_regionId,
+    sq2.deployedVersion,
+    at.TYPE_CODE,
+    at.TYPE_NAME
+FROM
+    (SELECT
+        aow.request_id AS requestId,
+        aow.request_status AS requestStatus,
+        aso.app_mnemonic AS mnemonic,
+        aso.app_name AS appName,
+        aso.create_date AS createDate,
+        aow.requester_id AS requesterId,
+        aow.REQUESTER_FULL_NAME AS requesterName,
+        aow.DELEGATE_ID AS delegateld,
+        aow.DELEGATE_FULL_NAME AS delegateName,
+        aow.reviewer_id AS reviewerId,
+        aow.REVIEWER_FULL_NAME AS reviewerName,
+        aow.update_date AS updateDate,
+        aow.VERSION AS version,
+        aow.REMARKS AS remarks,
+        aow.ISROLLBACK AS isRollback,
+        aow.RFC_NUMBER AS rfc_number,
+        aow.NEXT_REGION_ID AS next_regionId,
+        ROW_NUMBER() OVER (PARTITION BY aow.request_id ORDER BY aow.workflow_id DESC) AS ROW_NUMBER
+    FROM
+        alerts_onboarding_workflow aow
+    INNER JOIN
+        alerts_ss_onboarding aso ON aow.request_id = aso.request_id
+    ) sq1
+LEFT JOIN
+    (SELECT
+        REQUEST_ID,
+        workflow_id,
+        VERSION AS deployedVersion,
+        ROW_NUMBER() OVER (PARTITION BY REQUEST_ID ORDER BY workflow_id DESC) AS ROW_NUMBER1
+    FROM
+        ALERTS_ONBOARDING_WORKFLOW
+    WHERE
+        request_status = 'DEPLOYED'
+    ) sq2 ON sq1.requestId = sq2.REQUEST_ID
+LEFT JOIN
+    ALERTS_TYPE at ON at.REQUEST_ID = sq1.requestId
+WHERE
+    sq1.ROW_NUMBER = 1;
 
-- Behaving in an ethical manner, upholding the highest standards of integrity in all my actions, including the development of the 'Alert Self Service' tool and the creation of the V4 notification service API contract.
 
-- Adhering to BNY Mellon's standards, including our Code of Conduct, and relevant laws, policies, and controls, ensuring that these principles were not only followed but exemplified in my work.
-
-- Demonstrating personal ownership and accountability for risk management, both in understanding and mitigating risks, such as vulnerabilities fixed for enhanced security and the 'Alert Self Service' tool, which reduced onboarding times.
-
-- Promptly escalating any risk, compliance, or ethics matters, a practice I applied consistently in all my projects, fostering transparency and swift issue resolution.
-
-- Engaging in open and transparent relationships with control functions, involving them early in business decisions, which was evident in the collaboration during the creation of the V4 notification service contract.
-
-- Furnishing complete, accurate, and timely responses to regulatory and audit inquiries, a commitment I extended to my work, ensuring that all aspects were thoroughly addressed.
-
-- Completing mandatory training and certifications on time, demonstrating a commitment to ongoing learning, which was a hallmark of my approach to the 'Alert Self Service' tool and the V4 contract.
-
-This alignment with our company's culture has not only been integral to my work but has consistently contributed to our team's success.
