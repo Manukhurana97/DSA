@@ -1,9 +1,6 @@
 package com.example.dsa.NewCode.Stack_Queue;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LFU_cache {
 
@@ -41,7 +38,7 @@ public class LFU_cache {
             node.value = value;
             updateFrequency(key, node);
         } else {
-            if(capacity == cache.size()){
+            if (capacity == cache.size()) {
                 evict();
             }
             Node node = new Node(key, value);
@@ -56,16 +53,16 @@ public class LFU_cache {
         List<Node> nodes = frequencyList.get(freq);
         nodes.remove(nodes);
 
-        if(nodes.isEmpty() && freq == minFrequency)
-            minFrequency+=1;
-        node.frequency+=1;
+        if (nodes.isEmpty() && freq == minFrequency)
+            minFrequency += 1;
+        node.frequency += 1;
 
         frequencyList.computeIfAbsent(node.frequency, k -> new LinkedList<>()).add(node);
     }
 
-    private void evict(){
+    private void evict() {
         List<Node> nodes = frequencyList.get(minFrequency);
-        if(!nodes.isEmpty()){
+        if (!nodes.isEmpty()) {
             Node nodeToRemove = nodes.iterator().next(); /* get last element;*/
 
             cache.remove(nodeToRemove.key);
@@ -86,7 +83,5 @@ public class LFU_cache {
             this.frequency = 1;
         }
     }
-
-
 
 }

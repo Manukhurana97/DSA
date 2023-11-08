@@ -373,7 +373,7 @@ public class Recursion1 {
     }
 
     public static void main(String[] args) {
-        Recursion1 recursion1 = new Recursion1();
+        Recursion1 recursion = new Recursion1();
         /**
          * var a = recursion.print(5);
          * var b = recursion.sum_of_n_natural_numbers(5);
@@ -404,6 +404,6 @@ public class Recursion1 {
          *   arr = recursion.reverseAnArray(arr, arr.length);
          */
 
-        recursion1.func3(4);
+        recursion.allPermutation("abc");
     }
 }

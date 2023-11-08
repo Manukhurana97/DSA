@@ -44,7 +44,6 @@ public class InterviewBitsManipulation {
 	/* https://www.interviewbit.com/problems/reverse-bits/ */
 	public static long reverseBit(long n) {
 
-
 		long r = 0;
 		int i = 31;
 
@@ -85,7 +84,6 @@ public class InterviewBitsManipulation {
 			if ((total + (b << i)) < a) {
 				total += b << i;
 				quetient += 1l << i;
-
 			}
 		}
 
