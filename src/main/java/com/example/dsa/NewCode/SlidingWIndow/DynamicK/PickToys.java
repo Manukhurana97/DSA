@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.Recursion2;
+package com.example.dsa.NewCode.SlidingWIndow.DynamicK;
 
 import java.util.HashMap;
 import java.util.Map;
