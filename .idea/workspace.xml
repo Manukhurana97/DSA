@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="dsa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimizeWindowSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/buyAndSellStock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/minimumNumberOfFlipsToMakeBinary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/LongestSubstringWithoutRepeating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/LongestSubstringWithoutRepeating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Recursion2/PickToys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/PickToys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimizeWindowSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimizeWindowSubstring.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,19 +61,6 @@
   }
 }</component>
   <component name="RunManager" selected="Application.MinimizeWindowSubstring">
-    <configuration name="LargestSubarraySum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.LargestSubarraySum" />
-      <module name="DSA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LongestSubStringWithKUniqueChar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.LongestSubStringWithKUniqueChar" />
       <module name="DSA" />
@@ -126,13 +113,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="buyAndSellStock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.buyAndSellStock" />
+      <module name="DSA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MinimizeWindowSubstring" />
+        <item itemvalue="Application.buyAndSellStock" />
         <item itemvalue="Application.PickToys" />
         <item itemvalue="Application.LongestSubstringWithoutRepeating" />
         <item itemvalue="Application.LongestSubStringWithKUniqueChar" />
-        <item itemvalue="Application.LargestSubarraySum" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +209,7 @@
       <workItem from="1699087323308" duration="665000" />
       <workItem from="1699091018887" duration="1218000" />
       <workItem from="1699093144694" duration="34037000" />
-      <workItem from="1699471652003" duration="6201000" />
+      <workItem from="1699471652003" duration="27385000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -373,7 +373,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699474912899</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="dsa">
+      <option name="closed" value="true" />
+      <created>1699509763993</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1699509763993</updated>
+    </task>
+    <task id="LOCAL-00030" summary="dsa">
+      <option name="closed" value="true" />
+      <created>1699509805172</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699509805172</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,11 +430,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimizeWindowSubstring.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

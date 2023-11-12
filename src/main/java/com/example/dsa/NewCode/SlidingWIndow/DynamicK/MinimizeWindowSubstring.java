@@ -41,8 +41,46 @@ public class MinimizeWindowSubstring {
     }
 
 
+    public static String minWindow(String s, String t) {
+
+        int left = 0, right = 0, n = s.length(), minStart = 0, minLength = Integer.MAX_VALUE, requiredChars = 0;
+        Map<Character, Integer> actual = new HashMap<>();
+        Map<Character, Integer> expected = new HashMap<>();
+
+        for (var z : t.toCharArray()) expected.put(z, expected.getOrDefault(z, 0) + 1);
+
+        while (right < n) {
+            var charRight = s.charAt(right);
+
+            actual.put(charRight, actual.getOrDefault(charRight, 0) + 1);
+
+            if (expected.containsKey(charRight) && actual.get(charRight).equals(expected.get(charRight))) {
+                requiredChars--;
+            }
+
+            while (requiredChars == 0) {
+                if (right - left + 1 < minLength) {
+                    minLength = right - left + 1;
+                    minStart = left;
+                }
+
+                var charLeft  = s.charAt(left);
+                actual.put(charLeft , actual.get(charLeft ) - 1);
+
+                if (expected.containsKey(charLeft ) && expected.get(charLeft ) > actual.get(charLeft )) requiredChars++;
+                left++;
+            }
+            right++;
+        }
+
+        return (minLength == Integer.MAX_VALUE) ? "" : s.substring(minStart, minStart + minLength);
+    }
+
+
     public static void main(String[] args) {
         String[] arr = {"T", "O", "T", "M", "T", "A", "P", "T", "a", "T"};
         System.out.println(getWindow(arr, "TTA"));
+
+        System.out.println(minWindow("aa", "aa"));
     }
 }
