@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.SlidingWIndow;
+package com.example.dsa.NewCode.SlidingWIndow.DynamicK;
 
 public class minimumNumberOfFlipsToMakeBinary {
 

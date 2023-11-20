@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/*find longest substring with unique element*/
 public class LongestSubstringWithoutRepeating {
 
 //    using set we just store the element and , use the while loop to update the i.

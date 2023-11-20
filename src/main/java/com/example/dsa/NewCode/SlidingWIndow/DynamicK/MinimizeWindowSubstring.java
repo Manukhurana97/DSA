@@ -22,7 +22,7 @@ public class MinimizeWindowSubstring {
             if (map.containsKey(val)) {
                 map.put(val, map.get(val) - 1);
 
-                while (i < j && map.get(val) < 0) {
+                while (i <= j && map.get(val) < 0) {
                     if (Objects.equals(arr[i], val)) map.put(val, 0);
                     i++;
                 }
@@ -78,7 +78,7 @@ public class MinimizeWindowSubstring {
 
 
     public static void main(String[] args) {
-        String[] arr = {"T", "O", "T", "M", "T", "A", "P", "T", "a", "T"};
+        String[] arr = {"T", "O", "T", "M", "T", "A", "P", "T", "A", "T"};
         System.out.println(getWindow(arr, "TTA"));
 
         System.out.println(minWindow("aa", "aa"));

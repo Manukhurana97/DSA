@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.SlidingWIndow;
+package com.example.dsa.NewCode.SlidingWIndow.DynamicK;
 
 public class buyAndSellStock {
 
@@ -23,7 +23,7 @@ public class buyAndSellStock {
 
     public static void main(String[] args) {
         int[] arr = {7, 1, 5, 3, 6, 4};
-        arr = new int[]{7, 6, 5, 4, 3, 2, 1};
+//        arr = new int[]{7, 6, 5, 4, 3, 2, 1};
         System.out.println(getMaxProfit(arr));
     }
 }
