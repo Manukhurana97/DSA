@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="2 pointer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/DNASequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MaxLengthSubstringWithoutRepeatingChar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimumNumberOfFlips.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/minimumSizeSubarraySum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/FrequencyOfMostFreqElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/LongestRepeatingCharacter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/MaxConsecutiveOnce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/binarySubArraysWithSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/findAllAnagramInString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/maxPointForCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/noOfSubsetContainingAllThreeChar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/LongestSubstringWithoutRepeating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/LongestSubstringWithoutRepeating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimizeWindowSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/MinimizeWindowSubstring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/MaxElementInSubarray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/StaticK/MaxElementInSubarray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/buyAndSellStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/buyAndSellStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/minimumNumberOfFlipsToMakeBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/SlidingWIndow/DynamicK/minimumNumberOfFlipsToMakeBinary.java" afterDir="false" />
-    </list>
+    <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="Heap" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +52,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "editor.preferences.tabs",
     "vue.rearranger.settings.migration": "true"
   }
@@ -436,7 +420,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dsa" />
     <MESSAGE value="2 pointer" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 pointer" />
+    <MESSAGE value="Heap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
