@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="Heap" />
+    <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="2 pointer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/KClosestPointFromOrigin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/SingleThreadedCPU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/SumOfElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/TopKFrequentElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/connectRopesToMinimiseTheCost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/kClosestElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,13 +67,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.maxPointForCard">
-    <configuration name="MaxConsecutiveOnce" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.StaticK.MaxConsecutiveOnce" />
+  <component name="RunManager" selected="Application.SingleThreadedCPU">
+    <configuration name="KClosestPointFromOrigin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.KClosestPointFromOrigin" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.StaticK.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,12 +81,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="binarySubArraysWithSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.StaticK.binarySubArraysWithSum" />
+    <configuration name="SingleThreadedCPU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.SingleThreadedCPU" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.StaticK.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="maxPointForCard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.StaticK.maxPointForCard" />
+    <configuration name="SumOfElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.SumOfElement" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.StaticK.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="minimumNumberOfFlipsToMakeBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.minimumNumberOfFlipsToMakeBinary" />
+    <configuration name="TopKFrequentElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.TopKFrequentElement" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +120,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="minimumSizeSubarraySum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.minimumSizeSubarraySum" />
+    <configuration name="connectRopesToMinimiseTheCost" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.connectRopesToMinimiseTheCost" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.SlidingWIndow.DynamicK.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.maxPointForCard" />
-        <item itemvalue="Application.binarySubArraysWithSum" />
-        <item itemvalue="Application.MaxConsecutiveOnce" />
-        <item itemvalue="Application.minimumSizeSubarraySum" />
-        <item itemvalue="Application.minimumNumberOfFlipsToMakeBinary" />
+        <item itemvalue="Application.SingleThreadedCPU" />
+        <item itemvalue="Application.SumOfElement" />
+        <item itemvalue="Application.connectRopesToMinimiseTheCost" />
+        <item itemvalue="Application.KClosestPointFromOrigin" />
+        <item itemvalue="Application.TopKFrequentElement" />
       </list>
     </recent_temporary>
   </component>
@@ -400,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699774992839</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="2 pointer">
+      <option name="closed" value="true" />
+      <created>1700658960520</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700658960520</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,9 +435,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dsa" />
-    <MESSAGE value="2 pointer" />
     <MESSAGE value="Heap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heap" />
+    <MESSAGE value="2 pointer" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 pointer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -470,6 +486,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/kClosestElement.java</url>
+          <line>35</line>
+          <properties class="com.example.dsa.NewCode.Heap.kClosestElement" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
