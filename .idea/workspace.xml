@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="2 pointer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/KClosestPointFromOrigin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/SingleThreadedCPU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/SumOfElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/TopKFrequentElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/connectRopesToMinimiseTheCost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/kClosestElement.java" afterDir="false" />
+    <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="Heap">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/MedianFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/replaceEachArrayByItsRank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,43 +42,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/ritak/OneDrive/Desktop/Codes/konductor",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ritak/OneDrive/Desktop/Codes/konductor&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.SingleThreadedCPU">
-    <configuration name="KClosestPointFromOrigin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.KClosestPointFromOrigin" />
-      <module name="DSA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SingleThreadedCPU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.SingleThreadedCPU" />
+}</component>
+  <component name="RunManager" selected="Application.replaceEachArrayByItsRank">
+    <configuration name="SortKSortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.SortKSortedArray" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -120,8 +103,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="connectRopesToMinimiseTheCost" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.connectRopesToMinimiseTheCost" />
+    <configuration name="kClosestElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.kClosestElement" />
+      <module name="DSA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="replaceEachArrayByItsRank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.replaceEachArrayByItsRank" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
@@ -135,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SingleThreadedCPU" />
-        <item itemvalue="Application.SumOfElement" />
-        <item itemvalue="Application.connectRopesToMinimiseTheCost" />
-        <item itemvalue="Application.KClosestPointFromOrigin" />
+        <item itemvalue="Application.replaceEachArrayByItsRank" />
         <item itemvalue="Application.TopKFrequentElement" />
+        <item itemvalue="Application.SumOfElement" />
+        <item itemvalue="Application.SortKSortedArray" />
+        <item itemvalue="Application.kClosestElement" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +217,7 @@
       <workItem from="1700073677912" duration="162000" />
       <workItem from="1700073856974" duration="29000" />
       <workItem from="1700073903347" duration="21369000" />
+      <workItem from="1700929606403" duration="2771000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -416,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700658960520</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Heap">
+      <option name="closed" value="true" />
+      <created>1700816540434</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700816540434</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,9 +440,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dsa" />
-    <MESSAGE value="Heap" />
     <MESSAGE value="2 pointer" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 pointer" />
+    <MESSAGE value="Heap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
