@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45bcafe-13df-41ac-b54c-407107f5c10d" name="Changes" comment="Heap">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/MedianFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/replaceEachArrayByItsRank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/FractionalKnapsack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/MinNumberOfCoins.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/MinimumNoOfPlatform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/ValidParanthesisString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/jobSequencingProblem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/nMeetingInOneRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/TaskScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/TopKElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/Heap/hand0fStraights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -50,7 +59,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.github.iguissouma.nxconsole.dontShowDeprecationNoticeAgain&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ritak/OneDrive/Desktop/Codes/konductor&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ritak/OneDrive/Desktop/Codes/DSA&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -63,13 +72,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.replaceEachArrayByItsRank">
-    <configuration name="SortKSortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.SortKSortedArray" />
+  <component name="RunManager" selected="Application.ValidParanthesisString">
+    <configuration name="FractionalKnapsack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.GreedyApproach.FractionalKnapsack" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.GreedyApproach.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumOfElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.SumOfElement" />
+    <configuration name="MinNumberOfCoins" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.GreedyApproach.MinNumberOfCoins" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.GreedyApproach.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TopKFrequentElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.TopKFrequentElement" />
+    <configuration name="MinimumNoOfPlatform" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.GreedyApproach.MinimumNoOfPlatform" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.GreedyApproach.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="kClosestElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.kClosestElement" />
+    <configuration name="ValidParanthesisString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.GreedyApproach.ValidParanthesisString" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.GreedyApproach.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="replaceEachArrayByItsRank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.Heap.replaceEachArrayByItsRank" />
+    <configuration name="jobSequencingProblem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsa.NewCode.GreedyApproach.jobSequencingProblem" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.dsa.NewCode.Heap.*" />
+          <option name="PATTERN" value="com.example.dsa.NewCode.GreedyApproach.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.replaceEachArrayByItsRank" />
-        <item itemvalue="Application.TopKFrequentElement" />
-        <item itemvalue="Application.SumOfElement" />
-        <item itemvalue="Application.SortKSortedArray" />
-        <item itemvalue="Application.kClosestElement" />
+        <item itemvalue="Application.ValidParanthesisString" />
+        <item itemvalue="Application.MinNumberOfCoins" />
+        <item itemvalue="Application.FractionalKnapsack" />
+        <item itemvalue="Application.jobSequencingProblem" />
+        <item itemvalue="Application.MinimumNoOfPlatform" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +226,9 @@
       <workItem from="1700073677912" duration="162000" />
       <workItem from="1700073856974" duration="29000" />
       <workItem from="1700073903347" duration="21369000" />
-      <workItem from="1700929606403" duration="2771000" />
+      <workItem from="1700929606403" duration="33515000" />
+      <workItem from="1701463306482" duration="26000" />
+      <workItem from="1701463353390" duration="1237000" />
     </task>
     <task id="LOCAL-00006" summary="dsa">
       <created>1691420416702</created>
@@ -421,7 +432,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700816540434</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Heap">
+      <option name="closed" value="true" />
+      <created>1700940051059</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700940051059</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +519,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/dsa/NewCode/GreedyApproach/FractionalKnapsack.java</url>
+          <line>39</line>
+          <properties class="com.example.dsa.NewCode.GreedyApproach.FractionalKnapsack" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
