@@ -2,7 +2,6 @@ package com.example.dsa.NewCode.BinaryTree;
 
 public class BinaryTree {
 
-
     class Node {
         int data;
         Node left;
@@ -19,11 +18,6 @@ public class BinaryTree {
         }
     }
 
-    public static void display(Node node){
-        System.out.println(node.data);
-    }
-
-
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
         BinaryTree.Node head = tree.new Node(1);
@@ -33,5 +27,6 @@ public class BinaryTree {
         head.left.right = tree.new Node(5);
         head.right.left = tree.new Node(6);
         head.right.right = tree.new Node(7);
+
     }
 }
