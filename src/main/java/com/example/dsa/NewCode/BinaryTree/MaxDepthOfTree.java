@@ -22,7 +22,7 @@ public class MaxDepthOfTree {
     public static int bfs(Node head) {
         Queue<Node> stack = new LinkedList<>();
         Queue<Node> aux = new LinkedList<>();
-        int level = 0;
+        int level = 1;
         stack.add(head);
 
         while (!stack.isEmpty()) {
@@ -45,6 +45,14 @@ public class MaxDepthOfTree {
         return level;
     }
 
+    public static int getmaxHeightRecursion(Node head) {
+        if (head == null)
+            return 0;
+
+        return 1 + Math.max(getmaxHeightRecursion(head.left), getmaxHeightRecursion(head.right));
+
+    }
+
     public static void main(String[] args) {
 
         Node head = new Node(1);
@@ -56,6 +64,7 @@ public class MaxDepthOfTree {
         head.right.right = new Node(7);
 
         System.out.println(bfs(head));
+        System.out.println(getmaxHeightRecursion(head));
 
     }
 
