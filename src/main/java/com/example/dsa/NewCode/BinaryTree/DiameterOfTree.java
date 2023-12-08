@@ -12,7 +12,7 @@ class Node {
 
 public class DiameterOfTree {
 
-    public static int getDiameter(Node head) {
+    private static int getDiameter(Node head) {
         int diameter[] = new int[1];
         // getDiameter(head, diameter);
         getDiameter1(head, diameter);
@@ -20,7 +20,7 @@ public class DiameterOfTree {
         return diameter[0];
     }
 
-    public static int getDiameter(Node head, int[] max) {
+    private static int getDiameter(Node head, int[] max) {
 
         if (head == null)
             return 0;
@@ -33,7 +33,7 @@ public class DiameterOfTree {
         return Math.max(getDiameter(head.left, max), getDiameter(head.right, max));
     }
 
-    public static int getHeight(Node head) {
+    private static int getHeight(Node head) {
         if (head == null)
             return 0;
 
@@ -41,7 +41,7 @@ public class DiameterOfTree {
     }
 
     /**/
-    public static int getDiameter1(Node head, int[] diameter) {
+    private static int getDiameter1(Node head, int[] diameter) {
         if (head == null)
             return 0;
 

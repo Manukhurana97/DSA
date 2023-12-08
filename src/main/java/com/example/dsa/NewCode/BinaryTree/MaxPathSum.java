@@ -12,7 +12,7 @@ class Node {
 
 public class MaxPathSum {
 
-    public static int getMaxSum(Node head, int max) {
+    private static int getMaxSum(Node head, int max) {
 
         if (head == null)
             return 0;
@@ -26,14 +26,14 @@ public class MaxPathSum {
                                                                                                // leftMax, rightMax)
     }
 
-    public static int getChildSum(Node head) {
+    private static int getChildSum(Node head) {
         if (head == null)
             return 0;
 
         return head.val + getChildSum(head.left) + getChildSum(head.right);
     }
 
-    public static int getMaxSum1(Node head, int[] max) {
+    private static int getMaxSum1(Node head, int[] max) {
         if (head == null)
             return 0;
 

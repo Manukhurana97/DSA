@@ -23,7 +23,7 @@ class Node {
  */
 public class CheckBalanceTree {
 
-    public static boolean isBalanced(Node head) {
+    private static boolean isBalanced(Node head) {
         if (head == null)
             return true;
 
@@ -41,11 +41,11 @@ public class CheckBalanceTree {
         return 1 + Math.max(getHeight(head.left), getHeight(head.right));
     }
 
-    public static boolean isBalanced1(Node head) {
+    private static boolean isBalanced1(Node head) {
         return isBalanced1helper(head) != -1;
     }
 
-    public static int isBalanced1helper(Node head) {
+    private static int isBalanced1helper(Node head) {
         if (head == null)
             return 0;
 

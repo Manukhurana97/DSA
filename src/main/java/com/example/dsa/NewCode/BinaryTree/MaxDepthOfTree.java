@@ -19,7 +19,7 @@ class Node {
  */
 public class MaxDepthOfTree {
 
-    public static int bfs(Node head) {
+    private static int bfs(Node head) {
         Queue<Node> stack = new LinkedList<>();
         Queue<Node> aux = new LinkedList<>();
         int level = 1;
@@ -45,7 +45,7 @@ public class MaxDepthOfTree {
         return level;
     }
 
-    public static int getmaxHeightRecursion(Node head) {
+    private static int getmaxHeightRecursion(Node head) {
         if (head == null)
             return 0;
 

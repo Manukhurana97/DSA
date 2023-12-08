@@ -22,7 +22,7 @@ public class BFS {
         }
     }
 
-    public static void display(Node head) {
+    private static void display(Node head) {
         Queue<Node> queue = new LinkedList<>();
         queue.add(head);
 
@@ -38,7 +38,7 @@ public class BFS {
         }
     }
 
-    public static void display1(Node head) {
+    private static void display1(Node head) {
         Queue<Node> queue = new LinkedList<>();
         Queue<Node> aux = new LinkedList<>();
         queue.add(head);
