@@ -17,11 +17,6 @@ class NodeDetails {
     int order;
     Node node;
 
-    NodeDetails(int level, Node node) {
-        this.level = level;
-        this.node = node;
-    }
-
     NodeDetails(int level, int order, Node node) {
         this.level = level;
         this.order = order;
