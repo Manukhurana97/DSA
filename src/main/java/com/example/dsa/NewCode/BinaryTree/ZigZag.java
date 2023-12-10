@@ -2,8 +2,6 @@ package com.example.dsa.NewCode.BinaryTree;
 
 import java.util.*;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 class Node {
     int val;
     Node left;
