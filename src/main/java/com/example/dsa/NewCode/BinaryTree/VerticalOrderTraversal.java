@@ -55,16 +55,14 @@ public class VerticalOrderTraversal {
 
         while (!queue.isEmpty()) {
             var nn = queue.poll();
+            int order = nn.order;
             pqueue.add(new NodeDetails(level, nn.order, nn.node));
 
-            if (nn.node.left != null) {
-                int order = nn.order;
-                auxQueue.add(new NodeDetails(level, --order, nn.node.left));
-            }
-            if (nn.node.right != null) {
-                int order = nn.order;
-                auxQueue.add(new NodeDetails(level, ++order, nn.node.right));
-            }
+            if (nn.node.left != null)
+                auxQueue.add(new NodeDetails(level, order - 1, nn.node.left));
+
+            if (nn.node.right != null)
+                auxQueue.add(new NodeDetails(level, order + 1, nn.node.right));
 
             if (queue.isEmpty()) {
                 queue = auxQueue;
@@ -73,6 +71,38 @@ public class VerticalOrderTraversal {
             }
 
         }
+    }
+
+    public static List<Integer> verticalOrder1(Node head) {
+        List<Integer> result = new ArrayList<>();
+        if (head == null)
+            return result;
+
+        TreeMap<Integer, List<Integer>> map = new TreeMap<>();
+        Queue<NodeDetails> queue = new LinkedList<>();
+        queue.add(new NodeDetails(0, 0, head));
+
+        while (!queue.isEmpty()) {
+            var nn = queue.poll();
+            int order = nn.order;
+            int level = nn.level;
+
+            map.computeIfAbsent(order, k -> new ArrayList<>()).add(nn.node.val);
+
+            if (nn.node.left != null)
+                queue.add(new NodeDetails(level + 1, order - 1, nn.node.left));
+
+            if (nn.node.right != null)
+                queue.add(new NodeDetails(level + 1, order + 1, nn.node.right));
+
+        }
+
+        System.out.println(map);
+        for (List<Integer> value : map.values()) {
+            result.addAll(value);
+        }
+
+        return result;
     }
 
     public static void main(String[] args) {
@@ -87,6 +117,7 @@ public class VerticalOrderTraversal {
         head.right.right.right = new Node(9);
 
         System.out.println(verticalOrder(head));
+        System.out.println(verticalOrder1(head));
 
     }
 
