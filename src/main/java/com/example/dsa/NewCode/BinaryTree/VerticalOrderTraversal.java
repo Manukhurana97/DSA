@@ -17,6 +17,11 @@ class NodeDetails {
     int order;
     Node node;
 
+    NodeDetails(int level, Node node) {
+        this.level = level;
+        this.node = node;
+    }
+
     NodeDetails(int level, int order, Node node) {
         this.level = level;
         this.order = order;
@@ -26,15 +31,17 @@ class NodeDetails {
 
 public class VerticalOrderTraversal {
 
-    public static List<Integer> display(Node head) {
+    public static List<Integer> verticalOrder(Node head) {
 
-        PriorityQueue<NodeDetails> queue = new PriorityQueue<>(Comparator.comparingInt((NodeDetails dd) -> dd.order));
+        PriorityQueue<NodeDetails> queue = new PriorityQueue<>(
+                Comparator.comparingInt((NodeDetails dd) -> dd.order).thenComparing((dd) -> dd.level));
 
         getOrder(head, queue);
 
         List<Integer> result = new ArrayList<>();
         while (!queue.isEmpty()) {
-            result.add(queue.remove().node.val);
+            var nn = queue.poll();
+            result.add(nn.node.val);
         }
         return result;
     }
@@ -47,19 +54,24 @@ public class VerticalOrderTraversal {
         queue.add(new NodeDetails(level, 0, head));
 
         while (!queue.isEmpty()) {
-            NodeDetails nn = queue.poll();
-            pqueue.add(new NodeDetails(nn.level, nn.order, nn.node));
+            var nn = queue.poll();
+            pqueue.add(new NodeDetails(level, nn.order, nn.node));
 
-            if (nn.node.left != null)
-                auxQueue.add(new NodeDetails(level, --nn.order, nn.node.left));
-            if (nn.node.right != null)
-                auxQueue.add(new NodeDetails(level, ++nn.order, nn.node.right));
+            if (nn.node.left != null) {
+                int order = nn.order;
+                auxQueue.add(new NodeDetails(level, --order, nn.node.left));
+            }
+            if (nn.node.right != null) {
+                int order = nn.order;
+                auxQueue.add(new NodeDetails(level, ++order, nn.node.right));
+            }
 
-            if (queue.isEmpty() && !auxQueue.isEmpty()) {
-                queue.addAll(auxQueue);
-                auxQueue.clear();
+            if (queue.isEmpty()) {
+                queue = auxQueue;
+                auxQueue = new LinkedList<>();
                 level++;
             }
+
         }
     }
 
@@ -68,13 +80,13 @@ public class VerticalOrderTraversal {
         head.left = new Node(2);
         head.right = new Node(3);
         head.left.left = new Node(4);
-        head.left.left.right = new Node(8);
-        head.left.left.right.right = new Node(9);
         head.left.right = new Node(5);
         head.right.left = new Node(6);
         head.right.right = new Node(7);
+        head.right.right.left = new Node(8);
+        head.right.right.right = new Node(9);
 
-        System.out.println(display(head));
+        System.out.println(verticalOrder(head));
 
     }
 
