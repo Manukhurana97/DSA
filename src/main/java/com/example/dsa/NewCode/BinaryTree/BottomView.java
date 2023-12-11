@@ -24,9 +24,9 @@ class NodeDetails {
     }
 }
 
-public class TopView {
+public class BottomView {
 
-    public static List<Integer> getTopView(Node head) {
+    public static List<Integer> getBottomOrder(Node head) {
         List<Integer> result = new ArrayList<>();
         TreeMap<Integer, List<Integer>> map = new TreeMap<>();
 
@@ -51,7 +51,7 @@ public class TopView {
         }
 
         for (var lst : map.values()) {
-            result.add(lst.get(0));
+            result.add(lst.get(lst.size() - 1));
         }
 
         return result;
@@ -63,10 +63,16 @@ public class TopView {
         head.right = new Node(3);
         head.left.left = new Node(4);
         head.left.right = new Node(5);
-        head.left.right.left = new Node(6);
+        head.right.left = new Node(6);
         head.right.right = new Node(7);
+        head.left.right.left = new Node(8);
+        head.left.right.right = new Node(9);
 
-        System.out.println(getTopView(head));
-
+        System.out.println(getBottomOrder(head));
     }
+
 }
+
+// 1
+// 2 3
+// 4 5 6 7
