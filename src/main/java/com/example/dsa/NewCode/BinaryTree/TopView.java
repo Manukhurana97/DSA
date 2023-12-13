@@ -2,28 +2,6 @@ package com.example.dsa.NewCode.BinaryTree;
 
 import java.util.*;
 
-class Node {
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-    }
-}
-
-class NodeDetails {
-    int level;
-    int order;
-    Node node;
-
-    NodeDetails(int level, int order, Node node) {
-        this.level = level;
-        this.order = order;
-        this.node = node;
-    }
-}
-
 public class TopView {
 
     public static List<Integer> getTopView(Node head) {

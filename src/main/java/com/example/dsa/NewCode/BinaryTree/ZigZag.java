@@ -2,16 +2,6 @@ package com.example.dsa.NewCode.BinaryTree;
 
 import java.util.*;
 
-class Node {
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-    }
-}
-
 public class ZigZag {
 
     private static List<Integer> display(Node head) {

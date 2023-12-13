@@ -4,22 +4,6 @@ import java.util.*;
 
 public class DFS {
 
-    class Node {
-        int data;
-        Node left;
-        Node right;
-
-        public Node(int data) {
-            this.data = data;
-        }
-
-        public Node(int data, Node left, Node right) {
-            this.data = data;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     /*
      * Inorder traversal: (left, root, right)
      */
@@ -28,7 +12,7 @@ public class DFS {
             return;
 
         inOrderTraversal(node.left);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         inOrderTraversal(node.right);
     }
 
@@ -42,7 +26,7 @@ public class DFS {
             }
 
             current = stack.pop();
-            System.out.print(current.data + " ");
+            System.out.print(current.val + " ");
 
             current = current.right;
         }
@@ -55,7 +39,7 @@ public class DFS {
         if (node == null)
             return;
 
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         preOrderTraversal(node.left);
         preOrderTraversal(node.right);
     }
@@ -66,7 +50,7 @@ public class DFS {
 
         while (!stack.isEmpty()) {
             Node temp = stack.pop();
-            System.out.print(temp.data + " ");
+            System.out.print(temp.val + " ");
 
             if (temp.right != null)
                 stack.add(temp.right);
@@ -84,7 +68,7 @@ public class DFS {
 
         postOrderTraversal(node.left);
         postOrderTraversal(node.right);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
     }
 
     /*
@@ -108,7 +92,7 @@ public class DFS {
         }
 
         while (!stack2.isEmpty()) {
-            System.out.print(stack2.pop().data + " ");
+            System.out.print(stack2.pop().val + " ");
         }
     }
 
@@ -129,7 +113,7 @@ public class DFS {
 
             current = stack.peek();
             if (current.right == null || current.right == prev) {
-                System.out.print(current.data + " ");
+                System.out.print(current.val + " ");
                 stack.pop();
                 prev = current;
                 current = null;
@@ -141,23 +125,23 @@ public class DFS {
     }
 
     public static void main(String[] args) {
-        DFS tree = new DFS();
-        DFS.Node head = tree.new Node(1);
-        head.left = tree.new Node(2);
-        head.right = tree.new Node(3);
-        head.left.left = tree.new Node(4);
-        head.left.right = tree.new Node(5);
-        head.right.left = tree.new Node(6);
-        head.right.right = tree.new Node(7);
 
-        DFS.Node head1 = tree.new Node(1);
-        head1.left = tree.new Node(2);
-        head1.left.left = tree.new Node(3);
-        head1.left.left.right = tree.new Node(4);
-        head1.left.left.right.right = tree.new Node(5);
-        head1.left.left.right.right.right = tree.new Node(6);
-        head1.right = tree.new Node(7);
-        head1.right.left = tree.new Node(8);
+        Node head = new Node(1);
+        head.left = new Node(2);
+        head.right = new Node(3);
+        head.left.left = new Node(4);
+        head.left.right = new Node(5);
+        head.right.left = new Node(6);
+        head.right.right = new Node(7);
+
+        Node head1 = new Node(1);
+        head1.left = new Node(2);
+        head1.left.left = new Node(3);
+        head1.left.left.right = new Node(4);
+        head1.left.left.right.right = new Node(5);
+        head1.left.left.right.right.right = new Node(6);
+        head1.right = new Node(7);
+        head1.right.left = new Node(8);
 
         inOrderTraversal(head);
         System.out.println();

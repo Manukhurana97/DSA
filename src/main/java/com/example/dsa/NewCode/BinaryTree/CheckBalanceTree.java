@@ -1,21 +1,6 @@
 package com.example.dsa.NewCode.BinaryTree;
 
 /**
- * Node
- */
-class Node {
-
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-    }
-
-}
-
-/**
  * CheckBalanceTree: check if tree is balance
  * check the height of left and right subtree
  * at any point if height of left and right subtree diff is greater then 1,

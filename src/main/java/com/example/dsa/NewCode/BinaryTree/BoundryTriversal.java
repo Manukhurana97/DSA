@@ -3,16 +3,6 @@ package com.example.dsa.NewCode.BinaryTree;
 import java.util.ArrayList;
 import java.util.*;
 
-class Node {
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-    }
-}
-
 public class BoundryTriversal {
 
     private static List<Integer> getBoundry(Node head) {

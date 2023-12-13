@@ -1,15 +1,5 @@
 package com.example.dsa.NewCode.BinaryTree;
 
-class Node {
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-    }
-}
-
 public class CheckIdenticalTree {
 
     private static boolean validate(Node h1, Node h2) {

@@ -3,17 +3,6 @@ package com.example.dsa.NewCode.BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-
-    }
-}
-
 /*
  * we can use BFS, Recursion
  */
