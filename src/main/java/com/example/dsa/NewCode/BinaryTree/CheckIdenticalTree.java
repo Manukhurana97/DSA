@@ -27,7 +27,7 @@ public class CheckIdenticalTree {
         head1.right = new Node(3);
         head1.left.left = new Node(4);
         head1.left.right = new Node(5);
-        head1.right.left = new Node(7);
+        head1.right.left = new Node(6);
 
         System.out.println(validate(head, head1));
     }

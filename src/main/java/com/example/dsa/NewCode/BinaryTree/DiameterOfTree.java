@@ -4,8 +4,8 @@ public class DiameterOfTree {
 
     private static int getDiameter(Node head) {
         int diameter[] = new int[1];
-        // getDiameter(head, diameter);
-        getDiameter1(head, diameter);
+        getDiameter(head, diameter);
+        // getDiameter1(head, diameter);
 
         return diameter[0];
     }

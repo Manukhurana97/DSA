@@ -71,9 +71,6 @@ public class DFS {
         System.out.print(node.val + " ");
     }
 
-    /*
-     * using 2 stack
-     */
     public static void postOrderTraversal1(Node node) {
 
         Stack<Node> stack1 = new Stack<>();
@@ -143,16 +140,17 @@ public class DFS {
         head1.right = new Node(7);
         head1.right.left = new Node(8);
 
+        System.out.println("In Order");
         inOrderTraversal(head);
         System.out.println();
         inOrderTraversal1(head);
         System.out.println();
-
+        System.out.println("Pre Order");
         preOrderTraversal(head);
         System.out.println();
         preOrderTraversal1(head);
         System.out.println();
-
+        System.out.println("Post Order");
         postOrderTraversal(head);
         System.out.println();
         postOrderTraversal1(head);
