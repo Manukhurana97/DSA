@@ -2,11 +2,11 @@ package com.example.dsa.NewCode.BinaryTree;
 
 import java.util.*;
 
-public class LowestCommonAncestor {
+public class ParentNode {
 
     private static List<Integer> findAncestors(Node head, int num) {
         List<Integer> list = new ArrayList<>();
-        findAncestorsHelper(head, num, list);
+        // findAncestorsHelper(head, num, list);
         findAncestorsHelper1(head, num, list);
 
         // to get the lowerest common ansistor print , last element of list
