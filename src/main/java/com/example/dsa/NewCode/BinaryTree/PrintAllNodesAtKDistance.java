@@ -8,33 +8,33 @@ public class PrintAllNodesAtKDistance {
         Map<Node, Node> parents = new HashMap<>();
         getParent(node, parents); // get the parent node of all the current as we iterte back
 
-        Map<Node, Boolean> visited = new HashMap<>(); // to keep the track which node is visited
-        visited.put(target, true);
+        Set<Node> visited = new HashSet<>(); // to keep the track which node is visited
+        visited.add(target);
 
         Queue<Node> queue = new LinkedList<>(); // to preform bfs
         queue.add(target);
 
-        while (!queue.isEmpty()) {
+        while (!queue.isEmpty() && k > 0) {
             int size = queue.size();
-            if (k == 0)
-                break;
-            k--;
+
             for (int i = 0; i < size; i++) {
                 Node currentNode = queue.poll();
 
-                if (currentNode.left != null && !visited.containsKey(currentNode.left)) {
+                if (currentNode.left != null && !visited.contains(currentNode.left)) {
                     queue.add(currentNode.left);
-                    visited.put(currentNode.left, true);
+                    visited.add(currentNode.left);
                 }
-                if (currentNode.right != null && !visited.containsKey(currentNode.right)) {
+                if (currentNode.right != null && !visited.contains(currentNode.right)) {
                     queue.add(currentNode.right);
-                    visited.put(currentNode.right, true);
+                    visited.add(currentNode.right);
                 }
-                if (parents.containsKey(currentNode) && !visited.containsKey(parents.get(currentNode))) {
+                if (parents.containsKey(currentNode) && !visited.contains(parents.get(currentNode))) {
                     queue.add(parents.get(currentNode));
-                    visited.put(parents.get(currentNode), true);
+                    visited.add(parents.get(currentNode));
                 }
             }
+
+            k--;
         }
         List<Integer> result = new ArrayList<>();
         while (!queue.isEmpty()) {
