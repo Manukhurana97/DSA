@@ -10,8 +10,16 @@ public class ChildrenSumProperty {
         if (head.left != null)
             childSum += head.left.val;
         if (head.right != null)
-            childSum += head.left.val;
-        head.val = Math.max(head.val, childSum);
+            childSum += head.right.val;
+
+        if (childSum >= head.val)
+            head.val = childSum;
+        else {
+            if (head.left != null)
+                head.left.val = head.val;
+            if (head.right != null)
+                head.right.val = head.val;
+        }
 
         changeTree(head.left);
         changeTree(head.right);
@@ -20,8 +28,9 @@ public class ChildrenSumProperty {
         if (head.left != null)
             childSum += head.left.val;
         if (head.right != null)
-            childSum += head.left.val;
-        head.val = Math.max(head.val, childSum);
+            childSum += head.right.val;
+
+        head.val = Math.max(childSum, head.val);
     }
 
     private static void display(Node head) {
@@ -29,7 +38,7 @@ public class ChildrenSumProperty {
             return;
 
         display(head.left);
-        System.out.println(head.val);
+        System.out.print(head.val + " ");
         display(head.right);
     }
 
