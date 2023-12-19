@@ -6,12 +6,12 @@ public class PrintAllNodesAtKDistance {
 
     public static List<Integer> getNodes(Node node, Node target, int k) {
         Map<Node, Node> parents = new HashMap<>();
-        getParent(node, parents);
+        getParent(node, parents); // get the parent node of all the current as we iterte back
 
-        Map<Node, Boolean> visited = new HashMap<>();
+        Map<Node, Boolean> visited = new HashMap<>(); // to keep the track which node is visited
         visited.put(target, true);
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>(); // to preform bfs
         queue.add(target);
 
         while (!queue.isEmpty()) {
@@ -51,7 +51,7 @@ public class PrintAllNodesAtKDistance {
         Queue<Node> queue = new LinkedList<>();
         queue.add(head);
 
-        while (queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             var node = queue.poll();
 
             if (node.left != null) {
@@ -78,5 +78,8 @@ public class PrintAllNodesAtKDistance {
         head.right = new Node(1);
         head.right.left = new Node(0);
         head.right.right = new Node(8);
+
+        System.out.println(getNodes(head, head.left, 2));
     }
+
 }
