@@ -30,9 +30,9 @@ public class PrintAllNodesAtKDistance {
                     queue.add(currentNode.right);
                     visited.put(currentNode.right, true);
                 }
-                if (parents.containsKey(currentNode) && !visited.containsKey(currentNode.right)) {
+                if (parents.containsKey(currentNode) && !visited.containsKey(parents.get(currentNode))) {
                     queue.add(parents.get(currentNode));
-                    visited.put(currentNode.right, true);
+                    visited.put(parents.get(currentNode), true);
                 }
             }
         }
