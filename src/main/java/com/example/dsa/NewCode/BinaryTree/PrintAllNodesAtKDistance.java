@@ -2,6 +2,12 @@ package com.example.dsa.NewCode.BinaryTree;
 
 import java.util.*;
 
+/**
+ * 1. get parent of all the nodes, as we can't iterate back in tree
+ * 2. create a set to mark which node is visited
+ * 3. run loop till k and add left, right, parent
+ * 4. print all the element of the queue
+ */
 public class PrintAllNodesAtKDistance {
 
     public static List<Integer> getNodes(Node node, Node target, int k) {
