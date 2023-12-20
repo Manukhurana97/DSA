@@ -6,6 +6,9 @@ public class MinTimeToBurnDownBinaryTree {
 
     private static int findMinTime(Node head, Node startNode) {
 
+        if (startNode == null || head == null)
+            return 0;
+
         Map<Node, Node> parentMap = new HashMap<>();
         getParent(head, parentMap);
 
