@@ -10,6 +10,8 @@ public class CountNumberOfNodesCompleteTree {
         return 1 + countNodes(head.left) + countNodes(head.right);
     }
 
+    // space : O(n)
+    // time complexity: O(log2^n)
     private static int countNodes1(Node head) {
 
         if (head == null)
