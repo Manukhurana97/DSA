@@ -12,22 +12,16 @@ public class SerializeDeserialize {
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(head);
-        result.append(head.val).append(",");
 
         while (!queue.isEmpty()) {
             Node node = queue.poll();
 
-            if (node.left != null) {
+            if (node != null) {
+                result.append(node.val).append(",");
                 queue.add(node.left);
-                result.append(node.left.val).append(",");
-            } else {
-                result.append("#").append(",");
-            }
-            if (node.right != null) {
                 queue.add(node.right);
-                result.append(node.right.val).append(",");
             } else {
-                result.append("#").append(",");
+                result.append("#,");
             }
         }
 
