@@ -33,7 +33,7 @@ public class DFS {
     }
 
     /*
-     * Inorder traversal: (root, left, right)
+     * preorder traversal: (root, left, right)
      */
     public static void preOrderTraversal(Node node) {
         if (node == null)
@@ -60,7 +60,7 @@ public class DFS {
     }
 
     /*
-     * Inorder traversal: (left, right, root)
+     * postorder traversal: (left, right, root)
      */
     public static void postOrderTraversal(Node node) {
         if (node == null)
