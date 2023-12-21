@@ -34,7 +34,17 @@ public class ConstructBinaryTreeInAndPre {
 
     }
 
+    private static void display(Node head) {
+        if (head == null)
+            return;
+
+        display(head.left);
+        System.out.println(head.val);
+        display(head.right);
+    }
+
     public static void main(String[] args) {
         Node head = constructTree(new int[] { 40, 20, 50, 10, 60, 30 }, new int[] { 10, 20, 40, 50, 30, 60 });
+        display(head);
     }
 }
