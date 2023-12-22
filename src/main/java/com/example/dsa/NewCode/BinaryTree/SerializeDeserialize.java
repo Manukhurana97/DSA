@@ -46,7 +46,7 @@ public class SerializeDeserialize {
         Queue<Node> queue = new LinkedList<>();
         queue.add(head);
 
-        while (!queue.isEmpty() && index < charList.length) {
+        while (!queue.isEmpty()) {
             Node node = queue.poll();
 
             if (index < charList.length && !charList[index].equals("#")) {
