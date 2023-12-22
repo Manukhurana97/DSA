@@ -28,9 +28,52 @@ public class SerializeDeserialize {
         return result.toString();
     }
 
-    // private static Node deSerializer(String str) {
-    // return null;
-    // }
+    private static Node deSerializer(String str) {
+        if (str == null || str.equals(""))
+            return null;
+
+        Node head = buildTreefromString(str);
+        return head;
+    }
+
+    private static Node buildTreefromString(String str) {
+
+        var charList = str.split(",");
+
+        int index = 0;
+        Node head = new Node(Integer.parseInt(charList[index++]));
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(head);
+
+        while (!queue.isEmpty() && index < charList.length) {
+            Node node = queue.poll();
+
+            if (index < charList.length && !charList[index].equals("#")) {
+                node.left = new Node(Integer.parseInt(charList[index]));
+                queue.add(node.left);
+            }
+            index++;
+
+            if (index < charList.length && !charList[index].equals("#")) {
+                node.right = new Node(Integer.parseInt(charList[index]));
+                queue.add(node.right);
+            }
+            index++;
+
+        }
+
+        return head;
+    }
+
+    private static void display(Node head) {
+        if (head == null)
+            return;
+
+        display(head.left);
+        System.out.print(head.val + " ");
+        display(head.right);
+    }
 
     public static void main(String[] args) {
         Node head = new Node(1);
@@ -39,7 +82,8 @@ public class SerializeDeserialize {
         head.right.left = new Node(4);
         head.right.right = new Node(5);
 
-        System.out.println(serializer(head));
+        var serialized = serializer(head);
+        deSerializer(serialized);
 
     }
 
