@@ -1,5 +1,7 @@
 package com.example.dsa.NewCode.BinaryTree;
 
+import java.util.*;
+
 public class FlattenbinaryTree {
 
     static Node prev = null;
@@ -17,11 +19,30 @@ public class FlattenbinaryTree {
         prev = head;
     }
 
+    private static void flatten1(Node head) {
+        Stack<Node> stack = new Stack<>();
+        stack.add(head);
+
+        while (!stack.isEmpty()) {
+            Node node = stack.pop();
+
+            if (node.right != null)
+                stack.add(node.right);
+            if (node.left != null) {
+                stack.add(node.left);
+            }
+            if (!stack.isEmpty())
+                node.right = stack.peek();
+            node.left = null;
+        }
+    }
+
     private static void display(Node head) {
         while (head != null) {
-            System.out.println(head.val);
+            System.out.print(head.val + " ");
             head = head.right;
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -34,7 +55,9 @@ public class FlattenbinaryTree {
         head.right.right = new Node(6);
         head.right.right.left = new Node(7);
 
-        flatten(head);
+        // flatten(head);
+        // display(head);
+        flatten1(head);
         display(head);
     }
 }
