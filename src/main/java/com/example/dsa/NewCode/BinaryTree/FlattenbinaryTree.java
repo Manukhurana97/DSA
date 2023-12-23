@@ -37,6 +37,23 @@ public class FlattenbinaryTree {
         }
     }
 
+    private static void flatten2(Node head) {
+        while (head != null) {
+            if (head.left != null) {
+                Node prev = head.left;
+                while (prev.right != null) {
+                    prev = prev.right;
+                }
+
+                prev.right = head.right;
+                head.right = head.left;
+            }
+            head = head.right;
+
+        }
+
+    }
+
     private static void display(Node head) {
         while (head != null) {
             System.out.print(head.val + " ");
@@ -57,7 +74,9 @@ public class FlattenbinaryTree {
 
         // flatten(head);
         // display(head);
-        flatten1(head);
+        // flatten1(head);
+        // display(head);
+        flatten2(head);
         display(head);
     }
 }
