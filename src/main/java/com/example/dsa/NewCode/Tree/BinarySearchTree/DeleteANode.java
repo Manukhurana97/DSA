@@ -1,5 +1,6 @@
 package com.example.dsa.NewCode.Tree.BinarySearchTree;
 
+// delete a node and the mode all the right node to the max in left node
 public class DeleteANode {
 
     private static void deleteNode(Node head, int val) {
