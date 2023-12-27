@@ -2,7 +2,7 @@ package com.example.dsa.NewCode.Tree.BinarySearchTree;
 
 public class InsertNodeInBST {
 
-    private static void insertInBST(Node head, int value) {
+    public static void insertInBST(Node head, int value) {
         Node newNode = new Node(value);
 
         if (head == null)
