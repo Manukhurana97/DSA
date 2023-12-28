@@ -2,6 +2,7 @@ package com.example.dsa.NewCode.Tree.BinarySearchTree;
 
 import java.util.Stack;
 
+//   get next element in inorder fashion and also check if has next element in list
 public class BinarySearchTreeIterator {
 
     Stack<Node> stack = new Stack<>();
