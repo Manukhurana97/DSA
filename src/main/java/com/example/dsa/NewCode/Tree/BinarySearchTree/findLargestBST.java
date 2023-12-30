@@ -69,7 +69,9 @@ public class findLargestBST {
 
     private static Result largestBST1Helper(Node node) {
         if (node == null) {
-            return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+            return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE); // reasion of taking min : integer.max is it
+                                                                        // will get overridden when taking min(MAX,
+                                                                        // left.value) and vise versa for right
         }
 
         Result lr = largestBST1Helper(node.left);
