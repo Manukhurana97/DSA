@@ -52,5 +52,8 @@ public class DiameterOfTree {
         head.right.left = new Node(6);
 
         System.out.println(getDiameter(head));
+        int[] diameter = { 0 };
+        getDiameter1(head, diameter);
+        System.out.println(diameter[0]);
     }
 }
