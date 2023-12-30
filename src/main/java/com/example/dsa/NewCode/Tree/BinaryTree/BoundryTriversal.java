@@ -16,6 +16,7 @@ public class BoundryTriversal {
         return result;
     }
 
+    // move left till end
     private static void addLeft(Node head, List<Integer> list) {
         Node current = head.left;
 
@@ -26,6 +27,7 @@ public class BoundryTriversal {
         }
     }
 
+    // move right till end
     private static void addRight(Node head, List<Integer> list) {
         Node current = head.right;
         ArrayList<Integer> temp = new ArrayList<>();
