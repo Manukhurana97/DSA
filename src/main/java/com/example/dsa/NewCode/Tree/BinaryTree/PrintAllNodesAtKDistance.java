@@ -15,7 +15,7 @@ public class PrintAllNodesAtKDistance {
         getParent(node, parents); // get the parent node of all the current as we iterte back
 
         Set<Node> visited = new HashSet<>(); // to keep the track which node is visited
-        visited.add(target);
+        // visited.add(target);
 
         Queue<Node> queue = new LinkedList<>(); // to preform bfs
         queue.add(target);
@@ -26,17 +26,18 @@ public class PrintAllNodesAtKDistance {
             for (int i = 0; i < size; i++) {
                 Node currentNode = queue.poll();
 
+                System.out.println(currentNode.val);
                 if (currentNode.left != null && !visited.contains(currentNode.left)) {
                     queue.add(currentNode.left);
-                    visited.add(currentNode.left);
+                    // visited.add(currentNode.left);
                 }
                 if (currentNode.right != null && !visited.contains(currentNode.right)) {
                     queue.add(currentNode.right);
-                    visited.add(currentNode.right);
+                    // visited.add(currentNode.right);
                 }
                 if (parents.containsKey(currentNode) && !visited.contains(parents.get(currentNode))) {
                     queue.add(parents.get(currentNode));
-                    visited.add(parents.get(currentNode));
+                    // visited.add(parents.get(currentNode));
                 }
             }
 
@@ -50,6 +51,7 @@ public class PrintAllNodesAtKDistance {
         return result;
     }
 
+    // get the parents of nodes
     private static void getParent(Node head, Map<Node, Node> map) {
         if (head == null)
             return;
