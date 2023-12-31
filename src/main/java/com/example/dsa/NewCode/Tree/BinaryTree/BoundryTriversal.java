@@ -3,6 +3,9 @@ package com.example.dsa.NewCode.Tree.BinaryTree;
 import java.util.ArrayList;
 import java.util.*;
 
+/**
+ * left , right, leaf
+ */
 public class BoundryTriversal {
 
     private static List<Integer> getBoundry(Node head) {
