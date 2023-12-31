@@ -4,6 +4,8 @@ import java.util.*;
 
 public class ConstructBinaryTreeInAndPre {
 
+    // inorder: left, root, right
+    // preorder: root, left, right
     private static Node constructTree(int[] inOrder, int[] preOrder) {
         Map<Integer, Integer> map = new HashMap<>();
 
