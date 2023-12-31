@@ -14,9 +14,11 @@ public class MinTimeToBurnDownBinaryTree {
 
         Set<Node> isVisiNodes = new HashSet<>();
         isVisiNodes.add(startNode);
+
         Queue<Node> queue = new LinkedList<>();
         queue.add(startNode);
         Queue<Node> aux = new LinkedList<>();
+
         int time = 0;
 
         while (!queue.isEmpty()) {
