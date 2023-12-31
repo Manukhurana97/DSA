@@ -47,6 +47,7 @@ public class FlattenbinaryTree {
 
                 prev.right = head.right;
                 head.right = head.left;
+                head.left = null;
             }
             head = head.right;
 
