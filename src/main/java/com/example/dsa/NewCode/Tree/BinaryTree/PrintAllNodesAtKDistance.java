@@ -7,6 +7,9 @@ import java.util.*;
  * 2. create a set to mark which node is visited
  * 3. run loop till k and add left, right, parent
  * 4. print all the element of the queue
+ * 
+ * visited check : when we check the parent it will again come to child in left/
+ * right to avoid that we added visited check
  */
 public class PrintAllNodesAtKDistance {
 
@@ -29,15 +32,15 @@ public class PrintAllNodesAtKDistance {
                 System.out.println(currentNode.val);
                 if (currentNode.left != null && !visited.contains(currentNode.left)) {
                     queue.add(currentNode.left);
-                    // visited.add(currentNode.left);
+                    visited.add(currentNode.left);
                 }
                 if (currentNode.right != null && !visited.contains(currentNode.right)) {
                     queue.add(currentNode.right);
-                    // visited.add(currentNode.right);
+                    visited.add(currentNode.right);
                 }
                 if (parents.containsKey(currentNode) && !visited.contains(parents.get(currentNode))) {
                     queue.add(parents.get(currentNode));
-                    // visited.add(parents.get(currentNode));
+                    visited.add(parents.get(currentNode));
                 }
             }
 
