@@ -20,9 +20,11 @@ public class CountNumberOfNodesCompleteTree {
         int leftCount = getLeftHeight(head);
         int rightCount = getRightHeight(head);
 
+        // If the left and right heights are equal, it's a perfect binary tree.
         if (leftCount == rightCount) {
             return (1 << leftCount) - 1;
         } else {
+            // If the left and right heights are not equal, recursively count nodes.
             return 1 + countNodes1(head.left) + countNodes1(head.right);
         }
     }
