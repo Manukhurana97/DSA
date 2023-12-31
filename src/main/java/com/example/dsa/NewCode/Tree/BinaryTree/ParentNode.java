@@ -6,36 +6,34 @@ public class ParentNode {
 
     private static List<Integer> findAncestors(Node head, int num) {
         List<Integer> list = new ArrayList<>();
-        // findAncestorsHelper(head, num, list);
-        findAncestorsHelper1(head, num, list);
+        findAncestorsHelper(head, num, list);
+        // findAncestorsHelper1(head, num, list);
 
-        // to get the lowerest common ansistor print , last element of list
+        // PreOrder, to get the lowerest common ansistor print , last element of list
         return list;
     }
 
+    // add to list in top
     private static boolean findAncestorsHelper(Node head, int num, List<Integer> list) {
         if (head == null)
             return false;
 
-        if (head.left != null && head.right != null)
-            list.add(head.val);
-
         if (head.val == num) {
             return true;
         }
+        list.add(head.val);
 
         if (findAncestorsHelper(head.left, num, list) || findAncestorsHelper(head.right, num, list)) {
             return true;
         }
 
-        if (head.left != null && head.right != null && head.val == list.get(list.size() - 1)) {
-            list.remove(list.size() - 1);
-        }
+        list.remove(list.size() - 1);
 
         return false;
 
     }
 
+    // post order, add to list in last after we found the destination
     private static boolean findAncestorsHelper1(Node head, int num, List<Integer> list) {
         if (head == null)
             return false;
@@ -61,9 +59,11 @@ public class ParentNode {
         node.left.right = new Node(5);
         node.left.right.left = new Node(6);
         node.left.right.right = new Node(7);
+        node.left.right.right.left = new Node(10);
+        node.left.right.right.left.left = new Node(11);
         node.right.left = new Node(8);
         node.right.right = new Node(9);
 
-        System.out.println(findAncestors(node, 7));
+        System.out.println(findAncestors(node, 11));
     }
 }
