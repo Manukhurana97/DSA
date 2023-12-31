@@ -5,6 +5,9 @@ import java.util.Queue;
 
 public class MaxWithOfBinaryTree {
 
+    // we need to user the special formula to calculalate the index of left and
+    // right, right-left+1 will give total number of nodes
+
     public static int widthOfBinaryTree(Node node) {
         Queue<NodeDetails> queue = new LinkedList<>();
         queue.add(new NodeDetails(0, 1, node));
@@ -16,6 +19,7 @@ public class MaxWithOfBinaryTree {
             var num = nodeDtls.order;
             var level = nodeDtls.level;
 
+            // if we have move to next level;
             if (level > preLevel) {
                 preLevel = level;
                 preNum = num;
