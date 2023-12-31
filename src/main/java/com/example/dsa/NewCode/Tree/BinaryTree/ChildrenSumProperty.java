@@ -2,6 +2,9 @@ package com.example.dsa.NewCode.Tree.BinaryTree;
 
 public class ChildrenSumProperty {
 
+    // sum child value , if child sum is greater then head.val = childSum; else
+    // left.val = right.val = head.val;
+    // while iterating back the sum the value of child and put in parent
     public static void changeTree(Node head) {
         if (head == null)
             return;
