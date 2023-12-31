@@ -40,6 +40,11 @@ public class LowerCommonAncestor {
         return false;
     }
 
+    // if find node of left return left vice versa,if a node is not found we return
+    // null from child node
+    // while iterating to parent we will check for left and right , if any is null
+    // return other else return head;
+
     public static Node findLowerCommonStatus(Node head, int p, int q) {
         if (head == null || head.val == p || head.val == q)
             return head;
