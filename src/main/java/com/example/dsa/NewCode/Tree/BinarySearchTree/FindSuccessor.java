@@ -11,7 +11,7 @@ public class FindSuccessor {
         inOrderTriversal(head, list);
 
         for (int i = 1; i < list.size() - 1; i++) {
-            if (list.get(i) == val) {
+            if (list.get(i - 1) == val) {
                 return list.get(i);
             }
         }
