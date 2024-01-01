@@ -1,8 +1,9 @@
 package com.example.dsa.NewCode.Tree.BinarySearchTree;
 
-// in case of finding larger element , user any triversal algo (inorder,preOrder,PostOrder, moris) to count the number of element in tree and the k = NUmOfNOdes-k+1
 public class FindKthElement {
 
+    // use the inorder triversal , (inorder triversal return data in sorted order
+    // for BST) , reduce the counter untill reaches k==0;
     private static int findKthSmallestElement(Node node, int k) {
         int[] result = { k, 0 };
         // findKthSmallestElement(node, result);
