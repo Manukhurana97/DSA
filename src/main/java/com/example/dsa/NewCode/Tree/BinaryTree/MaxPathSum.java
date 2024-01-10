@@ -23,16 +23,18 @@ public class MaxPathSum {
         return head.val + getChildSum(head.left) + getChildSum(head.right);
     }
 
-    private static int getMaxSum1(Node head, int[] max) {
-        if (head == null)
-            return 0;
+    private static int maxPathSum(TreeNode root, int[] max) {
 
-        int ls = Math.max(0, getMaxSum1(head.left, max));
-        int rs = Math.max(0, getMaxSum1(head.right, max));
+        if (root == null)
+            return Integer.MIN_VALUE;
 
-        max[0] = Math.max(max[0], (ls + rs + head.val));
+        int ls = Math.max(0, maxPathSum(root.left, max));
+        int rs = Math.max(0, maxPathSum(root.right, max));
 
-        return head.val + Math.max(ls, rs);
+        max[0] = Math.max(max[0], root.val + ls + rs);
+
+        return Math.max(root.val, root.val + Math.max(ls, rs));
+
     }
 
     public static void main(String[] args) {
@@ -44,7 +46,7 @@ public class MaxPathSum {
 
         System.out.println(getMaxSum(head, 0));
         int[] arr = new int[1];
-        getMaxSum1(head, arr);
+        maxPathSum(head, arr);
         System.out.println(arr[0]);
     }
 
