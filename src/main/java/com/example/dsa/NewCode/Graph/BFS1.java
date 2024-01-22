@@ -2,7 +2,7 @@ package com.example.dsa.NewCode.Graph;
 
 import java.util.*;
 
-public class BFS {
+public class BFS1 {
 
     private static List<Integer> triverse(List<List<Integer>> graph, int v) {
 
