@@ -22,7 +22,7 @@ public class AllPossibleFullBinaryTree {
             list.add(new TreeNode(0));
             return list;
         }
-        if (map.containsKey(n)) { // cashing case , if already compute then just retuurn the data
+        if (map.containsKey(n)) { // cashing case , if already compute got n, just retuurn the data
             return map.get(n);
         }
 
