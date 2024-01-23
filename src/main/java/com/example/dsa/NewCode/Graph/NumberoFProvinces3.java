@@ -20,12 +20,13 @@ public class NumberoFProvinces3 {
             }
         }
 
+        // perform dfs on all the nodes, it will mark visit to all the provience
         int provience = 0;
         boolean[] visited = new boolean[isConnected.length];
         for (int nodes = 0; nodes < visited.length; nodes++) {
-            if (!visited[nodes]) {
+            if (!visited[nodes]) { // true, if not in provience or other provience
                 provience += 1;
-                dfs(input, visited, nodes);
+                dfs(input, visited, nodes); // perform dfs to mark too the nodes in a provience
             }
         }
 
