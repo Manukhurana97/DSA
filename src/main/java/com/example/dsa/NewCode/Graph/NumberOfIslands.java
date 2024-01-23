@@ -43,7 +43,7 @@ public class NumberOfIslands {
     }
 
     private void dfs(char[][] grid, int r, int c) {
-        if (r < 0 || c < 0 || r >= grid.length || c >= grid.length || grid[r][c] != '1')
+        if (r < 0 || c < 0 || r >= grid.length || c >= grid[r].length || grid[r][c] != '1')
             return;
         grid[r][c] = '0';
 
