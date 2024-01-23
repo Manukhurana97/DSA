@@ -36,20 +36,31 @@ public class FloodFillAlgo {
             image[r][c] = color;
             visited[r][c] = 1;
 
-            if (r - 1 >= 0 && image[r - 1][c] == op && visited[r - 1][c] == 0) {
+            if (r - 1 >= 0 && image[r - 1][c] == op && visited[r - 1][c] == 0)
                 queue.add(new Node(r - 1, c));
-            }
-            if (c - 1 >= 0 && image[r][c - 1] == op && visited[r][c - 1] == 0) {
+            if (c - 1 >= 0 && image[r][c - 1] == op && visited[r][c - 1] == 0)
                 queue.add(new Node(r, c - 1));
-            }
-            if (r + 1 < image.length && image[r + 1][c] == op && visited[r + 1][c] == 0) {
+            if (r + 1 < image.length && image[r + 1][c] == op && visited[r + 1][c] == 0)
                 queue.add(new Node(r + 1, c));
-            }
-            if (c + 1 < image[r].length && image[r][c + 1] == op && visited[r + 1][c] == 0) {
+            if (c + 1 < image[r].length && image[r][c + 1] == op && visited[r + 1][c] == 0)
                 queue.add(new Node(r, c + 1));
-            }
 
         }
+
+    }
+
+    private static void floodFillDFS(int[][] image, int r, int c, int[][] visited, int op, int color) {
+
+        if (r < 0 || r >= image.length || c < 0 || c >= image[r].length || image[r][c] != op || visited[r][c] == 1)
+            return;
+
+        image[r][c] = color;
+        visited[r][c] = 1;
+
+        floodFillDFS(image, r - 1, c, visited, op, color);
+        floodFillDFS(image, r, c - 1, visited, op, color);
+        floodFillDFS(image, r + 1, c, visited, op, color);
+        floodFillDFS(image, r, c + 1, visited, op, color);
 
     }
 
