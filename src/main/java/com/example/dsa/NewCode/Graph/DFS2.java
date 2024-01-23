@@ -39,30 +39,25 @@ public class DFS2 {
     private static List<Integer> triverse1(List<List<Integer>> input, int v) {
         List<Integer> result = new ArrayList<>();
         Set<Integer> visited = new HashSet<>();
-        Stack<Integer> stack = new Stack<>();
-        stack.push(v - 1);
 
-        dfs1(input, v, result, visited, stack);
+        dfs1(input, v, result, visited);
 
         return result;
     }
 
-    private static void dfs1(List<List<Integer>> input, int v, List<Integer> result, Set<Integer> visited,
-            Stack<Integer> stack) {
+    private static void dfs1(List<List<Integer>> input, int n, List<Integer> result, Set<Integer> visited) {
 
-        while (!stack.isEmpty()) {
-            var n = stack.pop();
-            result.add(n + 1);
+        visited.add(n);
+        result.add(n);
 
-            var list = input.get(n);
-            for (var node : list) {
-                if (!visited.contains(node - 1)) {
-                    stack.add(node - 1);
-                    visited.add(node - 1);
-                    dfs1(input, node - 1, result, visited, stack);
-                }
+        var list = input.get(n);
+        for (var node : list) {
+            if (!visited.contains(node)) {
+                dfs1(input, node, result, visited);
             }
         }
+    }
+
     }
 
     public static void main(String[] args) {
@@ -77,7 +72,7 @@ public class DFS2 {
         input.add(Arrays.asList(7));
         input.add(Arrays.asList(6));
 
-        System.out.println("a " + triverse(input, 1));
+        // System.out.println("a " + triverse(input, 1));
         System.out.println("b " + triverse1(input, 1));
     }
 
