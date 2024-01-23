@@ -40,7 +40,7 @@ public class DFS2 {
         List<Integer> result = new ArrayList<>();
         Set<Integer> visited = new HashSet<>();
 
-        dfs1(input, v, result, visited);
+        dfs1(input, v - 1, result, visited);
 
         return result;
     }
@@ -48,16 +48,14 @@ public class DFS2 {
     private static void dfs1(List<List<Integer>> input, int n, List<Integer> result, Set<Integer> visited) {
 
         visited.add(n);
-        result.add(n);
+        result.add(n + 1);
 
         var list = input.get(n);
         for (var node : list) {
-            if (!visited.contains(node)) {
-                dfs1(input, node, result, visited);
+            if (!visited.contains(node - 1)) {
+                dfs1(input, node - 1, result, visited);
             }
         }
-    }
-
     }
 
     public static void main(String[] args) {
