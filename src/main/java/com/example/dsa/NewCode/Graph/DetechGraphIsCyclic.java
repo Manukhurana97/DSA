@@ -10,28 +10,35 @@ public class DetechGraphIsCyclic {
         Set<Integer> visited = new HashSet<>();
         Map<Integer, Integer> parent = new HashMap<>(); // current node, who is the parent
 
-        for (int i = 0; i < v; i++) { // for all the nodes
+        for (int i = 0; i < v; i++) { // for all the nodes, (if the graph ic brock into multiple component)
             if (!visited.contains(i)) { // if not visited
-                queue.add(i); // add to the queue
-                parent.put(i, null);
-
-                while (!queue.isEmpty()) {
-                    int current = queue.poll(); // get current elemnt from queue
-                    visited.add(current); // mark as visited
-
-                    for (int neighbour : list.get(current)) { // get all the neighbours of current
-                        if (!visited.contains(neighbour)) { // if not visited , the add to the queue and get the parents
-                            queue.add(neighbour);
-                            parent.put(neighbour, current);
-                        } else if (parent.get(neighbour) != current) // if already visited, the check if parent is same
-                                                                     // as current ot not
-                            return true;
-                    }
-                }
+                if (detectCycleBFS(i, queue, visited, parent, list)) // has cycle , return true
+                    return true;
             }
         }
-
         return false;
+    }
+
+    private static boolean detectCycleBFS(int i, Queue<Integer> queue, Set<Integer> visited,
+            Map<Integer, Integer> parent, List<List<Integer>> list) {
+        queue.add(i); // add to the queue
+        parent.put(i, null);
+
+        while (!queue.isEmpty()) {
+            int current = queue.poll(); // get current elemnt from queue
+            visited.add(current); // mark as visited
+
+            for (int neighbour : list.get(current)) { // get all the neighbours of current
+                if (!visited.contains(neighbour)) { // if not visited , the add to the queue and get the parents
+                    queue.add(neighbour);
+                    parent.put(neighbour, current);
+                } else if (parent.get(neighbour) != current) // if already visited, the check if parent is same
+                                                             // as current ot not
+                    return true;
+            }
+        }
+        return false;
+
     }
 
     public static void main(String[] args) {
