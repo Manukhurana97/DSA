@@ -10,7 +10,7 @@ public class DetechGraphIsCyclic {
         Set<Integer> visited = new HashSet<>();
         Map<Integer, Integer> parent = new HashMap<>(); // current node, who is the parent
 
-        for (int i = 0; i < v; i++) { // for all the nodes, (if the graph ic brock into multiple component)
+        for (int i = 0; i < v; i++) { // for all the nodes, (if the graph is brock into multiple component)
             if (!visited.contains(i)) { // if not visited
                 if (detectCycleBFS(i, queue, visited, parent, list)) // has cycle , return true
                     return true;
@@ -21,8 +21,9 @@ public class DetechGraphIsCyclic {
 
     private static boolean detectCycleBFS(int i, Queue<Integer> queue, Set<Integer> visited,
             Map<Integer, Integer> parent, List<List<Integer>> list) {
+
         queue.add(i); // add to the queue
-        parent.put(i, null);
+        parent.put(i, null); // current elem
 
         while (!queue.isEmpty()) {
             int current = queue.poll(); // get current elemnt from queue
