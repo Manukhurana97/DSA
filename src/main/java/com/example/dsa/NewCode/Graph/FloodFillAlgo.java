@@ -21,7 +21,8 @@ public class FloodFillAlgo {
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(sr, sc));
 
-        floodFillBFS(image, queue, color, image[sr][sc], visited);
+        // floodFillBFS(image, queue, color, image[sr][sc], visited);
+        // floodFillDFS(image, sr, sc, visited, image[sr][sc], color);
 
         return image;
     }
