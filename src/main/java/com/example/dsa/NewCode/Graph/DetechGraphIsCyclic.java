@@ -12,8 +12,11 @@ public class DetechGraphIsCyclic {
 
         for (int i = 0; i < v; i++) { // for all the nodes, (if the graph is brock into multiple component)
             if (!visited.contains(i)) { // if not visited
-                if (detectCycleBFS(i, queue, visited, parent, list)) // has cycle , return true
+                // if (detectCycleBFS(i, queue, visited, parent, list)) // has cycle , return true
+                //     return true;
+                if(detectCycleDFS(i, list, visited, parent){
                     return true;
+                }
             }
         }
         return false;
@@ -39,7 +42,22 @@ public class DetechGraphIsCyclic {
             }
         }
         return false;
+    }
 
+    private static boolean detectCycleDFS(int current, List<List<Integer>> list, Set<Integer> visited,
+            Map<Integer, Integer> map) {
+
+        visited.add(current);
+
+        for (var neighbour : list.get(current)) {
+            if (!visited.contains(neighbour)) {
+                map.put(neighbour, current);
+                detectCycleDFS(neighbour, list, visited, map);
+            } else if (map.get(neighbour) != current)
+                return true;
+        }
+
+        return false;
     }
 
     public static void main(String[] args) {
