@@ -19,14 +19,18 @@ public class BiPartiteGraph {
             }
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            if (!bfs(i, list.size(), list, color))
-                return false;
-        }
+        // for (int i = 0; i < list.size(); i++) {
+        // if (!bfs(i, list.size(), list, color))
+        // return false;
+        // }
 
-        return false;
+        if (!dfs(list.get(0).get(0), list, color))
+            return false;
+
+        return true;
     }
 
+    // bfs
     private static boolean bfs(int i, int v, List<List<Integer>> list, int[] color) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(i);
@@ -43,7 +47,22 @@ public class BiPartiteGraph {
                 }
             }
         }
-
         return true;
     }
+
+    // dfs
+    private static boolean dfs(int current, List<List<Integer>> list, int[] color) {
+        for (int j : list.get(current)) {
+            if (color[j] == -1) {
+                color[j] = 1 - color[current];
+                if (!dfs(j, list, color)) {
+                    return false;
+                }
+            } else if (color[current] == color[j]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
