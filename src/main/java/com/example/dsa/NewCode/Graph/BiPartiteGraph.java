@@ -19,14 +19,15 @@ public class BiPartiteGraph {
             }
         }
 
-        // for (int i = 0; i < list.size(); i++) {
-        // if (!bfs(i, list.size(), list, color))
-        // return false;
-        // }
+        for (int i = 0; i < list.size(); i++) {
+            // BFS
+            if (!bfs(i, list.size(), list, color))
+                return false;
 
-        if (!dfs(list.get(0).get(0), list, color))
-            return false;
-
+            // DFS
+            if (!dfs(i, list, color))
+                return false;
+        }
         return true;
     }
 
