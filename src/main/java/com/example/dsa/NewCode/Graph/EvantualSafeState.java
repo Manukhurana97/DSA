@@ -22,6 +22,7 @@ public class EvantualSafeState {
         return result;
     }
 
+    // detecting cycle in dfs
     private static boolean dfs(int i, List<List<Integer>> grid, int[] visited, int[] pathVisited, int[] check) {
 
         visited[i] = 1;
@@ -32,14 +33,17 @@ public class EvantualSafeState {
             if (visited[neighbour] == 0) {
                 if (dfs(neighbour, grid, visited, pathVisited, check))
                     return true;
-            }
-            if (pathVisited[neighbour] == 1) {
+            } else if (pathVisited[neighbour] == 1) {
                 return true;
             }
         }
 
-        check[i] = 1;
+        check[i] = 1;// if element is not a check ot not pointing to a cycle we make it as 1
         pathVisited[i] = 0;
         return false;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

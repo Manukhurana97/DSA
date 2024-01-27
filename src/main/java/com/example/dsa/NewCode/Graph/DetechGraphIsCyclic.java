@@ -12,9 +12,10 @@ public class DetechGraphIsCyclic {
 
         for (int i = 0; i < v; i++) { // for all the nodes, (if the graph is brock into multiple component)
             if (!visited.contains(i)) { // if not visited
-                // if (detectCycleBFS(i, queue, visited, parent, list)) // has cycle , return true
-                //     return true;
-                if(detectCycleDFS(i, list, visited, parent){
+                // if (detectCycleBFS(i, queue, visited, parent, list)) // has cycle , return
+                // true
+                // return true;
+                if (detectCycleDFS(i, list, visited, parent)) {
                     return true;
                 }
             }
