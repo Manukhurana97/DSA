@@ -4,6 +4,11 @@ import java.util.*;
 
 /*for linear ordering of vertices, such that if there is an edge b/w u&v, u appears before v in the ordering*/
 /* extension of a topo sort (BFS)*/
+// 1. get all the indegree(number of incomming nodes) of all the element
+// 2. get the initial element with 0 indegree, (these the the initial element) put it in a queue 
+// 3. run bfs, get the elemnt from queue (add the elemnt in result) and reduce the outdegree of neighbours,
+// if the neighbours element is 0, add it in a queue
+
 public class KahnsAlgo {
 
     private static List<Integer> topoSort(List<List<Integer>> grid) {

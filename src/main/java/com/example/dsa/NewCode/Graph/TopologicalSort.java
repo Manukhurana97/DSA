@@ -4,6 +4,9 @@ import java.util.*;
 
 // it can we applied on dag : dircted acyclic graph  
 // if there us node from u->v, the u always ahead of v
+// 1. perform the dfs on all the element, and keep the visited pointer
+// 2. get all the neighbour of current element and mark the as visited and perform the dfs
+// 3. once the dfs is completed perform add the (last elemnt to result)
 public class TopologicalSort {
 
     private static List<Integer> topoSort(List<List<Integer>> list) {
