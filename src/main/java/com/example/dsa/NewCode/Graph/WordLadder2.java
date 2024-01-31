@@ -20,7 +20,8 @@ public class WordLadder2 {
 
             if (queue.size() > level) {
                 level++;
-                // erase all words that have been used in the previous levels to transform
+                // erase all the words from set that are used in last level, before processing
+                // further
                 for (var wrdUsd : elemUsedInLastLevel)
                     set.remove(wrdUsd);
             }
@@ -62,11 +63,11 @@ public class WordLadder2 {
         List<String> wordList1 = Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
         System.out.println(findSequence(startWord1, endWord1, wordList1));
 
-        // String startWord2 = "red";
-        // String endWord2 = "tax";
-        // List<String> wordList2 = Arrays.asList("ted", "tex", "red", "tax", "tad",
-        // "den", "rex");
-        // System.out.println(findSequence(startWord2, endWord2, wordList2));
+        String startWord2 = "red";
+        String endWord2 = "tax";
+        List<String> wordList2 = Arrays.asList("ted", "tex", "red", "tax", "tad",
+                "den", "rex");
+        System.out.println(findSequence(startWord2, endWord2, wordList2));
     }
 
 }
