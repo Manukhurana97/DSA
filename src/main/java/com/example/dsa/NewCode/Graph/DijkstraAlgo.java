@@ -14,7 +14,7 @@ public class DijkstraAlgo {
         }
     }
 
-    private static int dijkstra(int start, int end, List<List<List<Integer>>> adj) {
+    private static int dijkstraUsingQueue(int start, int end, List<List<List<Integer>>> adj) {
         PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparing(n -> n.distance));
         queue.add(new Node(0, start));
 
@@ -37,6 +37,42 @@ public class DijkstraAlgo {
                 if (distance[neighbour] > cdist + ndist) {
                     distance[neighbour] = (cdist + ndist);
                     queue.add(new Node(cdist + ndist, neighbour));
+                }
+
+            }
+        }
+        return distance[end];
+    }
+
+    /*
+     * using set we can optimize by removing the element with greater distance from
+     * set, but removing part can take upto O(log n) time, its a very minor
+     * optimization bason size and input of graph
+     */
+    private static int dijkstraUsingSet(int start, int end, List<List<List<Integer>>> adj) {
+        TreeSet<Node> set = new TreeSet<>(Comparator.comparing(n -> n.distance));
+        set.add(new Node(0, start));
+
+        // initially mark all the point as infinte
+        int[] distance = new int[adj.size()];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+
+        while (!set.isEmpty()) {
+            var node = set.pollFirst();
+            var currentPoint = node.point;
+            int cdist = node.distance;
+
+            // visit all the neighbours of current point and check the distance
+            for (int i = 0; i < adj.get(currentPoint).size(); i++) {
+                int neighbour = adj.get(currentPoint).get(i).get(0);
+                int ndist = adj.get(currentPoint).get(i).get(1);
+
+                // if the distance is less then update the distance in distance array and add
+                // node to queue
+                if (distance[neighbour] > cdist + ndist) {
+                    set.remove(new Node(distance[neighbour], neighbour));// remove the old node
+                    distance[neighbour] = (cdist + ndist);
+                    set.add(new Node(cdist + ndist, neighbour));
                 }
 
             }
@@ -70,6 +106,7 @@ public class DijkstraAlgo {
         addEdge(adjacencyList, 5, 7, 2);
         addEdge(adjacencyList, 6, 7, 1);
 
-        System.out.println(dijkstra(startNode, endNode, adjacencyList));
+        System.out.println(dijkstraUsingQueue(startNode, endNode, adjacencyList));
+        System.out.println(dijkstraUsingSet(startNode, endNode, adjacencyList));
     }
 }
