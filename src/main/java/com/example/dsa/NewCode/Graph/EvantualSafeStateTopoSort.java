@@ -1,13 +1,11 @@
 package com.example.dsa.NewCode.Graph;
 
+import java.util.*;
 
 /* convert all inbound nodes into outbound notes 
     perform a topo sort,
     all the nodes that lead/points to exit node will come in result, and it a cycle exist it will skip all the nodes as it can never have indegree as 0
  */
-
-import java.util.*;
-
 public class EvantualSafeStateTopoSort {
 
     private static List<Integer> eventualSafeNodes(List<List<Integer>> input) {

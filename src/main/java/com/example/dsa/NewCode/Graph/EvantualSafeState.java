@@ -2,6 +2,7 @@ package com.example.dsa.NewCode.Graph;
 
 import java.util.*;
 
+// find all the nodes that are pointing to the end nodes / not pointing to the safe note
 public class EvantualSafeState {
     private static List<Integer> evantualSafeState(List<List<Integer>> grid) {
 
