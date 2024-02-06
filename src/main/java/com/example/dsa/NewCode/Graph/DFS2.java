@@ -23,8 +23,7 @@ public class DFS2 {
             var vertex = stack.pop();
             result.add(vertex + 1);
 
-            var neighbours = input.get(vertex);
-            for (var neighbour : neighbours) {
+            for (var neighbour : input.get(vertex)) {
                 if (!visited.contains(neighbour - 1)) {
                     stack.add(neighbour - 1);
                     visited.add(neighbour - 1);
@@ -50,8 +49,7 @@ public class DFS2 {
         visited.add(n);
         result.add(n + 1);
 
-        var list = input.get(n);
-        for (var node : list) {
+        for (var node : input.get(n)) {
             if (!visited.contains(node - 1)) {
                 dfs1(input, node - 1, result, visited);
             }
