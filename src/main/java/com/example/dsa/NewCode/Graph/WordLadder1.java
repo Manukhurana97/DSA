@@ -19,6 +19,7 @@ public class WordLadder1 {
 
     private static int wordLadderLength(String startWord, String endWord, List<String> wordList) {
         Set<String> set = new HashSet<>(wordList);
+        int count = 0;
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(startWord, 1));
@@ -28,11 +29,11 @@ public class WordLadder1 {
 
             if (node.data.equals(endWord))
                 return node.count;
-
+            count++;
             checkNextWord(node.data, node.count, set, queue);
         }
 
-        return 0;
+        return count;
     }
 
     // modify each character of word and check if iexist or not
