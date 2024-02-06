@@ -2,6 +2,7 @@ package com.example.dsa.NewCode.Graph;
 
 import java.util.*;
 
+/* find number of distinct iland and it should not be a mirrot image */
 public class NumberOfDistinctIslands {
 
     public static int numDistinctIslands(int[][] grid) {
