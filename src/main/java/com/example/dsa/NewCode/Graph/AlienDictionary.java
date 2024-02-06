@@ -21,14 +21,15 @@ public class AlienDictionary {
             input.add(new ArrayList<>());
         }
 
+        // creating a adjancy list from input
         for (int i = 0; i < N - 1; i++) { // for each string
             var s1 = dictionary[i]; // i
             var s2 = dictionary[i + 1]; // i+1
             int min = Math.min(s1.length(), s2.length());
             for (int j = 0; j < min; j++) { // get differnt character
                 if (s1.charAt(j) != s2.charAt(j)) { // if different elemnt found
-                    input.get(s1.charAt(j) - 'a').add(s2.charAt(j) - 'a'); // create a graph node
-                    inbound[s2.charAt(j) - 'a']++; // sum inbound degree
+                    input.get(s1.charAt(j) - 'a').add(s2.charAt(j) - 'a'); // create a node of adjanct list
+                    inbound[s2.charAt(j) - 'a']++; // sum inbound degree of destination
                     break;
                 }
             }
