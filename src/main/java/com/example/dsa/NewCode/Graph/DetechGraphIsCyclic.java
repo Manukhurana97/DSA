@@ -9,7 +9,6 @@ public class DetechGraphIsCyclic {
         Queue<Integer> queue = new LinkedList<>();
         Set<Integer> visited = new HashSet<>();
         Map<Integer, Integer> parent = new HashMap<>(); // current node, who is the parent
-        Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < v; i++) { // for all the nodes, (if the graph is broke into multiple component)
             if (!visited.contains(i)) { // if not visited
@@ -45,15 +44,15 @@ public class DetechGraphIsCyclic {
     }
 
     private static boolean detectCycleDFS(int current, List<List<Integer>> list, Set<Integer> visited,
-            Map<Integer, Integer> map) {
+            Map<Integer, Integer> parent) {
 
         visited.add(current);
 
         for (var neighbour : list.get(current)) {
             if (!visited.contains(neighbour)) {
-                map.put(neighbour, current);
-                detectCycleDFS(neighbour, list, visited, map);
-            } else if (map.get(neighbour) != current)
+                parent.put(neighbour, current);
+                detectCycleDFS(neighbour, list, visited, parent);
+            } else if (parent.get(neighbour) != current)
                 return true;
         }
 
