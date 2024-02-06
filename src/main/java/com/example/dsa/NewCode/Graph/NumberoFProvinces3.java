@@ -6,7 +6,7 @@ public class NumberoFProvinces3 {
 
     private static int findCircleNum(int[][] isConnected) {
 
-        // convert adjancey matrix to adjancey list
+        // convert adjancey matrix to adjancey list (biDirectional Graph)
         List<List<Integer>> input = new ArrayList<>();
         for (int i = 0; i < isConnected.length; i++)
             input.add(new ArrayList<>());
