@@ -23,7 +23,7 @@ public class Course1and2 {
             }
         }
 
-        // get all the initial elemrnt with indegree 0
+        // get all the initial element with indegree 0
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < n; i++) {
             if (indegree[i] == 0) {
