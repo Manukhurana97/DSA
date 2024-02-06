@@ -70,7 +70,7 @@ public class DFS2 {
         input.add(Arrays.asList(7));
         input.add(Arrays.asList(6));
 
-        // System.out.println("a " + triverse(input, 1));
+        System.out.println("a " + triverse(input, 1));
         System.out.println("b " + triverse1(input, 1));
     }
 

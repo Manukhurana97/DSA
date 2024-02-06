@@ -22,7 +22,7 @@ public class NumberOfWaysToAriveAtDestination {
 
         for (var i : input) {
             list.get(i[0]).add(new Node(i[1], i[2]));
-            list.get(i[1]).add(new Node(i[2], i[2]));
+            list.get(i[1]).add(new Node(i[0], i[2]));
         }
 
         PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparing(nn -> nn.weights));
