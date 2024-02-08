@@ -27,24 +27,43 @@ public class BellmenFordAlgo {
                 int v = it.get(1);
                 int wt = it.get(2);
 
-                if (distance[u] != Integer.MAX_VALUE && distance[v] > u + wt) {
-                    distance[v] = u + wt;
+                if (distance[u] != Integer.MAX_VALUE && distance[v] > distance[u] + wt) {
+                    distance[v] = distance[u] + wt;
                 }
             }
         }
 
-        // nth relaxation to check negative cycle, 
+        // nth relaxation to check negative cycle,
         // if graph contain -ve cycle the it will never reach all the nodes
-    
+
         for (var it : edges) {
             int u = it.get(0);
             int v = it.get(1);
             int wt = it.get(2);
-            if (distance[u] != Integer.MAX_VALUE && distance[v] > u + wt) {
-                return new int[]{-1};
+
+            if (distance[u] != Integer.MAX_VALUE && distance[v] > distance[u] + wt) {
+                return new int[] { -1 };
+            }
         }
 
         return distance;
+
+    }
+
+    public static void main(String[] args) {
+        List<List<Integer>> edges = new ArrayList<>();
+        edges.add(Arrays.asList(0, 1, 2));
+        edges.add(Arrays.asList(1, 2, -1));
+        edges.add(Arrays.asList(2, 3, 3));
+        edges.add(Arrays.asList(3, 1, -6));
+
+        BellmenFordAlgo bellmanFordExample = new BellmenFordAlgo();
+
+        int[] result = bellmanFordExample.BellmenFord(5, edges, 0);
+        for (var i : result) {
+            System.out.print(i + " ");
+        }
+
     }
 
 }
