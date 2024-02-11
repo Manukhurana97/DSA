@@ -3,7 +3,7 @@ package com.example.dsa.NewCode.Graph;
 public class CityWithSmallestNeighbours {
 
     /* find the max city wih minimum number of neighbours */
-    private static int findCity(int n, int[][] edges, int thrashold) {
+    private static int findTheCity(int n, int[][] edges, int thrashold) {
 
         int[][] distance = new int[n][n];
 
@@ -25,14 +25,14 @@ public class CityWithSmallestNeighbours {
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
-                    if (distance[i][k] != Integer.MAX_VALUE || distance[k][j] != Integer.MAX_VALUE)
+                    if (distance[i][k] != Integer.MAX_VALUE && distance[k][j] != Integer.MAX_VALUE)
                         distance[i][j] = Math.min(distance[i][j], distance[i][k] + distance[k][j]);
                 }
             }
         }
 
-        int cityNo = n;
-        int cityCount = 0;
+        int cityNo = -1;
+        int cityCount = n; // larger city with min neighbours
 
         for (int i = 0; i < n; i++) {
             int count = 0;
@@ -58,7 +58,7 @@ public class CityWithSmallestNeighbours {
                 { 3, 4, 5 }
         };
 
-        System.out.println(findCity(5, edges, 30));
+        System.out.println(findTheCity(5, edges, 30));
     }
 
 }
