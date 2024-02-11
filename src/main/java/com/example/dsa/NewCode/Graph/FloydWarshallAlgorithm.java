@@ -19,7 +19,7 @@ public class FloydWarshallAlgorithm {
             for (int i = 0; i < arr.length; i++) {
                 for (int j = 0; j < arr[i].length; j++) {
                     if (arr[i][k] != Integer.MAX_VALUE && arr[k][j] == Integer.MAX_VALUE)
-                        arr[i][j] = Math.max(arr[i][j], arr[i][k] + arr[k][j]);
+                        arr[i][j] = Math.min(arr[i][j], arr[i][k] + arr[k][j]);
                 }
             }
         }
