@@ -23,10 +23,10 @@ public class PrimsAlgo {
     static int spanningTree(int v, List<List<List<Integer>>> lst) {
 
         PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparing(node -> node.wt));
-        queue.add(new Node(0, 0, -1));
+        queue.add(new Node(0, 0));
 
         int[] visited = new int[v];
-        List<Node> mst = new ArrayList<>();
+        // List<Node> mst = new ArrayList<>();
 
         int sum = 0;
         while (!queue.isEmpty()) {
@@ -46,7 +46,7 @@ public class PrimsAlgo {
             }
         }
 
-        return mst.size();
+        return sum;
 
     }
 
