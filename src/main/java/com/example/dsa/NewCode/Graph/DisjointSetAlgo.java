@@ -11,13 +11,13 @@ import java.util.*;
 */
 
 // time : 4 alpas -> O(1)
-public class DisjointSet {
+public class DisjointSetAlgo {
 
     List<Integer> rank = new ArrayList<>();
     List<Integer> size = new ArrayList<>();
     List<Integer> parent = new ArrayList<>();
 
-    DisjointSet(int n) {
+    DisjointSetAlgo(int n) {
         // make all the rank as 0 : not child
         // mark parent of all nodes to itself
 
@@ -101,7 +101,7 @@ public class DisjointSet {
     }
 
     public static void main(String[] args) {
-        DisjointSet set = new DisjointSet(8);
+        DisjointSetAlgo set = new DisjointSetAlgo(8);
         set.unionBySize(1, 2);
         set.unionBySize(2, 3);
         set.unionBySize(4, 5);
