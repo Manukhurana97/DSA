@@ -33,7 +33,7 @@ class DisJointSet {
         int ultParentV = findParent(v);
 
         if (ultParentV == ultParentU) {
-            return;L̥
+            return;
         }
         if (size.get(ultParentV) > size.get(ultParentU)) {
             parent.set(ultParentU, ultParentV);
