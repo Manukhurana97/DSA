@@ -9,17 +9,21 @@ import java.util.*;
 
  union will help to connect 2 nodes in disjoint set
 */
+
+// time : 4 alpas -> O(1)
 public class DisjointSet {
 
     List<Integer> rank = new ArrayList<>();
+    List<Integer> size = new ArrayList<>();
     List<Integer> parent = new ArrayList<>();
 
     DisjointSet(int n) {
         // make all the rank as 0 : not child
-        // makr parent of all nodes to itself
+        // mark parent of all nodes to itself
 
         for (int i = 0; i < n; i++) {
             rank.add(0);
+            size.add(1); // because everyone is parent of itself
             parent.add(i);
         }
     }
@@ -45,6 +49,9 @@ public class DisjointSet {
      * 1. find untimate parent of u & v : pu, pv
      * 2. find rank of pu, pv
      * 3. connect smaller rank to larger rank
+     * * a: to make the tree hight minimum, we connect largest rank element with
+     * smallest rank
+     * * : time taken to find the parent is minimum
      * 
      */
     private void unionByRank(int u, int v) {
@@ -67,17 +74,42 @@ public class DisjointSet {
         }
     }
 
+    /*
+     * union (u, v)
+     * 1. find untimate parent of u & v : pu, pv
+     * 2. find rank of pu, pv
+     * 3. connect smaller rank to larger rank
+     * * a: to make the tree hight minimum, we connect largest rank element with
+     * smallest rank
+     * * : time taken to find the parent is minimum
+     * 4. increase the size by size of v+ size of u
+     */
+    private void unionBySize(int u, int v) {
+
+        int ultU = findParent(u);
+        int ultv = findParent(v);
+        if (ultU == ultv)
+            return;
+        if (size.get(ultU) < size.get(ultv)) {
+            parent.set(ultU, ultv);
+        } else {
+            parent.set(ultv, ultU);
+        }
+        size.set(ultv, size.get(ultv) + size.get(ultU));
+
+    }
+
     public static void main(String[] args) {
         DisjointSet set = new DisjointSet(8);
-        set.unionByRank(1, 2);
-        set.unionByRank(2, 3);
-        set.unionByRank(4, 5);
-        set.unionByRank(6, 7);
-        set.unionByRank(5, 6);
+        set.unionBySize(1, 2);
+        set.unionBySize(2, 3);
+        set.unionBySize(4, 5);
+        set.unionBySize(6, 7);
+        set.unionBySize(5, 6);
 
         // find parent of 1 and 4
         System.out.println((set.findParent(1) == set.findParent(4)) ? "same" : "not same");
-        set.unionByRank(3, 4);
+        set.unionBySize(3, 4);
         System.out.println((set.findParent(1) == set.findParent(4)) ? "same" : "not same");
     }
 
