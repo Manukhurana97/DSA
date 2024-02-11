@@ -92,10 +92,11 @@ public class DisjointSet {
             return;
         if (size.get(ultU) < size.get(ultv)) {
             parent.set(ultU, ultv);
+            size.set(ultv, size.get(ultv) + size.get(ultU));
         } else {
             parent.set(ultv, ultU);
+            size.set(ultU, size.get(ultv) + size.get(ultU));
         }
-        size.set(ultv, size.get(ultv) + size.get(ultU));
 
     }
 
