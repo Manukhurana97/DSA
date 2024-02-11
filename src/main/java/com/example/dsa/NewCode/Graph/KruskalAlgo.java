@@ -23,7 +23,7 @@ class DisJointSet {
             return node;
 
         parent.set(node, findParent(node));
-        return node;
+        return parent.get(i);
 
     }
 
@@ -90,13 +90,22 @@ public class KruskalAlgo {
     public static void main(String[] args) {
 
         List<List<List<Integer>>> adj = new ArrayList<>();
-        adj.add(Arrays.asList(Arrays.asList(0, 1, 10)));
-        adj.add(Arrays.asList(Arrays.asList(1, 3, 15)));
-        adj.add(Arrays.asList(Arrays.asList(2, 3, 4)));
-        adj.add(Arrays.asList(Arrays.asList(2, 0, 6)));
-        adj.add(Arrays.asList(Arrays.asList(0, 3, 5)));
+        adj.add(Arrays.asList(Arrays.asList(7, 6, 1)));
+        adj.add(Arrays.asList(Arrays.asList(8, 2, 2)));
+        adj.add(Arrays.asList(Arrays.asList(6, 5, 2)));
+        adj.add(Arrays.asList(Arrays.asList(0, 1, 4)));
+        adj.add(Arrays.asList(Arrays.asList(2, 5, 4)));
+        adj.add(Arrays.asList(Arrays.asList(8, 6, 6)));
+        adj.add(Arrays.asList(Arrays.asList(2, 3, 7)));
+        adj.add(Arrays.asList(Arrays.asList(7, 8, 7)));
+        adj.add(Arrays.asList(Arrays.asList(0, 7, 8)));
+        adj.add(Arrays.asList(Arrays.asList(1, 2, 8)));
+        adj.add(Arrays.asList(Arrays.asList(3, 4, 9)));
+        adj.add(Arrays.asList(Arrays.asList(5, 4, 10)));
+        adj.add(Arrays.asList(Arrays.asList(1, 7, 11)));
+        adj.add(Arrays.asList(Arrays.asList(14, 3, 5)));
 
-        int minWeight = KruskalAlgo.spanningTree(4, adj);
+        int minWeight = KruskalAlgo.spanningTree(9, adj);
         System.out.println("Minimum Weight of Spanning Tree: " + minWeight);
 
     }
