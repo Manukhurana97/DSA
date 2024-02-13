@@ -35,15 +35,6 @@ Help: https://algo.monster/flowchart
 
 
 
-"Empower your team with our self-service application. Seamlessly create, update, deploy, and promote requests from dev to prod without developer assistance. Tailor alerts by choosing criteria and communication channels effortlessly."
-
-
-
-
-
-
-
-
         
 
 
