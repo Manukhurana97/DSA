@@ -36,13 +36,19 @@ public class TopologicalSort {
     }
 
     public static void main(String[] args) {
+        // List<List<Integer>> list = new ArrayList<>();
+        // list.add(Arrays.asList());
+        // list.add(Arrays.asList());
+        // list.add(Arrays.asList(3));
+        // list.add(Arrays.asList(1));
+        // list.add(Arrays.asList(0, 1));
+        // list.add(Arrays.asList(0, 2));
+
         List<List<Integer>> list = new ArrayList<>();
+        list.add(Arrays.asList(1, 2)); // Edge from 0 to 1 and 2
+        list.add(Arrays.asList(2, 3)); // Edge from 1 to 2 and 3
+        list.add(Arrays.asList(3)); // Edge from 2 to 3
         list.add(Arrays.asList());
-        list.add(Arrays.asList());
-        list.add(Arrays.asList(3));
-        list.add(Arrays.asList(1));
-        list.add(Arrays.asList(0, 1));
-        list.add(Arrays.asList(0, 2));
         System.out.println(topoSort(list));
         ;
     }

@@ -6,7 +6,12 @@ import java.util.*;
     compare input, and find the different character with each string (from i to n)
     once's difference element is found, break the comparing loop, and create a graph from char[i]->char[i+1]
     also calculate in inbound notes
-    perform topo sort */
+    perform topo sort : 
+    1. calculate inbound of all the nodes
+    2. get all the element with 0 inbound
+    3. remove the element and connction with neighbours and store the new inbound with 0
+    
+    */
 public class AlienDictionary {
 
     private static String findOrder(String[] dictionary, int N, int k) {
