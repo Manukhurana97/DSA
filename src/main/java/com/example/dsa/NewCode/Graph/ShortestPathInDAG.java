@@ -38,7 +38,7 @@ public class ShortestPathInDAG {
 
         /*
          * perform the topo sort inorder to get the element from least inbound to max
-         * inbound
+         * inbound in stack , so that we can get the node to start with .
          */
         int[] visited = new int[n];
         Stack<Integer> stack = new Stack<>();
