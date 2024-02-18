@@ -2,6 +2,11 @@ package com.example.dsa.NewCode.Graph;
 
 import java.util.*;
 
+/* 
+ * a graph is said to be a bipartite graph is parent and child dont have same color 
+ *  1 -> (2,3) -> 4 : its a bipartite 
+ *  1 -> (2, 3) ->  (2, 3->4 ) -> (2, 4) -> 5 : its not a bipartite because value of 2,4 is different from 5       
+*/
 public class BiPartiteGraph {
 
     public boolean isBipartite(int[][] graph) {
