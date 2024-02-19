@@ -57,12 +57,11 @@ public class NumberOfWaysToAriveAtDestination {
     }
 
     public static void main(String[] args) {
-        List<List<Integer>> input = new ArrayList<>();
 
         // Edges: (source, destination, weight)
         int[][] arr = { { 0, 6, 7 }, { 0, 1, 2 }, { 1, 2, 3 } };
 
-        System.out.println(countPaths(7, input));
+        System.out.println(countPaths(7, arr));
     }
 
 }
