@@ -29,6 +29,7 @@ public class WordLadder2 {
             // Move this block outside the level check block
             if (lastString.equals(endWord)) {
                 result.add(list);
+                return result;
             }
 
             checkNextWord(lastString, set, list, queue, elemUsedInLastLevel);
