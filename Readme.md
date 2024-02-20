@@ -35,20 +35,8 @@ Help: https://algo.monster/flowchart
 
 
 
-SELECT
-    cons.constraint_name AS foreign_key_name,
-    cons.table_name AS child_table,
-    cols.column_name AS child_column,
-    cons_r.table_name AS parent_table,
-    cols_r.column_name AS parent_column
-FROM
-    user_constraints cons
-JOIN
-    user_cons_columns cols ON cons.constraint_name = cols.constraint_name
-JOIN
-    user_constraints cons_r ON cons.r_constraint_name = cons_r.constraint_name
-JOIN
-    user_cons_columns cols_r ON cons_r.constraint_name = cols_r.constraint_name
-WHERE
-    cons.constraint_type = 'R';
+SELECT CONSTRAINT_NAME, TABLE_NAME
+FROM ALL_CONSTRAINTS
+WHERE CONSTRAINT_TYPE = 'P'
+AND OWNER = 'YourSchemaName';
 
