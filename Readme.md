@@ -36,22 +36,19 @@ Help: https://algo.monster/flowchart
 
 
 SELECT
-    tc.constraint_name AS foreign_key_name,
-    tc.table_name AS child_table,
-    kcu.column_name AS child_column,
-    ccu.table_name AS parent_table,
-    ccu.column_name AS parent_column
+    cons.constraint_name AS foreign_key_name,
+    cons.table_name AS child_table,
+    cols.column_name AS child_column,
+    cons_r.table_name AS parent_table,
+    cols_r.column_name AS parent_column
 FROM
-    information_schema.table_constraints AS tc
-    JOIN information_schema.key_column_usage AS kcu
-        ON tc.constraint_name = kcu.constraint_name
-    JOIN information_schema.constraint_column_usage AS ccu
-        ON ccu.constraint_name = tc.constraint_name
+    user_constraints cons
+JOIN
+    user_cons_columns cols ON cons.constraint_name = cols.constraint_name
+JOIN
+    user_constraints cons_r ON cons.r_constraint_name = cons_r.constraint_name
+JOIN
+    user_cons_columns cols_r ON cons_r.constraint_name = cols_r.constraint_name
 WHERE
-    tc.constraint_type = 'FOREIGN KEY'
-    AND tc.table_schema = 'your_schema_name';
-
-
-        
-
+    cons.constraint_type = 'R';
 
