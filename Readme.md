@@ -35,6 +35,8 @@ Help: https://algo.monster/flowchart
 
 
 
-        
-
+SELECT CONSTRAINT_NAME, TABLE_NAME
+FROM ALL_CONSTRAINTS
+WHERE CONSTRAINT_TYPE = 'P'
+AND OWNER = 'YourSchemaName';
 
