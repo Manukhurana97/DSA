@@ -18,7 +18,6 @@ public class NetworkDelay {
             this.v = v;
             this.wt = wt;
         }
-
     }
 
     public int networkDelayTime(int[][] times, int n, int k) {
