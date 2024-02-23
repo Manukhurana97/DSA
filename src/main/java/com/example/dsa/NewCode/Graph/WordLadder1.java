@@ -1,10 +1,9 @@
 package com.example.dsa.NewCode.Graph;
 
-import java.util.*
-
+import java.util.*;
 
 /* intution: take each word and modify the all characters of words from a-z and check if is exist ot now, if exist add in queue 
-and increment the count*/ 
+and increment the count*/
 public class WordLadder1 {
 
     static class Node {
@@ -25,12 +24,15 @@ public class WordLadder1 {
         queue.add(new Node(startWord, 1));
 
         while (!queue.isEmpty()) {
-            var node = queue.poll();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                var node = queue.poll();
 
-            if (node.data.equals(endWord))
-                return node.count;
+                if (node.data.equals(endWord))
+                    return count++;
+                checkNextWord(node.data, node.count, set, queue);
+            }
             count++;
-            checkNextWord(node.data, node.count, set, queue);
         }
 
         return count;
