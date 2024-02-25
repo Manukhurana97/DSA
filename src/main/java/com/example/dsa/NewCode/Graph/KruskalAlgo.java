@@ -22,7 +22,7 @@ class DisJointSet {
         if (node == i)
             return node;
 
-        parent.set(node, findParent(node));
+        parent.set(i, findParent(node));
         return parent.get(i);
 
     }

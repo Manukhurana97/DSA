@@ -54,10 +54,6 @@ public class RedundantConnection {
             int uP = set.findUltParent(edge[0]);
             int vP = set.findUltParent(edge[1]);
 
-            System.out.println(edge[0] + ":" + uP + " " + edge[1] + ":" + vP);
-            System.out.println(set.parent);
-            System.out.println(set.size);
-
             if (uP == vP) {
                 return edge;
             } else {
