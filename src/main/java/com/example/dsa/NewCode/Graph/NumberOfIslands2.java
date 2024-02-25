@@ -23,7 +23,7 @@ public class NumberOfIslands2 {
                 return node;
             }
 
-            parent.set(node, findParent(node));
+            parent.set(i, findParent(node));
 
             return parent.get(i);
         }
