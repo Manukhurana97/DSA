@@ -38,10 +38,9 @@ public class DisjointSetAlgo {
             return node;
 
         // store the ultimate parent, path compression
-        var ultParent = findParent(node);
-        parent.set(node, ultParent); // updating the parent of the node to ultimate parent
+        parent.set(i, findParent(node)); // updating the parent of the node to ultimate parent
 
-        return node;
+        return parent.get(i);
     }
 
     /*
