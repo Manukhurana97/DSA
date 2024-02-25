@@ -2,7 +2,7 @@ package com.example.dsa.NewCode.Graph;
 
 public class WordSearch {
 
-    public boolean exist(char[][] board, String word) {
+    public static boolean exist(char[][] board, String word) {
 
         boolean[][] visited = new boolean[board.length][board[0].length];
 
@@ -19,7 +19,7 @@ public class WordSearch {
         return false;
     }
 
-    private boolean dfs(int r, int c, char[][] board, String endWord, boolean[][] visited, int index) {
+    private static boolean dfs(int r, int c, char[][] board, String endWord, boolean[][] visited, int index) {
 
         if (index == endWord.length())
             return true;
