@@ -20,9 +20,9 @@ public class NumberOfProvinces {
         public int getParent(int i) {
             var node = parent.get(i);
             if (node == i)
-                return node;
+                return i;
 
-            parent.set(node, getParent(node));
+            parent.set(i, getParent(node));
             return parent.get(i);
         }
 
