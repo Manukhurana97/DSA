@@ -23,11 +23,13 @@ public class CheapestFlightsWithinKStops {
     private int cheapestFlights(int n, int[][] arr, int src, int dst, int k) {
 
         List<List<Node>> input = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++)
+        for (int i = 0; i <= arr.length; i++) {
             input.add(new ArrayList<>());
+        }
 
-        for (int i = 0; i < arr.length; i++)
-            input.get(arr[i][0]).add(new Node(arr[i][1], arr[i][2]));
+        for (var flight : arr) {
+            input.get(flight[0]).add(new Node(flight[1], flight[2]));
+        }
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(0, src, 0));
@@ -55,7 +57,7 @@ public class CheapestFlightsWithinKStops {
             }
         }
 
-        return (distance[src] == Integer.MAX_VALUE) ? -1 : distance[dst];
+        return (distance[dst] == Integer.MAX_VALUE) ? -1 : distance[dst];
     }
 
     public static void main(String[] args) {

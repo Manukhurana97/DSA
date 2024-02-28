@@ -2,6 +2,7 @@ package com.example.dsa.NewCode.Graph;
 
 import java.util.*;
 
+// almost using dijkstra algo 
 public class SwimInRisingWater {
     class Node {
         int r;
