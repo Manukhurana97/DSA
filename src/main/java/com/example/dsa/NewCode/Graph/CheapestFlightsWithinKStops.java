@@ -60,6 +60,30 @@ public class CheapestFlightsWithinKStops {
         return (distance[dst] == Integer.MAX_VALUE) ? -1 : distance[dst];
     }
 
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+
+        int[] distance = new int[n + 1];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+        distance[src] = 0;
+
+        for (int i = 0; i <= k; i++) {
+            int[] temp = Arrays.copyOf(distance, n);
+            for (var it : flights) {
+                int u = it[0];
+                int v = it[1];
+                int wt = it[2];
+
+                if (distance[u] != Integer.MAX_VALUE) {
+                    temp[v] = Math.min(temp[v], distance[u] + wt);
+
+                }
+            }
+            distance = temp;
+        }
+
+        return distance[dst] == Integer.MAX_VALUE ? -1 : distance[dst];
+    }
+
     public static void main(String[] args) {
         CheapestFlightsWithinKStops flightCost = new CheapestFlightsWithinKStops();
 
