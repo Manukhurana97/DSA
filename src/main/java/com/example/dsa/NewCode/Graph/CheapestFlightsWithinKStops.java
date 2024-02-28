@@ -5,18 +5,18 @@ import java.util.*;
 public class CheapestFlightsWithinKStops {
 
     class Node {
-        int first;
-        int second;
-        int third;
+        int stops;
+        int src;
+        int cost;
 
         Node(int first, int second) {
-            this.first = first;
-            this.second = second;
+            this.stops = first;
+            this.src = second;
         }
 
         Node(int first, int second, int third) {
             this(first, second);
-            this.third = third;
+            this.cost = third;
         }
     }
 
@@ -40,15 +40,15 @@ public class CheapestFlightsWithinKStops {
 
         while (!queue.isEmpty()) {
             Node node = queue.poll();
-            int stops = node.first;
-            int currentNode = node.second;
-            int cost = node.third;
+            int stops = node.stops;
+            int currentNode = node.src;
+            int cost = node.cost;
 
             if (stops > k)
                 continue;
             for (Node neNode : input.get(currentNode)) {
-                int neighbourNode = neNode.first;
-                int neighbourCost = neNode.second;
+                int neighbourNode = neNode.stops;
+                int neighbourCost = neNode.src;
 
                 if (cost + neighbourCost < distance[neighbourNode] && stops <= k) {
                     distance[neighbourNode] = cost + neighbourCost;

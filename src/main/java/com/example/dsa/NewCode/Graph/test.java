@@ -51,6 +51,8 @@ public class test {
                 if (distance[neighbor.v] > current.cost + neighbor.cost && current.stop <= k) {
                     distance[neighbor.v] = current.cost + neighbor.cost;
                     queue.add(new Node(neighbor.v, (current.cost + neighbor.cost), current.stop + 1));
+                    queue.add(new Node(neighbor.v, current.cost + neighbor.cost, current.stop + 1));
+
                 }
             }
 
