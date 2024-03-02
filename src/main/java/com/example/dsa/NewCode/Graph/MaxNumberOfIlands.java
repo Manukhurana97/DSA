@@ -1,6 +1,6 @@
 package com.example.dsa.NewCode.Graph;
 
-import java.util.Queue;
+import java.util.*;
 
 public class MaxNumberOfIlands {
     public int maxAreaOfIsland(int[][] grid) {
