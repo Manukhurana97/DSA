@@ -9,6 +9,7 @@ import java.util.Queue;
 import java.util.Set;
 
 public class OpenTheLock {
+
     class Node {
         String pattern;
         int turn;
@@ -21,10 +22,16 @@ public class OpenTheLock {
 
     public int openLock(String[] deadends, String target) {
 
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(new Node("0000", 0));
+        if (target == "0000")
+            return 0;
 
         Set<String> visited = new HashSet<>(Arrays.asList(deadends));
+
+        if (visited.contains("0000"))
+            return -1;
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(new Node("0000", 0));
 
         while (!queue.isEmpty()) {
             var current = queue.poll();
@@ -41,20 +48,18 @@ public class OpenTheLock {
         return -1;
     }
 
-    private List<String> childrens(String current) {
+    private List<String> childrens(String curr) {
         List<String> res = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            char[] lock = current.toCharArray();
+            char c = curr.charAt(i);
+            String up = curr.substring(0, i) + (c == '9' ? 0 : c - '0' + 1) + curr.substring(i + 1);
+            String down = curr.substring(0, i) + (c == '0' ? 9 : c - '0' - 1) + curr.substring(i + 1);
 
-            var j = Integer.parseInt(lock[i] + "");
-            lock[i] = (char) ((char) j + 1);
-            res.add(String.valueOf(lock));
-
-            lock[i] = (char) ((char) j + -2);
-            res.add(String.valueOf(lock));
-
+            res.add(up);
+            res.add(down);
         }
 
         return res;
     }
+
 }

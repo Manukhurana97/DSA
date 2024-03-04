@@ -19,69 +19,61 @@ public class ShortestBridge {
 
         int n = grid.length;
 
-        int r = 0;
-        int c = 0;
+        Queue<Node> queue = new LinkedList<>();
+        boolean foundFirstIsland = false;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n && !foundFirstIsland; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) {
-                    r = i;
-                    c = j;
+                    dfs(i, j, grid, queue);
+                    foundFirstIsland = true;
                     break;
                 }
-
             }
         }
 
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(new Node(r, c));
-
-        int[][] visited = new int[n][n];
-        visited[r][c] = 1;
-
+        int flips = 0;
         int[][] direction = { { -1, 0 }, { 0, -1 }, { 1, 0 }, { 0, 1 } };
-        for (var dir : direction) {
-            int dr = r + dir[0];
-            int dc = c + dir[1];
-            if (isValid(r, c, n)) {
-                if (grid[dr][dc] == 0)
-                    break;
-
-                visited[dr][dc] = 1;
-                queue.add(new Node(dr, dc));
-            }
-        }
-
-        int numberOfFlips = 0;
         while (!queue.isEmpty()) {
             int size = queue.size();
-            numberOfFlips += 1;
+            flips += 1;
 
             for (int i = 0; i < size; i++) {
                 var current = queue.poll();
-                if (visited[current.r][current.c] == 0 && grid[current.r][current.c] == 1)
-                    return numberOfFlips;
-                if (visited[current.r][current.c] == 0 && grid[current.r][current.c] == 0) {
 
-                    visited[current.r][current.c] = 1;
+                for (var dir : direction) {
+                    int dr = current.r + dir[0];
+                    int dc = current.c + dir[1];
 
-                    for (var dir : direction) {
-                        int dr = r + dir[0];
-                        int dc = c + dir[1];
-                        if (isValid(r, c, n) && visited[dr][dc] == 0) {
+                    if (isValid(dr, dc, grid.length) && grid[dr][dc] == 1)
+                        return flips - 1;
 
-                            queue.add(new Node(dr, dc));
-                        }
+                    if (isValid(dr, dc, grid.length) && grid[dr][dc] == 0) {
+                        grid[dr][dc] = 2;
+                        queue.add(new Node(dr, dc));
                     }
-
                 }
             }
         }
-        return numberOfFlips;
+
+        return -1;
+    }
+
+    private void dfs(int i, int j, int[][] grid, Queue<Node> queue) {
+        if (!isValid(i, j, grid.length) || grid[i][j] != 1)
+            return;
+
+        grid[i][j] = 2;
+        queue.add(new Node(i, j));
+
+        dfs(i - 1, j, grid, queue);
+        dfs(i, j - 1, grid, queue);
+        dfs(i + 1, j, grid, queue);
+        dfs(i, j + 1, grid, queue);
     }
 
     private boolean isValid(int r, int c, int n) {
-        return !(r < 0 || c < 0 || r >= n || c >= n);
+        return r >= 0 && c >= 0 && r < n && c < n;
     }
 
 }
