@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index.js && rimraf dist/*.js"
   }
 }
