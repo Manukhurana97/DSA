@@ -13,6 +13,7 @@ public class SubsetSum5 {
             return;
         }
 
+        // to print the subsequence 
         for (int i = ind; i < arr.length; i++) {
             if (i != ind && arr[i] == arr[i - 1])
                 continue;
@@ -22,6 +23,7 @@ public class SubsetSum5 {
             lst.remove(lst.size() - 1); // not taking the element
         }
 
+        // to print all 
         // lst.add(arr[ind]); // take the element
         // findSubset(ind + 1, arr, lst, listList);
         // lst.remove(lst.size() - 1); // not taking the element

@@ -108,4 +108,5 @@ public class NinjaTraining {
         }
         return prev[3];
     }
+
 }
