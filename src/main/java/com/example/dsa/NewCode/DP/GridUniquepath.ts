@@ -13,7 +13,8 @@ class GridUniquePath{
             arr.push(new Array(n).fill(0));
         }
         // return uniquePathRecurssion(m-1, n-1);
-        return this.uniquePathMemoization(m-1, n-1, arr);
+        // return this.uniquePathMemoization(m-1, n-1, arr);
+        return this.uniquePathTabulation(m-1, n-1, arr);
     };
     
     
@@ -29,6 +30,7 @@ class GridUniquePath{
         return up + left;
     };
     
+    // memorization
     uniquePathMemoization(m: number, n: number, arr: number[][]): number{
         if(m<0 || n<0) return 0;
         if(m==0 && n==0) return 1;
@@ -44,7 +46,45 @@ class GridUniquePath{
         return up + left;
     }
 
+    // tabulation : (Declare Base case, express states in for loop, copy the recurrence and write)
+    uniquePathTabulation(m: number, n: number, arr: number[][]): number {
+        for (let i = 0; i <= m; i++) {
+            for (let j = 0; j <= n; j++) {
+                if (i === 0 && j === 0) {
+                    arr[i][j] = 1;
+                } else {
+                    const down = i > 0 ? arr[i - 1][j] : 0;
+                    const left = j > 0 ? arr[i][j - 1] : 0;
+                    arr[i][j] = down + left;
+                }
+            }
+        }
+        return arr[m][n];
+    } 
+    
+    
+    // space 
+    uniquePathSpaceOptimization(m: number, n: number): number{
+
+        var arr: number[] = new Array(n).fill(0);
         
+        for (let i = 0; i <= m; i++) {
+            var prev = arr;
+            for (let j = 0; j <= n; j++) {
+                if (i === 0 && j === 0) {
+                    arr[i] = 1;
+                } else {
+                    const down = i > 0 ? prev[j] : 0;
+                    const left = j > 0 ? arr[j - 1] : 0;
+                    arr[i] = down + left;
+                }
+            }
+
+            arr = prev;
+        }
+        return arr[n-1];
+    }
+
 }
 
 
