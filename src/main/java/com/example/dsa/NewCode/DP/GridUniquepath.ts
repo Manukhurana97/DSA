@@ -63,26 +63,26 @@ class GridUniquePath{
     } 
     
     
-    // space 
+    // space optimization
     uniquePathSpaceOptimization(m: number, n: number): number{
 
-        var arr: number[] = new Array(n).fill(0);
+        var prev: number[] = new Array(n).fill(0);
         
         for (let i = 0; i <= m; i++) {
-            var prev = arr;
+            var cur = prev;
             for (let j = 0; j <= n; j++) {
                 if (i === 0 && j === 0) {
-                    arr[i] = 1;
+                    cur[j] = 1;
                 } else {
                     const down = i > 0 ? prev[j] : 0;
-                    const left = j > 0 ? arr[j - 1] : 0;
-                    arr[i] = down + left;
+                    const left = j > 0 ? cur[j - 1] : 0;
+                    cur[i] = down + left;
                 }
             }
 
-            arr = prev;
+            prev = cur;
         }
-        return arr[n-1];
+        return prev[n-1];
     }
 
 }
