@@ -1,7 +1,12 @@
 package com.example.dsa.NewCode.DP;
 
-import java.util.Map;
-
+// tasks 
+/* 1 : 1 2 3
+ * 2 : 1 2 3
+ * 3 : 1 2 3
+ * 4 : 1 2 3
+ * 5 : 1 2 3 
+ */
 public class NinjaTraining {
     public static int ninjaTraining(int n, int points[][]) {
 
@@ -11,7 +16,7 @@ public class NinjaTraining {
     public static int ninjaTraining(int n, int last, int points[][]) {
         if (n == 0) {
             int maxi = 0;
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < points[n].length; i++) {
                 if (i != last) {
                     maxi = Math.max(maxi, points[n][i]);
                 }
@@ -20,7 +25,7 @@ public class NinjaTraining {
         }
 
         int maxPoints = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < points.length; i++) {
             if (i != last) {
                 int currentMax = Math.max(points[n][i], ninjaTraining(n - 1, i, points));
                 maxPoints = Math.max(maxPoints, currentMax);
@@ -34,7 +39,7 @@ public class NinjaTraining {
     public static int ninjaTrainingMemoization(int n, int last, int points[][], int[][] map) {
         if (n == 0) {
             int maxi = 0;
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < points[n].length; i++) {
                 if (i != last) {
                     maxi = Math.max(maxi, points[n][i]);
                 }
@@ -46,7 +51,7 @@ public class NinjaTraining {
             return map[n][last];
 
         int maxPoints = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < points.length; i++) {
             if (i != last) {
                 int currentMax = Math.max(points[n][i], ninjaTrainingMemoization(n - 1, i, points, map));
                 maxPoints = Math.max(maxPoints, currentMax);
