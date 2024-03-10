@@ -3,8 +3,6 @@ package com.example.dsa.NewCode.DP;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.dsa.NewCode.Tree.BinarySearchTree.twoSum;
-
 public class FrogJump {
     public static int frogJump(int n, int heights[], Map<Integer, Integer> map) {
 
