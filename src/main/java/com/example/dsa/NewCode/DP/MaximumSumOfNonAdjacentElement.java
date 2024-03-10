@@ -3,6 +3,8 @@ package com.example.dsa.NewCode.DP;
 import java.util.*;
 
 public class MaximumSumOfNonAdjacentElement {
+
+    // reccursion + memoization
     public static int maximumNonAdjacentSum(int n, ArrayList<Integer> nums, Map<Integer, Integer> map) {
         if (n == 0)
             return nums.get(n);
@@ -20,8 +22,7 @@ public class MaximumSumOfNonAdjacentElement {
 
     }
 
-    // tabluationx
-
+    // tabluation
     public static int maximumNonAdjacentSumTabulation(ArrayList<Integer> nums) {
         int n = nums.size();
         int[] arr = new int[n];
