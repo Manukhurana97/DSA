@@ -2,14 +2,18 @@ package com.example.dsa.NewCode.DP;
 
 import java.util.*;
 
+/* DP : 4 ways 
+ * 1. simple recursion :: time 0(n^2) , space O(n)
+ * 2. recursion + memoization time 0(n) , space O(2n)
+ * 3. tabulation :: time 0(n) , space O(n)
+ * 4. space optimization :: time 0(n) , space O(1)
+*/
 public class Fibonarci {
 
     // it has overlappting sub problems , solving same thing again and again
     private int FibonarciOf(int n) {
         if (n <= 1)
             return 1;
-
-        System.out.print(n + " ");
 
         return FibonarciOf(n - 1) + FibonarciOf(n - 2);
     }
@@ -33,7 +37,7 @@ public class Fibonarci {
     private int FibonarciWithoutExtraSpace(int n) {
         int prev = 1;
         int prev2 = 0;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             int current = prev + prev2;
             prev2 = prev;
             prev = current;
