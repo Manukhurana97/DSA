@@ -7,6 +7,8 @@ import java.util.Arrays;
 2. explore all path
 3. min max sum
  */
+
+//  consider 
 public class MaxPathSumInMatrix {
 
     public int minFallingPathSum(int[][] matrix) {
@@ -24,7 +26,7 @@ public class MaxPathSumInMatrix {
         return minFallingPathSumSpaceOptimization(matrix);
     }
 
-    // recursion: top down :: time - O(4n^2), space - O(2n)
+    // recursion: top down :: time - O(4n^2), space - O(2n^2)
     public int minFallingPathSumRecursion(int i, int j, int[][] matrix) {
         if (i > matrix.length - 1 || j > matrix.length - 1)
             return Integer.MAX_VALUE;
@@ -41,7 +43,7 @@ public class MaxPathSumInMatrix {
         return currentSum;
     }
 
-    // recursion + memoization : top down :: time - O(4n), space - O(2n)
+    // recursion + memoization : top down :: time - O(4n), space - O(2n^2)
     public int minFallingPathSumMemoization(int i, int j, int[][] matrix, int[][] visited) {
         if (i > matrix.length - 1 || j > matrix.length - 1)
             return Integer.MAX_VALUE;
@@ -63,7 +65,7 @@ public class MaxPathSumInMatrix {
         return currentSum;
     }
 
-    // tabulation : bottom ui :: time - O(n), space - O(n)
+    // tabulation : bottom ui :: time - O(n), space - O(n^2)
     public int minFallingPathSumTabulation(int[][] matrix) {
 
         int[][] visited = new int[matrix.length][matrix[0].length];
@@ -89,7 +91,7 @@ public class MaxPathSumInMatrix {
         return min;
     }
 
-    // space optimization : bottom ui :: time - O(n), space - O(1)
+    // space optimization : bottom ui :: time - O(n), space - O(n)
     public int minFallingPathSumSpaceOptimization(int[][] matrix) {
 
         int[] visited = new int[matrix[0].length];
