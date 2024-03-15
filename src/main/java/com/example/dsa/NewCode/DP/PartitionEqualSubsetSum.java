@@ -1,27 +1,30 @@
 package com.example.dsa.NewCode.DP;
 
+import java.util.Arrays;
+
 public class PartitionEqualSubsetSum {
 
-    public static boolean subsetSumToKTabulation(int n, int target, int arr[], boolean[][] dp) {
+    public static boolean subsetSumToKSpaceOptimization(int n, int target, int arr[]) {
 
-        for (int i = 0; i <= n; i++)
-            dp[i][0] = true;
+        boolean[] prev = new boolean[target + 1];
+        boolean[] cur = new boolean[target + 1];
 
-        for (int i = 1; i <= target; i++)
-            dp[0][i] = false;
+        for (int i = 0; i <= n; i++) // it means that it's possible to achieve a sum of "0" with the subset
+            prev[0] = cur[0] = true;
 
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= target; j++) {
-                if (arr[i - 1] <= j) {
-                    dp[i][j] = dp[i - 1][j - arr[i - 1]] || dp[i - 1][j];
-                } else {
-                    dp[i][j] = dp[i - 1][j];
-                }
+            for (int j = 1; j <= target; j++) { // target
+                boolean take = false;
+                if (arr[i - 1] <= j)
+                    take = prev[j - arr[i - 1]];
+                boolean notTake = prev[j];
 
+                cur[j] = take || notTake;
             }
+            prev = Arrays.copyOf(cur, cur.length);
         }
 
-        return dp[n][target];
+        return prev[target];
     }
 
     public boolean canPartition(int[] nums) {
@@ -34,7 +37,7 @@ public class PartitionEqualSubsetSum {
             return false;
 
         boolean[][] dp = new boolean[nums.length][totalSum];
-        return subsetSumToKTabulation(nums.length - 1, totalSum / 2, nums, dp);
+        return subsetSumToKSpaceOptimization(nums.length - 1, totalSum / 2, nums);
     }
 
 }

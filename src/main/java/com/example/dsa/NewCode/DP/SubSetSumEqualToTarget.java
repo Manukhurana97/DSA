@@ -5,7 +5,8 @@ public class SubSetSumEqualToTarget {
     public static boolean subsetSumToK(int n, int target, int arr[]) {
         boolean[][] dp = new boolean[arr.length + 1][target + 1];
         // return subsetSumToKRecursion(n - 1, target, arr);
-        return subsetSumToKMemoization(n - 1, target, arr, dp);
+        // return subsetSumToKMemoization(n - 1, target, arr, dp);
+        return subsetSumToKTabulation(n, target, arr, dp);
     }
 
     // recursion
@@ -49,23 +50,52 @@ public class SubSetSumEqualToTarget {
         return false;
     }
 
-    // tabulation
+    // tabulation :: "[1,5,11,5]"
     public static boolean subsetSumToKTabulation(int n, int target, int arr[], boolean[][] dp) {
 
-        for (int i = 0; i <= n; i++)
+        for (int i = 0; i <= n; i++) // it means that it's possible to achieve a sum of "0" with the subset
             dp[i][0] = true;
-        dp[0][arr[0]] = true;
 
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j <= target; j++) {
+        // for (int i = 1; i <= target; i++) // since [0][0] is alrady initialize , its
+        // not possible to achieve the sum greater the 0;
+        // dp[0][i] = false;
 
-                boolean take = dp[i][j] = (arr[i] < target) ? dp[i - 1][j - arr[i - 1]] : false;
-                boolean notTake = dp[i][j] = dp[i - 1][j];
-                dp[i][j] = take | notTake;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= target; j++) { // target
+                boolean take = false;
+                if (arr[i - 1] <= j)
+                    take = dp[i - 1][j - arr[i - 1]];
+                boolean notTake = dp[i - 1][j];
+
+                dp[i][j] = take || notTake;
             }
         }
 
         return dp[n][target];
+    }
+
+    // space optimization
+    public static boolean subsetSumToKSpaceOptimization(int n, int target, int arr[]) {
+
+        boolean[] prev = new boolean[target + 1];
+        boolean[] cur = new boolean[target + 1];
+
+        for (int i = 0; i <= n; i++) // it means that it's possible to achieve a sum of "0" with the subset
+            prev[0] = true;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= target; j++) { // target
+                boolean take = false;
+                if (arr[i - 1] <= j)
+                    take = prev[j - arr[i - 1]];
+                boolean notTake = prev[j];
+
+                cur[j] = take || notTake;
+            }
+            prev = cur;
+        }
+
+        return prev[target];
     }
 
 }
