@@ -36,7 +36,6 @@ public class PartitionEqualSubsetSum {
         if (totalSum % 2 != 0)
             return false;
 
-        boolean[][] dp = new boolean[nums.length][totalSum];
         return subsetSumToKSpaceOptimization(nums.length - 1, totalSum / 2, nums);
     }
 
