@@ -33,32 +33,8 @@ DP Practice:
 
 Help: https://algo.monster/flowchart
 
-git config --global alias.cmt '!f() { git commit -m "$*"; }; f'
-
-git config --global alias.all '!f() { git add . && git commit -m "$1" && git push; }; f'
 
 
-Sure, I can help you with that. Here's a draft for your email:
 
----
 
-Subject: Inquiry Regarding American Express Employee Credit Card Application Process
-
-Dear [Recipient's Name],
-
-I hope this email finds you well. I am writing to inquire about the process for applying for the American Express credit card that is offered to employees.
-
-As a member of the [Your Company Name] team, I am interested in taking advantage of this benefit and obtaining an American Express credit card. Could you please provide me with information on how to initiate the application process? Additionally, I would appreciate any guidance on the required documentation or steps I need to follow to complete the application successfully.
-
-Thank you in advance for your assistance. I look forward to hearing back from you soon regarding the next steps.
-
-Best regards,
-
-[Your Name]
-[Your Position/Department]
-[Your Contact Information]
-
----
-
-Feel free to customize the email with any specific details or additional information you may want to include. Let me know if you need further assistance!
 
