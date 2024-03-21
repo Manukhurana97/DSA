@@ -33,10 +33,6 @@ DP Practice:
 
 Help: https://algo.monster/flowchart
 
+git config --global alias.cmt '!f() { git commit -m "$*"; }; f'
 
-
-SELECT CONSTRAINT_NAME, TABLE_NAME
-FROM ALL_CONSTRAINTS
-WHERE CONSTRAINT_TYPE = 'P'
-AND OWNER = 'YourSchemaName';
-
+git config --global alias.all '!f() { git add . && git commit -m "$1" && git push; }; f'
