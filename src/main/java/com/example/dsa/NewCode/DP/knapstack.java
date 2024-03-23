@@ -1,7 +1,8 @@
 package com.example.dsa.NewCode.DP;
 
 /* 0/1 knapstack */
-
+// optimizatio  prodlem
+//  problem should be solved in sequence     of decisions
 public class knapstack {
 
     static int knapsack(int[] wts, int[] arr, int n, int maxWeight) {
@@ -55,15 +56,19 @@ public class knapstack {
 
         int[][] dp = new int[n][maxWeight + 1];
 
-        for (int j = wts[0]; j <= maxWeight; j++)
-            dp[0][j] = arr[0];
+        for (int j = wts[0]; j <= maxWeight; j++) // init with weight
+            dp[0][j] = arr[0]; // put profit for 0 row
 
         for (int i = 1; i < n; i++) {
-            for (int j = 0; j <= maxWeight; j++) {
-                int take = (wts[i] > j) ? Integer.MIN_VALUE : arr[i] + dp[i - 1][j - wts[i]];
-                int notTake = dp[i - 1][j];
+            for (int currWeight = 0; currWeight <= maxWeight; currWeight++) {
+                int take = (wts[i] > currWeight) ? Integer.MIN_VALUE : arr[i] + dp[i - 1][currWeight - wts[i]];
+                // formula : [weight - weight of currentRow] + profit; :
+                // [weight - weight of currentRow] :: can we hold current object in a bag , bag
+                // weight - element weight
+                int notTake = dp[i - 1][currWeight]; // prev profit
 
-                dp[i][j] = Math.max(take, notTake);
+                dp[i][currWeight] = Math.max(take, notTake); // taking min/max of current & prev, if bag size cant bear
+                                                             // both
             }
         }
 
@@ -109,11 +114,9 @@ public class knapstack {
                 int take = (wts[i] > j) ? Integer.MIN_VALUE : arr[i] + prev[j - wts[i]];
                 int notTake = prev[j];
 
-                curr[j] = Math.max(take, notTake);
+                prev[j] = Math.max(take, notTake);
             }
 
-            prev = curr;
-            curr = new int[maxWeight + 1];
         }
 
         return prev[maxWeight];
