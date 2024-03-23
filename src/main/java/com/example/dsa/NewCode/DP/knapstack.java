@@ -67,8 +67,7 @@ public class knapstack {
                 // weight - element weight
                 int notTake = dp[i - 1][currWeight]; // prev profit
 
-                dp[i][currWeight] = Math.max(take, notTake); // taking min/max of current & prev, if bag size cant bear
-                                                             // both
+                dp[i][currWeight] = Math.max(take, notTake); // taking min/max of current & prev
             }
         }
 
