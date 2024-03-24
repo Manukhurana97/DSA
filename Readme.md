@@ -35,8 +35,12 @@ Help: https://algo.monster/flowchart
 
 
 
-SELECT CONSTRAINT_NAME, TABLE_NAME
-FROM ALL_CONSTRAINTS
-WHERE CONSTRAINT_TYPE = 'P'
-AND OWNER = 'YourSchemaName';
+lg = "log"
+        lgp = "log --pretty=oneline --abbrev-commit"
+        psh = "push"
+        pshc = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+        all = "!f() { git add . && git commit -m \"$1\" && git push origin $(git rev-parse --abbrev-ref HEAD); }; f"
+        cmt = "commit -m"
+        count = "!git ls-files '*.java' | xargs cat | wc -l"
+
 
