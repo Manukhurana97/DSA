@@ -10,10 +10,11 @@ package com.example.dsa.NewCode.DP.Grid2;
 public class NinjaTraining {
     public static int ninjaTraining(int n, int points[][]) {
 
-        return ninjaTraining(n, 3, points);
+        return ninjaTrainingRecursion(n, 3, points);
     }
 
-    public static int ninjaTraining(int n, int last, int points[][]) {
+    // time complexity : O(n^tasks) , space Complexity: O(n*tasks)
+    public static int ninjaTrainingRecursion(int n, int last, int points[][]) {
         if (n == 0) {
             int maxi = 0;
             for (int i = 0; i < points[n].length; i++) {
@@ -27,7 +28,7 @@ public class NinjaTraining {
         int maxPoints = 0;
         for (int i = 0; i < points.length; i++) {
             if (i != last) {
-                int currentMax = Math.max(points[n][i], ninjaTraining(n - 1, i, points));
+                int currentMax = Math.max(points[n][i], ninjaTrainingRecursion(n - 1, i, points));
                 maxPoints = Math.max(maxPoints, currentMax);
             }
         }
@@ -36,6 +37,7 @@ public class NinjaTraining {
     }
 
     // memoization : botton to top
+    // time complexity : O(n) , space Complexity: O(n*tasks + n*tasks)
     public static int ninjaTrainingMemoization(int n, int last, int points[][], int[][] map) {
         if (n == 0) {
             int maxi = 0;
