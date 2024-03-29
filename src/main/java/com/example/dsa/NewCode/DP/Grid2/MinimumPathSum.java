@@ -1,14 +1,14 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Grid2;
 
 public class MinimumPathSum {
 
     public int minPathSum(int[][] grid) {
         int[][] arr = new int[grid.length][grid[0].length];
 
-        // return minPathSumRecusssion(grid.length - 1, grid[0].length - 1, grid);
+        return minPathSumRecusssion(grid.length - 1, grid[0].length - 1, grid);
         // return minPathSumMemoization(grid.length - 1, grid[0].length - 1, grid, arr);
         // return minPathSumTabulation(grid, arr);
-        return minPathSumSpaceOptimation(grid);
+        // return minPathSumSpaceOptimation(grid);
 
     }
 
@@ -22,7 +22,7 @@ public class MinimumPathSum {
         int up = minPathSumRecusssion(r - 1, c, grid);
         int left = minPathSumRecusssion(r, c - 1, grid);
 
-        return Math.min(up, left);
+        return grid[r][c] + Math.min(up, left);
     }
 
     // Memiozation: bottom -> up
@@ -89,7 +89,11 @@ public class MinimumPathSum {
     public static void main(String[] args) {
         MinimumPathSum min = new MinimumPathSum();
 
-        int[][] grid = { { 1, 3, 1 }, { 1, 5, 1 }, { 4, 2, 1 } };
+        int[][] grid = {
+                { 1, 3, 1 },
+                { 1, 5, 1 },
+                { 4, 2, 1 }
+        };
         System.out.println(min.minPathSum(grid));
     }
 

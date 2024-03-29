@@ -1,7 +1,7 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Grid2;
 
 // we can go down and right and find path from 0 to n-1 in grid
-// we have give an obstacle (-1) , if we encounter obstacle we cant continue on the path
+// we have give an obstacle (1) , if we encounter obstacle we can't continue on the path
 public class UniquePath2 {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -61,7 +61,7 @@ public class UniquePath2 {
                     visited[i][j] = 0;
                 } else if (i == 0 && j == 0) {
                     visited[i][j] = 1;
-                } else {
+                } else {l
                     int up = (i > 0) ? visited[i - 1][j] : 0;
                     int left = (j > 0) ? visited[i][j - 1] : 0;
                     visited[i][j] = (up + left);
