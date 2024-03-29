@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Grid2;
 
 // tasks 
 /* 1 : 1 2 3
