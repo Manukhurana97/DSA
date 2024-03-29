@@ -8,22 +8,22 @@ import java.util.Arrays;
 3. min max sum
  */
 
-//  consider 
+//  https://takeuforward.org/data-structure/minimum-maximum-falling-path-sum-dp-12/
 public class MaxPathSumInMatrix {
 
     public int minFallingPathSum(int[][] matrix) {
 
-        // int min = Integer.MAX_VALUE;
-        // for (int i = 0; i < matrix[0].length; i++) {
-        // // min = Math.min(min, minFallingPathSumRecursion(0, i, matrix));
-        // int[][] visited = new int[matrix.length][matrix[0].length];
-        // min = Math.min(min, minFallingPathSumMemoization(0, i, matrix, visited));
-        // }
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < matrix[0].length; i++) {
+            min = Math.min(min, minFallingPathSumRecursion(0, i, matrix));
+            // int[][] visited = new int[matrix.length][matrix[0].length];
+            // min = Math.min(min, minFallingPathSumMemoization(0, i, matrix, visited));
+        }
 
-        // return min;
+        return min;
 
         // return minFallingPathSumTabulation(matrix);
-        return minFallingPathSumSpaceOptimization(matrix);
+        // return minFallingPathSumSpaceOptimization(matrix);
     }
 
     // recursion: top down :: time - O(4n^2), space - O(2n^2)
