@@ -2,6 +2,7 @@ package com.example.dsa.NewCode.DP.DP1;
 
 import java.util.*;
 
+/* give a number of stairs, starting from 0, user can climb either 1, 2 steps, return distinct way he can climb */
 public class ClimbingStairs {
 
     private static int ClimbStairs(int n) {
