@@ -10,11 +10,11 @@ import java.util.*;
 */
 public class Fibonarci {
 
-    // it has overlappting sub problems , solving same thing again and again
+    // it has overlaping sub problems, doing same thing again and again
     private int FibonarciOf(int n) {
         if (n <= 1)
             return 1;
-
+,
         return FibonarciOf(n - 1) + FibonarciOf(n - 2);
     }
 
