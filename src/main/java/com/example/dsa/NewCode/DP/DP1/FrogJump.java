@@ -1,10 +1,20 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.DP1;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/* 
+ * frog can from 1 step or 2 step energy consume is abs(height(j)-height(i)) , from min energy
+ */
 public class FrogJump {
-    public static int frogJump(int n, int heights[], Map<Integer, Integer> map) {
+
+    public static int frogJump(int n, int heights[]) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        return frogJumpMemoization(n, heights, map);
+    }
+
+    public static int frogJumpMemoization(int n, int heights[], Map<Integer, Integer> map) {
 
         if (n == 0)
             return 0;
@@ -12,25 +22,17 @@ public class FrogJump {
         if (map.containsKey(n))
             return map.get(n);
 
-        int oneStep = frogJump(n - 1, heights, map) + Math.abs(heights[n] - heights[n - 1]);
+        int oneStep = frogJumpMemoization(n - 1, heights, map) + Math.abs(heights[n] - heights[n - 1]);
         int twoStep = Integer.MAX_VALUE;
         if (n > 1) {
-            twoStep = frogJump(n - 2, heights, map) + +Math.abs(heights[n] - heights[n - 2]);
+            twoStep = frogJumpMemoization(n - 2, heights, map) + Math.abs(heights[n] - heights[n - 2]);
         }
 
         map.put(n, Math.min(oneStep, twoStep));
         return Math.min(oneStep, twoStep);
     }
 
-    public static int frogJump(int n, int heights[]) {
-        Map<Integer, Integer> map = new HashMap<>();
-
-        return frogJump(n, heights, map);
-    }
-
-    // -------------------------------------------------------------------------------------------
-
-    public static int frogJump1(int n, int heights[]) {
+    public static int frogJumpTabulation(int n, int heights[]) {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 0);
 
@@ -77,7 +79,7 @@ public class FrogJump {
         for (int i = 1; i <= k; i++) {
             if (n - i >= 0) {
                 minTillNow = Math.min(minTillNow,
-                        frogwithkJump(n - i, heights, k) + +Math.abs(heights[n] - heights[n - i]));
+                        frogwithkJump(n - i, heights, k) + Math.abs(heights[n] - heights[n - i]));
             }
         }
 
@@ -95,7 +97,7 @@ public class FrogJump {
         for (int i = 1; i <= k; i++) {
             if (n - i >= 0) {
                 minTillNow = Math.min(minTillNow,
-                        frogwithkJump(n - i, heights, k) + +Math.abs(heights[n] - heights[n - i]));
+                        frogwithkJump(n - i, heights, k) + Math.abs(heights[n] - heights[n - i]));
 
             }
         }
@@ -112,10 +114,10 @@ public class FrogJump {
     public static void main(String[] args) {
         int[] arr = { 30, 10, 60, 10, 60, 50 };
         System.out.println(frogJump(5, arr));
-        System.out.println(frogJump1(5, arr));
-        System.out.println(frogJump2(5, arr));
-        System.out.println(frogwithkJump(5, arr, 2));
-        System.out.println(frogwithkJumpMemoization(5, arr, 2));
+        System.out.println(frogJumpTabulation(5, arr));
+        // System.out.println(frogJump2(5, arr));
+        // System.out.println(frogwithkJump(5, arr, 2));
+        // System.out.println(frogwithkJumpMemoization(5, arr, 2));
 
     }
 
