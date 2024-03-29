@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.DP1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
