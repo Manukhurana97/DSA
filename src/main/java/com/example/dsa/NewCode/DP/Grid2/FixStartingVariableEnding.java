@@ -2,6 +2,9 @@ package com.example.dsa.NewCode.DP.Grid2;
 
 import java.util.List;
 
+/* min path sum on a triangle 
+ * can move in 2 direction :  bottom cell, bottom-right cell
+*/
 public class FixStartingVariableEnding {
 
     public int minimumTotal(List<List<Integer>> triangle) {
@@ -9,8 +12,8 @@ public class FixStartingVariableEnding {
         int[][] visited = new int[triangle.size()][triangle.get(triangle.size() - 1).size() + 1];
         // return minimumTotalRecurssion(0, 0, triangle);
         // return minimumTotalMemoization(0, 0, triangle, visited);
-        // return minimumTotalTabulation(triangle, visited);
-        return minimumTotalSpaceOptimization(triangle);
+        return minimumTotalTabulation(triangle, visited);
+        // return minimumTotalSpaceOptimization(triangle);
     }
 
     // recursion : top down
@@ -18,10 +21,10 @@ public class FixStartingVariableEnding {
         if (i == triangle.size() - 1)
             return triangle.get(i).get(j);
 
-        int down = triangle.get(i).get(j) + minimumTotalRecurssion(i + 1, j, triangle);
-        int diag = triangle.get(i).get(j) + minimumTotalRecurssion(i + 1, j + 1, triangle);
+        int down = minimumTotalRecurssion(i + 1, j, triangle);
+        int diag = minimumTotalRecurssion(i + 1, j + 1, triangle);
 
-        return Math.min(down, diag);
+        return triangle.get(i).get(j) + Math.min(down, diag);
     }
 
     // recursion + memoization
@@ -32,10 +35,10 @@ public class FixStartingVariableEnding {
         if (visited[i][j] != 0)
             return visited[i][j];
 
-        int down = triangle.get(i).get(j) + minimumTotalMemoization(i + 1, j, triangle, visited);
-        int diag = triangle.get(i).get(j) + minimumTotalMemoization(i + 1, j + 1, triangle, visited);
+        int down = minimumTotalMemoization(i + 1, j, triangle, visited);
+        int diag = minimumTotalMemoization(i + 1, j + 1, triangle, visited);
 
-        int min = Math.min(down, diag);
+        int min = triangle.get(i).get(j) + Math.min(down, diag);
         visited[i][j] = min;
         return min;
     }
