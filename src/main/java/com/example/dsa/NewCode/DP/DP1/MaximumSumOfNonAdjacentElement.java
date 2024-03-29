@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.DP1;
 
 import java.util.*;
 
@@ -6,8 +6,8 @@ public class MaximumSumOfNonAdjacentElement {
 
     // reccursion + memoization
     public static int maximumNonAdjacentSum(int n, ArrayList<Integer> nums, Map<Integer, Integer> map) {
-        if (n == 0)
-            return nums.get(n);
+        // if (n == 0)
+        // return nums.get(n);
         if (n < 0)
             return 0;
         if (map.containsKey(n))
@@ -26,19 +26,15 @@ public class MaximumSumOfNonAdjacentElement {
     public static int maximumNonAdjacentSumTabulation(ArrayList<Integer> nums) {
         int n = nums.size();
         int[] arr = new int[n];
-        int result = 0;
 
         for (int i = 0; i < n; i++) {
             int pick = nums.get(i) + ((i > 1) ? arr[i - 2] : 0);
             int notPick = nums.get(i);
 
-            int max = Math.max(pick, notPick);
-            arr[i] = max;
-            result = Math.max(result, max);
-
+            arr[i] = Math.max(pick, notPick);
         }
 
-        return result;
+        return Math.max(arr[n - 1], n - 2 >= 0 ? arr[n - 2] : 0);
     }
 
     // constant space
