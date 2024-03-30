@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Sequence3;
 
 //  Partition A Set Into Two Subsets With Minimum Absolute Sum Difference
 public class PartitionASetInto2SubsetWithMinAbsoluteSumDifference {
