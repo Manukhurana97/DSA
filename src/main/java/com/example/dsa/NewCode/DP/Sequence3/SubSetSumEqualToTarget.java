@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Sequence3;
 
 import java.util.Arrays;
 
