@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Sequence3;
 
 public class CountPartitionWithGivenSubSet {
 
@@ -32,13 +32,15 @@ public class CountPartitionWithGivenSubSet {
         int notTake = findSubSetsMemoization(n - 1, target, arr, dp);
 
         dp[n][target] = (take + notTake) % 1000000007;
+
         return (take + notTake) % 1000000007;
+
     }
 
     // tabulation
     public static int findSubSetsTabulation(int n, int target, int[] arr, int[][] dp) {
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= target; j++) {
 
                 if (i == 0 && j == 0)
@@ -47,10 +49,10 @@ public class CountPartitionWithGivenSubSet {
                     dp[i][j] = 0;
                 else {
 
-                    int take = arr[n] > target ? 0 : dp[n - 1][target - arr[n]];
-                    int notTake = dp[n - 1][target];
+                    int take = arr[i - 1] > j ? 0 : dp[i - 1][j - arr[i - 1]];
+                    int notTake = dp[i - 1][j];
 
-                    dp[i][target] = (take + notTake) % 1000000007;
+                    dp[i][j] = (take + notTake) % 1000000007;
                 }
             }
         }
@@ -72,7 +74,7 @@ public class CountPartitionWithGivenSubSet {
 
         // return findSubSetsRecursion(n - 1, (totalSum - d) / 2, arr);
 
-        int[][] dp = new int[n][d + 1];
+        int[][] dp = new int[n + 1][(totalSum - d) / 2 + 1];
         // return findSubSetsMemoization(n - 1, (totalSum - d) / 2, arr, dp);
 
         return findSubSetsTabulation(n - 1, (totalSum - d) / 2, arr, dp);
