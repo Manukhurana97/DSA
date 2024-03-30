@@ -1,9 +1,5 @@
 package com.example.dsa.NewCode.DP.Grid2;
 
-/* 
- * 
- * 
- */
 public class MinimumPathSum {
 
     public int minPathSum(int[][] grid) {
