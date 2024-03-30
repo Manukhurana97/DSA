@@ -1,4 +1,4 @@
-package com.example.dsa.NewCode.DP;
+package com.example.dsa.NewCode.DP.Sequence3;
 
 /* 0/1 knapstack */
 // optimizatio  prodlem
@@ -26,8 +26,11 @@ public class knapstack {
             return 0;
 
         int take = (maxWeight - wts[n] < 0) ? 0
-                : arr[n] + maxProfitMinWeightRecursion(n - 1, arr, wts, maxWeight - wts[n], total);
-        int notTake = maxProfitMinWeightRecursion(n - 1, arr, wts, maxWeight, total);
+                : arr[n] + maxProfitMinWeightRecursion(n - 1, arr, wts, maxWeight - wts[n], total); // profit after
+                                                                                                    // taking current
+                                                                                                    // element
+        int notTake = maxProfitMinWeightRecursion(n - 1, arr, wts, maxWeight, total); // profit after not taking current
+                                                                                      // element
 
         return Math.max(take, notTake);
     }
@@ -43,8 +46,13 @@ public class knapstack {
             return dp[n][maxWeight];
 
         int take = (maxWeight - wts[n] < 0) ? 0
-                : arr[n] + maxProfitMinWeightMemoization(n - 1, arr, wts, maxWeight - wts[n], total, dp);
-        int notTake = maxProfitMinWeightMemoization(n - 1, arr, wts, maxWeight, total, dp);
+                : arr[n] + maxProfitMinWeightMemoization(n - 1, arr, wts, maxWeight - wts[n], total, dp); // profit
+                                                                                                          // after
+                                                                                                          // taking
+                                                                                                          // current
+                                                                                                          // element
+        int notTake = maxProfitMinWeightMemoization(n - 1, arr, wts, maxWeight, total, dp); // profit after not taking
+                                                                                            // current element
 
         dp[n][maxWeight] = Math.max(take, notTake);
 
