@@ -1,5 +1,9 @@
 package com.example.dsa.NewCode.DP;
 
+/* 
+ * min coin after exchange 
+ * we have inf supply of each coin
+ */
 public class CoinChange2 {
 
     public int change(int amount, int[] coins) {
@@ -17,7 +21,7 @@ public class CoinChange2 {
         if (ind < 0)
             return 0;
 
-        int take = coins[ind] > amount ? 0 : changeRecurssion(ind, amount - coins[ind], coins);
+        int take = coins[ind] > amount ? 0 : changeRecurssion(ind, amount - coins[ind], coins); // index not reduced
         int notTake = changeRecurssion(ind - 1, amount, coins);
 
         return take + notTake;
