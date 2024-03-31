@@ -20,7 +20,8 @@ public class LongestCommonSubSequence {
         // int[][] dp = new int[s.length()][t.length()];
         // return lcsMemoization(s.length(), s, t.length(), t, dp);
 
-        return lcsTabulation(s.length() - 1, s, t.length() - 1, t);
+        // return lcsTabulation(s, t);
+        return lcsSpaceOptimization(s, t);
     }
 
     public static int lcsRecursion(int sl, String s, int tl, String t) {
