@@ -1,5 +1,8 @@
 package com.example.dsa.NewCode.DP.Strings;
 
+/* 
+ * calculate longest palandrame using longest common sequence
+ */
 public class LongestPalandromicSequence {
 
     private static int longestPalandromicSequence(String s) {
