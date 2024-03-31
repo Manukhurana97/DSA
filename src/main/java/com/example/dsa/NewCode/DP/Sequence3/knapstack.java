@@ -70,7 +70,7 @@ public class knapstack {
         for (int i = 1; i < n; i++) {
             for (int currWeight = 0; currWeight <= maxWeight; currWeight++) {
                 int take = (wts[i] > currWeight) ? Integer.MIN_VALUE : arr[i] + dp[i - 1][currWeight - wts[i]];
-                // formula : [weight - weight of currentRow] + profit; :
+                // formula : [Totalweight - weight of currentRow] + profit; :
                 // [weight - weight of currentRow] :: can we hold current object in a bag , bag
                 // weight - element weight
                 int notTake = dp[i - 1][currWeight]; // prev profit

@@ -35,7 +35,7 @@ public class PrintLongestCommonSubsequence {
 
         while (i > 0 && j > 0) {
             if (s.charAt(i - 1) == t.charAt(j - 1)) {
-                builder.insert(0, s.charAt(i));
+                builder.insert(0, s.charAt(i - 1));
                 i -= 1;
                 j -= 1;
             } else {
@@ -48,5 +48,12 @@ public class PrintLongestCommonSubsequence {
         }
 
         return builder.toString();
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abcde";
+        String s2 = "bdgek";
+
+        System.out.println(lcss(s1, s2));
     }
 }
