@@ -1,5 +1,6 @@
 package com.example.dsa.NewCode.DP.Strings;
 
+// using longest common subsctring tabulation code, iterate from n to 0
 public class PrintLongestCommonSubsequence {
 
     public static int[][] lcsTabulation(String s, String t) {
