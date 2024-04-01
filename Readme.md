@@ -39,7 +39,7 @@ Help: https://algo.monster/flowchart
 
 
 
-
+```
 
 addConditionToSelectedRows(): void {
     const selection: Selection | null = window.getSelection();
@@ -85,4 +85,12 @@ addConditionToSelectedRows(): void {
         console.log("No selection made.");
     }
 }
+```
+
+
+
+
+
+
+
 
