@@ -121,5 +121,43 @@ function addConditionInBothColumns(): void {
 }
 
 
+
+
+
+function addConditionInBothColumns(): void {
+    const selection: Selection | null = window.getSelection();
+    if (selection?.anchorNode) {
+        const range: Range = selection.getRangeAt(0);
+        if (range?.startContainer?.parentElement) {
+            const tr: HTMLTableRowElement | null = range.startContainer.parentElement.closest('tr');
+            if (tr) {
+                const tds: HTMLCollectionOf<HTMLTableCellElement> = tr.cells;
+                if (tds.length === 2) {
+                    const key: string | undefined = tds[1].querySelector('p')?.textContent?.trim();
+                    if (key) {
+                        const condition: string = `<div>\n<pre>\n#if(${key} && ${key} !== '')\n</pre></div>`;
+                        const elseIfCondition: string = `<div>\n<pre>\n#elseif(${key} && ${key} === '')\n</pre></div>`;
+                        const endCondition: string = "#end";
+                        const table: HTMLTableElement | null = tr.closest('table');
+                        if (table && table.parentNode) {
+                            const existingCondition: HTMLElement | null = table.previousElementSibling as HTMLElement;
+                            if (existingCondition && existingCondition.tagName === "DIV" && existingCondition.querySelector('pre')) {
+                                table.parentNode.insertBefore(table.cloneNode(true), table.nextSibling);
+                            } else {
+                                const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
+                                tableClone.innerHTML = condition + elseIfCondition + table.innerHTML + endCondition;
+                                table.parentNode.insertBefore(tableClone, table.nextSibling);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
 ```
 
