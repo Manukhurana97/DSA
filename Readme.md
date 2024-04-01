@@ -41,15 +41,15 @@ Help: https://algo.monster/flowchart
 
 ```
 
-addConditionToSelectedRows(): void {
+generateTablesBasedOnSelection(): void {
     const selection: Selection | null = window.getSelection();
     if (selection && selection.rangeCount > 0) {
         const range: Range = selection.getRangeAt(0);
         const table: HTMLTableElement | null = range.commonAncestorContainer.closest('table');
-        
+
         if (table) {
-            const selectedRows: HTMLTableRowElement[] = [];
             const trs: NodeListOf<HTMLTableRowElement> = table.querySelectorAll('tr');
+            const selectedRows: HTMLTableRowElement[] = [];
             trs.forEach((tr) => {
                 const rects = selection.getRangeAt(0).getClientRects();
                 const trRect = tr.getBoundingClientRect();
@@ -60,21 +60,27 @@ addConditionToSelectedRows(): void {
                     }
                 }
             });
-            
+
             if (selectedRows.length > 0) {
-                const key: string | undefined = prompt("Enter the condition key:");
-                if (key) {
-                    const condition: string = `#if(${key} + ${key} & ${key} + ${key} [**)\n`;
-                    const elseIfCondition: string = `#elseif(${key} + ${key} & ${key} + ${key} [***)\n`;
-                    const endCondition: string = '#end\n';
-                    
-                    selectedRows.forEach((tr) => {
-                        const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
-                        tableClone.innerHTML = elseIfCondition + tr.innerHTML + endCondition;
-                        tr.insertAdjacentHTML('beforebegin', condition);
-                        tr.parentNode.insertBefore(tableClone, tr.nextSibling);
-                    });
+                const tables: HTMLTableElement[] = [];
+
+                // 1. If both selected rows exist
+                if (selectedRows.length >= 2) {
+                    tables.push(this.createTable(selectedRows.slice(0, 2)));
                 }
+
+                // 2. If either one exists
+                if (selectedRows.length >= 1) {
+                    tables.push(this.createTable(selectedRows.slice(0, 1)));
+                }
+
+                // 3. If not exist then send other remaining rows
+                if (selectedRows.length === 0) {
+                    tables.push(this.createTable(trs));
+                }
+
+                // Render tables or perform other actions with generated tables
+                console.log("Generated tables:", tables);
             } else {
                 console.log("No rows selected.");
             }
@@ -85,6 +91,17 @@ addConditionToSelectedRows(): void {
         console.log("No selection made.");
     }
 }
+
+createTable(rows: HTMLTableRowElement[]): HTMLTableElement {
+    const table: HTMLTableElement = document.createElement('table');
+    rows.forEach((row) => {
+        const clonedRow: HTMLTableRowElement = row.cloneNode(true) as HTMLTableRowElement;
+        table.appendChild(clonedRow);
+    });
+    return table;
+}
+            
+         
 ```
 
 
