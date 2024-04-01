@@ -41,67 +41,55 @@ Help: https://algo.monster/flowchart
 
 ```
 
-generateTablesBasedOnSelection(): void {
-    const selection: Selection | null = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-        const range: Range = selection.getRangeAt(0);
-        const table: HTMLTableElement | null = range.commonAncestorContainer.closest('table');
 
-        if (table) {
-            const trs: NodeListOf<HTMLTableRowElement> = table.querySelectorAll('tr');
-            const selectedRows: HTMLTableRowElement[] = [];
-            trs.forEach((tr) => {
-                const rects = selection.getRangeAt(0).getClientRects();
-                const trRect = tr.getBoundingClientRect();
-                for (let i = 0; i < rects.length; i++) {
-                    if (rects[i].top >= trRect.top && rects[i].bottom <= trRect.bottom) {
-                        selectedRows.push(tr);
-                        break;
+function addConditionInBothColumns() {
+    const selection = window.getSelection();
+    if (selection?.anchorNode) {
+        const range = selection.getRangeAt(0);
+        if (range?.startContainer?.parentElement) {
+            const tr = range.startContainer.parentElement.closest("tr");
+            if (tr) {
+                const tds = tr.cells;
+                const keys = Array.from(tds, cell => cell.querySelector("p")?.textContent?.trim()).filter(Boolean);
+                
+                if (keys.length > 0) {
+                    const tableCount = Math.pow(2, keys.length);
+                    
+                    for (let i = 0; i < tableCount; i++) {
+                        const condition = generateCondition(keys, i);
+                        const table = tr.closest("table");
+                        if (table?.parentNode) {
+                            const tableClone = table.cloneNode(true);
+                            tableClone.innerHTML = condition + table.innerHTML;
+                            table.parentNode.insertBefore(tableClone, table.nextSibling);
+                        }
                     }
                 }
-            });
-
-            if (selectedRows.length > 0) {
-                const tables: HTMLTableElement[] = [];
-
-                // 1. If both selected rows exist
-                if (selectedRows.length >= 2) {
-                    tables.push(this.createTable(selectedRows.slice(0, 2)));
-                }
-
-                // 2. If either one exists
-                if (selectedRows.length >= 1) {
-                    tables.push(this.createTable(selectedRows.slice(0, 1)));
-                }
-
-                // 3. If not exist then send other remaining rows
-                if (selectedRows.length === 0) {
-                    tables.push(this.createTable(trs));
-                }
-
-                // Render tables or perform other actions with generated tables
-                console.log("Generated tables:", tables);
-            } else {
-                console.log("No rows selected.");
             }
-        } else {
-            console.log("No table found.");
         }
-    } else {
-        console.log("No selection made.");
     }
 }
 
-createTable(rows: HTMLTableRowElement[]): HTMLTableElement {
-    const table: HTMLTableElement = document.createElement('table');
-    rows.forEach((row) => {
-        const clonedRow: HTMLTableRowElement = row.cloneNode(true) as HTMLTableRowElement;
-        table.appendChild(clonedRow);
-    });
-    return table;
+function generateCondition(keys, index) {
+    let condition = "<!-- If no key has data -->\n";
+    const selectedKeys = [];
+
+    for (let i = 0; i < keys.length; i++) {
+        if ((index >> i) & 1) {
+            selectedKeys.push(keys[i]);
+        }
+    }
+
+    if (selectedKeys.length > 0) {
+        condition = `<!-- If key(s) selected: ${selectedKeys.join(", ")} -->\n`;
+    }
+
+    return condition + selectedKeys.join("\n");
 }
-            
-         
+
+
+
+        
 ```
 
 
