@@ -44,3 +44,29 @@ lg = "log"
         count = "!git ls-files '*.java' | xargs cat | wc -l"
 
 
+addConditionInBothColumns(): void {
+    const selection: Selection | null = window.getSelection();
+    if (selection?.anchorNode) {
+        const range: Range = selection.getRangeAt(0);
+        if (range?.startContainer?.parentElement) {
+            const tr: HTMLTableRowElement | null = range.startContainer.parentElement.closest('tr');
+            if (tr) {
+                const tds: HTMLCollectionOf<HTMLTableCellElement> = tr.cells;
+                if (tds.length === 2) {
+                    const key: string | undefined = tds[1].querySelector('p')?.textContent?.trim();
+                    const condition: string = `#if(${key} + ${key} & ${key} + ${key} [**)\n`;
+                    const elseIfCondition: string = `#elseif(${key} + ${key} & ${key} + ${key} [***)\n`;
+                    const endCondition: string = '#end\n';
+
+                    const table: HTMLTableElement | null = tr.closest('table');
+                    if (table?.parentNode) {
+                        const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
+                        tableClone.innerHTML = elseIfCondition + table.innerHTML + endCondition;
+                        table.insertAdjacentHTML('beforebegin', condition);
+                        table.parentNode.insertBefore(tableClone, table.nextSibling);
+                    }
+                }
+            }
+        }
+    }
+}
