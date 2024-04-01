@@ -50,19 +50,25 @@ function addConditionInBothColumns(): void {
             const tr = range.startContainer.parentElement.closest("tr");
             if (tr) {
                 const tds = tr.cells;
-                const keys: string[] = Array.from(tds, cell => (cell.querySelector("p")?.textContent?.trim() || '')).filter(Boolean);
-
-                if (keys.length > 0) {
-                    const tableCount: number = Math.pow(2, keys.length);
-
+                const key1: string | undefined = tds[0].querySelector("p")?.textContent?.trim();
+                const key2: string | undefined = tds[1].querySelector("p")?.textContent?.trim();
+                const keys: string = (key1 && key1 !== "") && (key2 && key2 !== "") ? "both" : (key1 || key2) ? "either" : "none";
+                
+                const table = tr.closest("table");
+                if (table?.parentNode) {
+                    const startCondition: string = `<!-- #if(${keys} && ${keys} !== "") -->\n`;
+                    const elseIfCondition: string = `<!-- #elseif(${keys} && ${keys} !== "") -->\n`;
+                    const endCondition: string = `<!-- #end -->\n`;
+                    
+                    const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
+                    const tableCount: number = (keys === "both") ? 4 : 1;
+                    
                     for (let i = 0; i < tableCount; i++) {
-                        const condition: string = generateCondition(keys, i);
-                        const table = tr.closest("table");
-                        if (table?.parentNode) {
-                            const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
-                            tableClone.innerHTML = condition + table.innerHTML;
-                            table.parentNode.insertBefore(tableClone, table.nextSibling);
-                        }
+                        const condition: string = (i === 0) ? startCondition : (i === tableCount - 1) ? endCondition : elseIfCondition;
+                        const tableCloneInnerHtml: string = condition + table.innerHTML;
+                        const tableCloneTemp: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
+                        tableCloneTemp.innerHTML = tableCloneInnerHtml;
+                        table.parentNode.insertBefore(tableCloneTemp, table.nextSibling);
                     }
                 }
             }
@@ -70,25 +76,7 @@ function addConditionInBothColumns(): void {
     }
 }
 
-function generateCondition(keys: string[], index: number): string {
-    let condition: string = "<!-- If no key has data -->\n";
-    const selectedKeys: string[] = [];
-
-    for (let i = 0; i < keys.length; i++) {
-        if ((index >> i) & 1) {
-            selectedKeys.push(keys[i]);
-        }
-    }
-
-    if (selectedKeys.length > 0) {
-        condition = `<!-- If key(s) selected: ${selectedKeys.join(", ")} -->\n`;
-    }
-
-    return condition + selectedKeys.join("\n");
-}
-
-
-        
+    
 ```
 
 
