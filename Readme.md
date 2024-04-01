@@ -77,12 +77,49 @@ function addConditionInBothColumns(): void {
 }
 
     
+
+
+
+
+
+
+
+function addConditionInBothColumns(): void {
+    const selection = window.getSelection();
+    if (selection?.anchorNode) {
+        const range = selection.getRangeAt(0);
+        if (range?.startContainer?.parentElement) {
+            const tr = range.startContainer.parentElement.closest("tr");
+            if (tr) {
+                const selectedRows = Array.from(tr.closest("table")?.querySelectorAll("tr.selected") || []);
+                const selectedRowCount = selectedRows.length;
+                const tds = tr.cells;
+                const key1: string | undefined = tds[0].querySelector("p")?.textContent?.trim();
+                const key2: string | undefined = tds[1].querySelector("p")?.textContent?.trim();
+                const keys: string = (key1 && key1 !== "") && (key2 && key2 !== "") ? "both" : (key1 || key2) ? "either" : "none";
+                
+                const table = tr.closest("table");
+                if (table?.parentNode) {
+                    const startCondition: string = `<!-- #if(${keys} && ${keys} !== "") -->\n`;
+                    const elseIfCondition: string = `<!-- #elseif(${keys} && ${keys} !== "") -->\n`;
+                    const endCondition: string = `<!-- #end -->\n`;
+                    
+                    const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
+                    const tableCount: number = Math.pow(2, selectedRowCount);
+                    
+                    for (let i = 0; i < tableCount; i++) {
+                        const condition: string = (i === 0) ? startCondition : (i === tableCount - 1) ? endCondition : elseIfCondition;
+                        const tableCloneInnerHtml: string = condition + table.innerHTML;
+                        const tableCloneTemp: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
+                        tableCloneTemp.innerHTML = tableCloneInnerHtml;
+                        table.parentNode.insertBefore(tableCloneTemp, table.nextSibling);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 ```
-
-
-
-
-
-
-
 
