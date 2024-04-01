@@ -42,7 +42,7 @@ Help: https://algo.monster/flowchart
 ```
 
 
-function addConditionInBothColumns() {
+function addConditionInBothColumns(): void {
     const selection = window.getSelection();
     if (selection?.anchorNode) {
         const range = selection.getRangeAt(0);
@@ -50,16 +50,16 @@ function addConditionInBothColumns() {
             const tr = range.startContainer.parentElement.closest("tr");
             if (tr) {
                 const tds = tr.cells;
-                const keys = Array.from(tds, cell => cell.querySelector("p")?.textContent?.trim()).filter(Boolean);
-                
+                const keys: string[] = Array.from(tds, cell => (cell.querySelector("p")?.textContent?.trim() || '')).filter(Boolean);
+
                 if (keys.length > 0) {
-                    const tableCount = Math.pow(2, keys.length);
-                    
+                    const tableCount: number = Math.pow(2, keys.length);
+
                     for (let i = 0; i < tableCount; i++) {
-                        const condition = generateCondition(keys, i);
+                        const condition: string = generateCondition(keys, i);
                         const table = tr.closest("table");
                         if (table?.parentNode) {
-                            const tableClone = table.cloneNode(true);
+                            const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
                             tableClone.innerHTML = condition + table.innerHTML;
                             table.parentNode.insertBefore(tableClone, table.nextSibling);
                         }
@@ -70,9 +70,9 @@ function addConditionInBothColumns() {
     }
 }
 
-function generateCondition(keys, index) {
-    let condition = "<!-- If no key has data -->\n";
-    const selectedKeys = [];
+function generateCondition(keys: string[], index: number): string {
+    let condition: string = "<!-- If no key has data -->\n";
+    const selectedKeys: string[] = [];
 
     for (let i = 0; i < keys.length; i++) {
         if ((index >> i) & 1) {
@@ -86,7 +86,6 @@ function generateCondition(keys, index) {
 
     return condition + selectedKeys.join("\n");
 }
-
 
 
         
