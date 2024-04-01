@@ -35,38 +35,54 @@ Help: https://algo.monster/flowchart
 
 
 
-lg = "log"
-        lgp = "log --pretty=oneline --abbrev-commit"
-        psh = "push"
-        pshc = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-        all = "!f() { git add . && git commit -m \"$1\" && git push origin $(git rev-parse --abbrev-ref HEAD); }; f"
-        cmt = "commit -m"
-        count = "!git ls-files '*.java' | xargs cat | wc -l"
 
 
-addConditionInBothColumns(): void {
+
+
+
+
+addConditionToSelectedRows(): void {
     const selection: Selection | null = window.getSelection();
-    if (selection?.anchorNode) {
+    if (selection && selection.rangeCount > 0) {
         const range: Range = selection.getRangeAt(0);
-        if (range?.startContainer?.parentElement) {
-            const tr: HTMLTableRowElement | null = range.startContainer.parentElement.closest('tr');
-            if (tr) {
-                const tds: HTMLCollectionOf<HTMLTableCellElement> = tr.cells;
-                if (tds.length === 2) {
-                    const key: string | undefined = tds[1].querySelector('p')?.textContent?.trim();
+        const table: HTMLTableElement | null = range.commonAncestorContainer.closest('table');
+        
+        if (table) {
+            const selectedRows: HTMLTableRowElement[] = [];
+            const trs: NodeListOf<HTMLTableRowElement> = table.querySelectorAll('tr');
+            trs.forEach((tr) => {
+                const rects = selection.getRangeAt(0).getClientRects();
+                const trRect = tr.getBoundingClientRect();
+                for (let i = 0; i < rects.length; i++) {
+                    if (rects[i].top >= trRect.top && rects[i].bottom <= trRect.bottom) {
+                        selectedRows.push(tr);
+                        break;
+                    }
+                }
+            });
+            
+            if (selectedRows.length > 0) {
+                const key: string | undefined = prompt("Enter the condition key:");
+                if (key) {
                     const condition: string = `#if(${key} + ${key} & ${key} + ${key} [**)\n`;
                     const elseIfCondition: string = `#elseif(${key} + ${key} & ${key} + ${key} [***)\n`;
                     const endCondition: string = '#end\n';
-
-                    const table: HTMLTableElement | null = tr.closest('table');
-                    if (table?.parentNode) {
+                    
+                    selectedRows.forEach((tr) => {
                         const tableClone: HTMLTableElement = table.cloneNode(true) as HTMLTableElement;
-                        tableClone.innerHTML = elseIfCondition + table.innerHTML + endCondition;
-                        table.insertAdjacentHTML('beforebegin', condition);
-                        table.parentNode.insertBefore(tableClone, table.nextSibling);
-                    }
+                        tableClone.innerHTML = elseIfCondition + tr.innerHTML + endCondition;
+                        tr.insertAdjacentHTML('beforebegin', condition);
+                        tr.parentNode.insertBefore(tableClone, tr.nextSibling);
+                    });
                 }
+            } else {
+                console.log("No rows selected.");
             }
+        } else {
+            console.log("No table found.");
         }
+    } else {
+        console.log("No selection made.");
     }
 }
+
