@@ -7,17 +7,17 @@ public class LongestPalandromicSequence {
 
     private static int longestPalandromicSequence(String s) {
 
+        // reverse a string for s2
         StringBuilder builder = new StringBuilder();
         builder.append(s);
-        // return lcsRecursion(s.length() - 1, s.length() - 1, s,
-        // builder.reverse().toString());
+        return lcsRecursion(s.length() - 1, s.length() - 1, s, builder.reverse().toString());
 
         // int[][] dp = new int[s.length() + 1][s.length() + 1];
         // return lcsMemoization(s.length() - 1, s.length() - 1, s,
         // builder.reverse().toString(), dp);
 
         // return lcsTabulation(s, builder.reverse().toString());
-        return lcsSpaceOptimization(s, builder.reverse().toString());
+        // return lcsSpaceOptimization(s, builder.reverse().toString());
     }
 
     private static int lcsRecursion(int l1, int l2, String s1, String s2) {
