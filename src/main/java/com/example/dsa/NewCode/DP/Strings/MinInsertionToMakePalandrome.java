@@ -16,7 +16,9 @@ public class MinInsertionToMakePalandrome {
         // return longestPalindromeMemoization(s.length(), s.length(), s,
         // builder.reverse().toString(), dp);
 
-        return longestPalindromeTabulation(s, builder.reverse().toString());
+        // return longestPalindromeTabulation(s, builder.reverse().toString());
+
+        return longestPalindromeSpaceOptimization(s, builder.reverse().toString());
     }
 
     // using recursion
@@ -73,6 +75,28 @@ public class MinInsertionToMakePalandrome {
         }
 
         return dp[s1.length()][s2.length()];
+    }
+
+    // space optimization
+    private static int longestPalindromeSpaceOptimization(String s1, String s2) {
+        int[] prev = new int[s1.length() + 1];
+        int[] curr = new int[s1.length() + 1];
+
+        for (int l1 = 0; l1 <= s1.length(); l1++) {
+            for (int l2 = 0; l2 <= s2.length(); l2++) {
+                if (l1 == 0 || l2 == 0)
+                    prev[l2] = curr[l2] = 0;
+                else {
+                    if (s1.charAt(l1 - 1) == s2.charAt(l2 - 1)) {
+                        curr[l2] = 1 + prev[l2 - 1];
+                    } else {
+                        curr[l2] = Math.max(prev[l2], curr[l2 - 1]);
+                    }
+                }
+            }
+        }
+
+        return prev[s2.length()];
     }
 
     private static int minInsertion(String str) {
