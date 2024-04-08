@@ -84,9 +84,10 @@ public class MinInsertionToMakePalandrome {
 
         for (int l1 = 0; l1 <= s1.length(); l1++) {
             for (int l2 = 0; l2 <= s2.length(); l2++) {
-                if (l1 == 0 || l2 == 0)
-                    prev[l2] = curr[l2] = 0;
-                else {
+                if (l1 == 0 || l2 == 0) {
+                    prev[l2] = 0;
+                    curr[l2] = 0;
+                } else {
                     if (s1.charAt(l1 - 1) == s2.charAt(l2 - 1)) {
                         curr[l2] = 1 + prev[l2 - 1];
                     } else {
@@ -94,6 +95,8 @@ public class MinInsertionToMakePalandrome {
                     }
                 }
             }
+            prev = curr;
+            curr = new int[s1.length() + 1];
         }
 
         return prev[s2.length()];
