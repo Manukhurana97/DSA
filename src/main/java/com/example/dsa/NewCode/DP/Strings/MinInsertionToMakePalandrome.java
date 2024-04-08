@@ -9,9 +9,15 @@ public class MinInsertionToMakePalandrome {
         StringBuilder builder = new StringBuilder();
         builder.append(s);
 
-        return longestPalandromeRecursion(s.length(), s.length(), s, builder.reverse().toString());
+        // return longestPalandromeRecursion(s.length(), s.length(), s,
+        // builder.reverse().toString());
+
+        int[][] dp = new int[s.length() + 1][s.length() + 1];
+        return longestPalindromeMemoization(s.length(), s.length(), s,
+                builder.reverse().toString(), dp);
     }
 
+    // using recursion
     private static int longestPalandromeRecursion(int l1, int l2, String s1, String s2) {
 
         if (l1 <= 0 || l2 <= 0)
@@ -23,8 +29,35 @@ public class MinInsertionToMakePalandrome {
         return Math.max(longestPalandromeRecursion(l1 - 1, l2, s1, s2), longestPalandromeRecursion(l1, l2 - 1, s1, s2));
     }
 
-    private int minInsertion(String str) {
+    // using memoization
+    private static int longestPalindromeMemoization(int l1, int l2, String s1, String s2, int[][] dp) {
+
+        if (l1 <= 0 || l2 <= 0)
+            return 0;
+
+        if (dp[l1][l2] != 0)
+            return dp[l1][l2];
+
+        if (s1.charAt(l1 - 1) == s2.charAt(l2 - 1)) {
+            var result = 1 + longestPalindromeMemoization(l1 - 1, l2 - 1, s1, s2, dp);
+            dp[l1][l2] = result;
+            return result;
+
+        }
+        var result = Math.max(
+                longestPalindromeMemoization(l1 - 1, l2, s1, s2, dp),
+                longestPalindromeMemoization(l1, l2 - 1, s1, s2, dp));
+        dp[l1][l2] = result;
+        return result;
+
+    }
+
+    private static int minInsertion(String str) {
         return str.length() - longestPalindrome(str);
     }
 
+    public static void main(String[] args) {
+        String str = "abcaa";
+        System.out.println(minInsertion(str));
+    }
 }
