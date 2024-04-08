@@ -58,12 +58,16 @@ public class MinInsertionToMakePalandrome {
     private static int longestPalindromeTabulation(String s1, String s2) {
         int[][] dp = new int[s1.length() + 1][s1.length() + 1];
 
-        for (int l1 = 1; l1 <= s1.length(); l1++) {
-            for (int l2 = 1; l2 <= s2.length(); l2++) {
-                if (s1.charAt(l1 - 1) == s2.charAt(l2 - 1)) {
-                    dp[l1][l2] = 1 + dp[l1 - 1][l2 - 1];
-                } else {
-                    dp[l1][l2] = Math.max(dp[l1 - 1][l2], dp[l1][l2 - 1]);
+        for (int l1 = 0; l1 <= s1.length(); l1++) {
+            for (int l2 = 0; l2 <= s2.length(); l2++) {
+                if (l1 == 0 || l2 == 0)
+                    dp[l1][l2] = 0;
+                else {
+                    if (s1.charAt(l1 - 1) == s2.charAt(l2 - 1)) {
+                        dp[l1][l2] = 1 + dp[l1 - 1][l2 - 1];
+                    } else {
+                        dp[l1][l2] = Math.max(dp[l1 - 1][l2], dp[l1][l2 - 1]);
+                    }
                 }
             }
         }
