@@ -8,7 +8,9 @@ public class MinInsertionDeletionToMakeAtoB {
         // int[][] dp = new int[a.length() + 1][b.length() + 1];
         // return lcaMemoization(a.length(), b.length(), a, b, dp);
 
-        return lcaTabulation(a, b);
+        // return lcaTabulation(a, b);
+
+        return lcaSpaceOptimization(a, b);
     }
 
     // recursion
@@ -65,6 +67,31 @@ public class MinInsertionDeletionToMakeAtoB {
         }
 
         return dp[a.length()][b.length()];
+    }
+
+    // space optimization
+    private static int lcaSpaceOptimization(String a, String b) {
+
+        int[] prev = new int[b.length() + 1];
+        int[] curr = new int[b.length() + 1];
+
+        for (int i = 0; i <= a.length(); i++) {
+            for (int j = 0; j <= b.length(); j++) {
+                if (i == 0 || j == 0) {
+                    prev[j] = 0;
+                } else {
+                    if (a.charAt(i - 1) == b.charAt(j - 1)) {
+                        curr[j] = 1 + prev[j - 1];
+                    } else {
+                        curr[j] = Math.max(prev[j], curr[j - 1]);
+                    }
+                }
+            }
+            prev = curr;
+            curr = new int[b.length() + 1];
+        }
+
+        return prev[b.length()];
     }
 
     private static int canYouMake(String a, String b) {
