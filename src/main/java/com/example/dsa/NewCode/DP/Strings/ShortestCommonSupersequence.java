@@ -45,4 +45,9 @@ public class ShortestCommonSupersequence {
 
     }
 
+    public static void main(String[] args) {
+        String s = "AGGTAB";
+        String t = "GXTXAYB";
+        System.out.println("Shortest Common Supersequence: " + scs(s, t));
+    }
 }
