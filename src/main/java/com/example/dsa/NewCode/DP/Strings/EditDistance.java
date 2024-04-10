@@ -16,8 +16,8 @@ public class EditDistance {
         if (s1.charAt(l1) == s2.charAt(l2)) {
             return editDistanceRecursion(l1 - 1, l2 - 1, s1, s2);
         } else {
-            int insertion = editDistanceRecursion(l1 - 1, l2, s1, s2);
-            int deletion = editDistanceRecursion(l1, l2 - 1, s1, s2);
+            int insertion = editDistanceRecursion(l1, l2 - 1, s1, s2);
+            int deletion = editDistanceRecursion(l1 - 1, l2, s1, s2);
             int replace = editDistanceRecursion(l1 - 1, l2 - 1, s1, s2);
             return 1 + Math.min(replace, Math.min(insertion, deletion));
         }
