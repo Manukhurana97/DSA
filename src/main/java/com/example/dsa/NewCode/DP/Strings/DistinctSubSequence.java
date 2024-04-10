@@ -77,6 +77,20 @@ public class DistinctSubSequence {
         return prev[l2];
     }
 
+    private static int numDistinctSpaceOptimization1(int l1, int l2, String s, String t) {
+
+        int[] prev = new int[l2 + 1];
+
+        prev[0] = 1;
+
+        for (int i = 1; i <= l1; i++) {
+            for (int j = l2; j > 0; j--) {
+                prev[j] += ((s.charAt(i - 1) == t.charAt(j - 1)) ? prev[j - 1] : 0);
+            }
+        }
+        return prev[l2];
+    }
+
     public static void main(String[] args) {
         // System.out.println(numDistinct("babgbag", "bag"));
         System.out.println(numDistinct("rabbbit", "rabbit"));
