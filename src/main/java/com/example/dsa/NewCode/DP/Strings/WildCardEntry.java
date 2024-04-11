@@ -5,7 +5,10 @@ package com.example.dsa.NewCode.DP.Strings;
 public class WildCardEntry {
 
     private static boolean wildCardEntry(String s1, String s2) {
-        return wildCardEntryRecursion(s1.length(), s2.length(), s1, s2);
+        // return wildCardEntryRecursion(s1.length(), s2.length(), s1, s2);
+        int[][] dp = new int[s1.length()][s2.length()];
+        // return wildCardEntryMemoization(s1.length(), s2.length(), s1, s2, dp);
+        return wildCardEntryTabulation(s1, s2);
     }
 
     // Recurssion
@@ -67,7 +70,9 @@ public class WildCardEntry {
         return false;
     }
 
-    private static boolean wildCardEntryTabulation(String pattern, String text, boolean[][] dp) {
+    private static boolean wildCardEntryTabulation(String pattern, String text) {
+
+        boolean[][] dp = new boolean[pattern.length()][text.length()];
 
         dp[0][0] = true;
         for (int i = 1; i < pattern.length(); i++) {
@@ -94,5 +99,38 @@ public class WildCardEntry {
         }
 
         return dp[pattern.length()][text.length()];
+    }
+
+    private static boolean wildCardEntrySpaceOptimization(String pattern, String text) {
+
+        boolean[] prev = new boolean[text.length()];
+        boolean[] curr = new boolean[text.length()];
+
+        prev[0] = curr[0] = true;
+        for (int i = 1; i < pattern.length(); i++) {
+            boolean flag = true;
+            for (int ii = 1; ii < i; ii++) {
+                if (pattern.charAt(ii - 1) != '*') {
+                    flag = false;
+                    break;
+                }
+            }
+            prev[0] = flag;
+        }
+
+        for (int i = 1; i <= pattern.length(); i++) {
+            for (int j = 1; j <= text.length(); j++) {
+                if (pattern.charAt(i - 1) == text.charAt(j - 1) || pattern.charAt(i - 1) == '?') {
+                    curr[j] = prev[j - 1];
+                } else if (pattern.charAt(i - 1) == '*') {
+                    curr[j] = prev[j] || curr[j - 1];
+                } else {
+                    curr[j] = false;
+                }
+            }
+            System.arraycopy(curr, 0, prev, 0, curr.length);
+        }
+
+        return prev[text.length()];
     }
 }
