@@ -4,12 +4,12 @@ package com.example.dsa.NewCode.DP.Strings;
 // *: matches with sequence of length 0 or more
 public class WildCardEntry {
 
-    private boolean wildCardEntry(String s1, String s2) {
+    private static boolean wildCardEntry(String s1, String s2) {
         return wildCardEntryRecursion(s1.length(), s2.length(), s1, s2);
     }
 
     // Recurssion
-    private boolean wildCardEntryRecursion(int i, int j, String pattern, String text) {
+    private static boolean wildCardEntryRecursion(int i, int j, String pattern, String text) {
 
         if (i < 0 && j < 0)
             return true;
@@ -34,7 +34,7 @@ public class WildCardEntry {
     }
 
     // Memoization
-    private boolean wildCardEntryMemoization(int i, int j, String pattern, String text, int[][] dp) {
+    private static boolean wildCardEntryMemoization(int i, int j, String pattern, String text, int[][] dp) {
 
         if (i < 0 && j < 0)
             return true;
@@ -65,5 +65,34 @@ public class WildCardEntry {
         }
         dp[i][j] = 2;
         return false;
+    }
+
+    private static boolean wildCardEntryTabulation(String pattern, String text, boolean[][] dp) {
+
+        dp[0][0] = true;
+        for (int i = 1; i < pattern.length(); i++) {
+            boolean flag = true;
+            for (int ii = 1; ii < i; ii++) {
+                if (pattern.charAt(ii - 1) != '*') {
+                    flag = false;
+                    break;
+                }
+            }
+            dp[i][0] = flag;
+        }
+
+        for (int i = 1; i <= pattern.length(); i++) {
+            for (int j = 1; j <= text.length(); j++) {
+                if (pattern.charAt(i - 1) == text.charAt(j - 1) || pattern.charAt(i - 1) == '?') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else if (pattern.charAt(i - 1) == '*') {
+                    dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
+                } else {
+                    dp[i][j] = false;
+                }
+            }
+        }
+
+        return dp[pattern.length()][text.length()];
     }
 }
