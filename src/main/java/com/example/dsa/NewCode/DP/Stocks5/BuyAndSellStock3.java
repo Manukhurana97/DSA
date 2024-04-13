@@ -30,7 +30,7 @@ public class BuyAndSellStock3 {
         }
     }
 
-    // time: O(n), Space: 2*O(N*2*3);
+    // time: O(N);, Space: 2*O(N*2*3);
     private static int maxProfitMemoization(int index, int[] price, int times, int buy, int[][][] dp) {
 
         if (times == 0 || index == price.length)
@@ -54,6 +54,7 @@ public class BuyAndSellStock3 {
         }
     }
 
+    // time: O(N*2*3), Space: O(N*2*3);
     private static int maxProfitTabulation(int[] price, int times, int[][][] dp) {
 
         for (int index = price.length - 1; index >= 0; index--) {
@@ -71,6 +72,7 @@ public class BuyAndSellStock3 {
         return dp[0][1][times];
     }
 
+    // time: O(N*2*3);, Space: O(2*3) = O(1);
     private static int maxProfitSpaceOptimization(int[] price, int times) {
 
         int[][] prev = new int[2][times + 1];
