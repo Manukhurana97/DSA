@@ -13,7 +13,7 @@ public class BuyAndSellStock3 {
         return maxProfitSpaceOptimization(price, 2);
     }
 
-    // time: O(2^n), Space: O(N*2*3);
+    // time: O(2^N), Space: O(N*2*3);
     private static int maxProfitRecursion(int index, int[] price, int times, int buy) {
 
         if (times == 0 || index == price.length)
@@ -30,7 +30,7 @@ public class BuyAndSellStock3 {
         }
     }
 
-    // time: O(N);, Space: 2*O(N*2*3);
+    // time: O(N), Space: 2*O(N*2*3);
     private static int maxProfitMemoization(int index, int[] price, int times, int buy, int[][][] dp) {
 
         if (times == 0 || index == price.length)

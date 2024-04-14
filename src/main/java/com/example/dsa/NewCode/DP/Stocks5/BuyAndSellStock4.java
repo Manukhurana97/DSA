@@ -10,7 +10,9 @@ public class BuyAndSellStock4 {
 
         // return maxProfitTabulation(k, prices, dp);
 
-        return maxProfitSpaceOptimization(k, prices);
+        // return maxProfitSpaceOptimization(k, prices);
+
+        return maxProfitSpaceOptimizationAhead(k, prices);
     }
 
     private int maxProfitRecurssion(int index, int transactionNo, int k, int[] prices) {
@@ -84,6 +86,23 @@ public class BuyAndSellStock4 {
             }
             ahead = curr;
             curr = new int[2 * k + 1];
+        }
+
+        return ahead[0];
+    }
+
+    private int maxProfitSpaceOptimizationAhead(int k, int[] prices) {
+
+        int[] ahead = new int[2 * k + 1];
+
+        for (int index = prices.length - 1; index >= 0; index--) {
+            for (int transactionNo = 2 * k - 1; transactionNo >= 0; transactionNo--) {
+                if (transactionNo % 2 == 0) {
+                    ahead[transactionNo] = Math.max(-prices[index] + ahead[transactionNo + 1], ahead[transactionNo]);
+                } else {
+                    ahead[transactionNo] = Math.max(prices[index] + ahead[transactionNo + 1], ahead[transactionNo]);
+                }
+            }
         }
 
         return ahead[0];

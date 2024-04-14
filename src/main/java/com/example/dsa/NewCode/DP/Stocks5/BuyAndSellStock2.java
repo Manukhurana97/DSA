@@ -86,19 +86,4 @@ public class BuyAndSellStock2 {
         return ahread[1];
     }
 
-    private static int maxProfitSpaceOptimizationAhead(int[] price) {
-
-        int ahreadNotBuy = 0, ahreadBuy = 0, currBuy = 0, currNotBuy = 0;
-
-        for (int index = price.length - 1; index >= 0; index--) {
-
-            currBuy = Math.max(-price[index] + ahreadNotBuy, ahreadBuy);
-            currNotBuy = Math.max(price[index] + ahreadBuy, ahreadNotBuy);
-        }
-        ahreadBuy = currBuy;
-        ahreadNotBuy = currNotBuy;
-
-        return ahreadBuy;
-    }
-
 }
