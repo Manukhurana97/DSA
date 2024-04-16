@@ -1,13 +1,12 @@
 package com.example.dsa.NewCode.DP.LIS6;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class LongestIDivisibleSubset {
 
-    public List<Integer> largestDivisibleSubset(int[] nums) {
+    public static List<Integer> largestDivisibleSubset(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
         int[] parent = new int[n];
