@@ -7,8 +7,7 @@ import java.util.List;
 
 public class LongestIDivisibleSubset {
 
-    public static List<Integer> largestDivisibleSubset(int[] nums) {
-
+    public List<Integer> largestDivisibleSubset(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
         int[] parent = new int[n];
@@ -16,10 +15,12 @@ public class LongestIDivisibleSubset {
         Arrays.fill(dp, 1);
         Arrays.fill(parent, -1);
 
+        Arrays.sort(nums);
+
         int maxElement = 0;
         for (int index = 0; index < n; index++) {
             for (int prev = 0; prev < index; prev++) {
-                if ((nums[prev] % nums[index] == 0 || nums[index] % nums[prev] == 0) && 1 + dp[prev] > dp[index]) {
+                if ((nums[index] % nums[prev] == 0) && 1 + dp[prev] > dp[index]) {
                     dp[index] = 1 + dp[prev];
                     parent[index] = prev;
                 }
@@ -28,11 +29,7 @@ public class LongestIDivisibleSubset {
                 maxElement = index;
         }
 
-        for (int i : parent) {
-            System.out.println(i);
-        }
-
-        List<Integer> result = new LinkedList<>(); // Changed to ArrayList for better performance
+        List<Integer> result = new LinkedList<>();
         while (maxElement != -1) {
             result.add(0, nums[maxElement]);
             maxElement = parent[maxElement];
