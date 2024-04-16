@@ -1,10 +1,14 @@
 package com.example.dsa.NewCode.DP.LIS6;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class LongestIncreasingSubSequence {
 
-    public int lengthOfLIS(int[] nums) {
+    public static int lengthOfLIS(int[] nums) {
         // return lengthOfLISRecurssion(0, -1, nums);
 
         // int[][] dp = new int[nums.length + 1][nums.length + 1];
@@ -12,10 +16,14 @@ public class LongestIncreasingSubSequence {
 
         // return lengthOfLISTabulation(nums);
 
-        return lengthOfLISSpaceOptimization(nums);
+        // return lengthOfLISSpaceOptimization(nums);
+
+        // return lengthOfLISSpaceOptimization1(nums);
+
+        return lengthOfLISPrintSubSequence(nums);
     }
 
-    private int lengthOfLISRecurssion(int index, int prev, int[] nums) {
+    private static int lengthOfLISRecurssion(int index, int prev, int[] nums) {
 
         if (index == nums.length)
             return 0;
@@ -29,7 +37,7 @@ public class LongestIncreasingSubSequence {
         return Math.max(take, notTake);
     }
 
-    private int lengthOfLISMemoization(int index, int prev, int[] nums, int[][] dp) {
+    private static int lengthOfLISMemoization(int index, int prev, int[] nums, int[][] dp) {
 
         if (index == nums.length)
             return 0;
@@ -47,7 +55,7 @@ public class LongestIncreasingSubSequence {
         return Math.max(take, notTake);
     }
 
-    private int lengthOfLISTabulation(int nums[]) {
+    private static int lengthOfLISTabulation(int nums[]) {
         int n = nums.length;
         int[][] dp = new int[n + 1][n + 1];
 
@@ -66,7 +74,7 @@ public class LongestIncreasingSubSequence {
         return dp[0][0];
     }
 
-    private int lengthOfLISSpaceOptimization(int nums[]) {
+    private static int lengthOfLISSpaceOptimization(int nums[]) {
         int n = nums.length;
         int[] last = new int[n + 1];
         int[] curr = new int[n + 1];
@@ -87,7 +95,7 @@ public class LongestIncreasingSubSequence {
         return last[0];
     }
 
-    private int lengthOfLISSpaceOptimization1(int nums[]) {
+    private static int lengthOfLISSpaceOptimization1(int nums[]) {
         int n = nums.length;
         int[] dp = new int[n + 1];
 
@@ -96,16 +104,54 @@ public class LongestIncreasingSubSequence {
         int LIS = 1;
 
         for (int index = 1; index < n; index++) {
+            int maxTillNow = dp[index];
             for (int prev = 0; prev <= index; prev++)
                 if (nums[prev] < nums[index])
-                    dp[index] = Math.max(dp[index], 1 + dp[prev]);
+                    maxTillNow = Math.max(maxTillNow, 1 + dp[prev]);
 
+            dp[index] = maxTillNow;
             LIS = Math.max(LIS, dp[index]);
         }
 
         return LIS;
     }
-}
 
-// 5 4 9 6 7
-// 1 1 1 1 1 :-> 1 1 2
+    // printing a path
+    private static int lengthOfLISPrintSubSequence(int nums[]) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        int[] parent = new int[n];
+
+        Arrays.fill(dp, 1);
+        Arrays.fill(parent, -1);
+
+        int maxElement = 0;
+        for (int index = 0; index < n; index++) {
+            for (int prev = 0; prev < index; prev++) {
+                if (nums[prev] < nums[index] && 1 + dp[prev] > dp[index]) {
+                    dp[index] = 1 + dp[prev];
+                    parent[index] = prev;
+                }
+            }
+            if (dp[index] > dp[maxElement])
+                maxElement = index;
+        }
+
+        List<Integer> result = new LinkedList<>(); // Changed to ArrayList for better performance
+        var index = maxElement;
+        while (maxElement != -1) {
+            result.add(0, nums[maxElement]);
+            maxElement = parent[maxElement];
+        }
+
+        System.out.println(result);
+
+        return dp[index];
+    }
+
+    public static void main(String[] args) {
+        int[] nums = { 5, 4, 11, 1, 16, 8 };
+
+        System.out.println(lengthOfLIS(nums));
+    }
+}
