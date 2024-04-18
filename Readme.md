@@ -37,25 +37,30 @@ Help: https://algo.monster/flowchart
 
 ```
 
-preserveVtlDirectivesUsingRenderer(htmlString: string, renderer: Renderer2): string {
-    // Create a div element to parse the HTML string
-    const container = renderer.createElement('div');
-    container.innerHTML = htmlString;
+import { Renderer2 } from '@angular/core';
 
-    // Traverse all text nodes and replace # character with &amp;#
-    const traverseAndReplace = (node: Node) => {
-        if (node.nodeType === 3) { // Text node
-            const textContent = node.nodeValue.replace(/#/g, '&amp;#');
-            renderer.setValue(node, textContent);
-        } else if (node.nodeType === 1) { // Element node
-            Array.from(node.childNodes).forEach(childNode => traverseAndReplace(childNode));
-        }
-    };
+function preserveHtmlContent(htmlString: string, renderer: Renderer2): string {
+    // Create a document fragment to preserve entire HTML structure
+    const fragment = renderer.createDocumentFragment();
 
-    traverseAndReplace(container);
+    // Create a temporary div to parse the HTML string
+    const tempDiv = renderer.createElement('div');
+    tempDiv.innerHTML = htmlString;
 
-    return container.innerHTML;
+    // Append the child nodes of the temporary div to the document fragment
+    Array.from(tempDiv.childNodes).forEach(childNode => {
+        renderer.appendChild(fragment, childNode);
+    });
+
+    // Return the HTML content of the document fragment
+    return fragment.innerHTML;
 }
+
+// Example usage:
+const htmlString = '<html><head></head><body><h1>Title</h1><p>Paragraph</p><div style="position: relative"><br><table><tbody><tr><td>1</td></tr>#if($key && $key!=null)<tr><td>2</td></tr>#elseif($key && $key!=null)<tr><td>3</td></tr>#else<tr><td>4</td></tr>#end</tbody></table></div></body></html>';
+const wysiwygOutput = preserveHtmlContent(htmlString, renderer2Instance);
+console.log(wysiwygOutput); // Output the HTML content as is
+
 
 ```
 
