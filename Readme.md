@@ -37,33 +37,24 @@ Help: https://algo.monster/flowchart
 
 ```
 
-import { JSDOM } from 'jsdom';
+preserveVtlDirectivesUsingRenderer(htmlString: string, renderer: Renderer2): string {
+    // Create a div element to parse the HTML string
+    const container = renderer.createElement('div');
+    container.innerHTML = htmlString;
 
-function htmlToWysiwyg(htmlString: string): string {
-    const dom = new JSDOM(htmlString);
-    const document = dom.window.document;
-    const elements = Array.from(document.body.childNodes);
+    // Traverse all text nodes and replace # character with &amp;#
+    const traverseAndReplace = (node: Node) => {
+        if (node.nodeType === 3) { // Text node
+            const textContent = node.nodeValue.replace(/#/g, '&amp;#');
+            renderer.setValue(node, textContent);
+        } else if (node.nodeType === 1) { // Element node
+            Array.from(node.childNodes).forEach(childNode => traverseAndReplace(childNode));
+        }
+    };
 
-    // Sort elements by their position in the document
-    elements.sort((a, b) => {
-        const positionA = getPosition(a);
-        const positionB = getPosition(b);
-        return positionA - positionB;
-    });
+    traverseAndReplace(container);
 
-    // Reconstruct the HTML in WYSIWYG format
-    const wysiwygHtml = elements.map(element => element.outerHTML).join('');
-    
-    return wysiwygHtml;
-}
-
-function getPosition(node: Node): number {
-    let position = 0;
-    while (node !== null) {
-        position += node.sourcepos || 0; // You may need to adjust this based on your HTML structure
-        node = node.parentNode;
-    }
-    return position;
+    return container.innerHTML;
 }
 
 ```
