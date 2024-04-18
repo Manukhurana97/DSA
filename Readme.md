@@ -34,3 +34,24 @@ DP Practice:
 Help: https://algo.monster/flowchart
 
 
+
+
+
+function hasUnsupportedFeatures(htmlText: string): boolean {
+  // Create a new DOMParser instance
+  const parser = new DOMParser();
+
+  // Parse the HTML string into a DOM document
+  const xmlDoc = parser.parseFromString(htmlText, "text/html");
+
+  // Check for unsupported features in the main content
+  const mainContent = xmlDoc.body; // Assuming the main content is in the <body> element
+
+  // Query only the main content for unsupported features
+  const unsupportedElements = mainContent.querySelectorAll(':not(style):not(script):not(template):not(iframe):not(link):not(object):not(embed)');
+
+  // If unsupported elements are found in the main content, return true
+  return unsupportedElements.length > 0;
+}
+
+
