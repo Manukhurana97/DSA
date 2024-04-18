@@ -35,7 +35,7 @@ Help: https://algo.monster/flowchart
 
 
 
-'''
+```
 
 import { JSDOM } from 'jsdom';
 
@@ -65,5 +65,6 @@ function getPosition(node: Node): number {
     }
     return position;
 }
-'''
+
+```
 
