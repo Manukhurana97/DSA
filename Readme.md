@@ -37,25 +37,18 @@ Help: https://algo.monster/flowchart
 
 ```
 
-onContentChange(element: HTMLElement): void {
-    let html = '';
-    if (this.modeVisual) {
-      html = element.innerHTML;
-    } else {
-      html = element.innerText;
-    }
-    if ((!html || html === '<br>')) {
-      html = '';
-    }
-    if (typeof this.onChange === 'function') {
-      this.onChange(this.config.sanitize || this.config.sanitize === undefined ?
-        this.sanitizer.sanitize(SecurityContext.HTML, html) : html);
-      if ((!html) !== this.showPlaceholder) {
-        this.togglePlaceholder(this.showPlaceholder);
-      }
-    }
-    this.changed = true;
-  }
+function preserveHtmlContent(htmlString: string): string {
+    // Create a temporary <html> element to parse the HTML string
+    const tempHtml = document.createElement('html');
+    tempHtml.innerHTML = htmlString;
+
+    // Create a wrapper div to ensure that the HTML is properly rendered
+    const wrapperDiv = document.createElement('div');
+    wrapperDiv.appendChild(tempHtml);
+
+    // Return the innerHTML of the wrapper div
+    return wrapperDiv.innerHTML;
+}
 
 
 
