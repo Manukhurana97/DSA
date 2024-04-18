@@ -35,23 +35,35 @@ Help: https://algo.monster/flowchart
 
 
 
+'''
 
+import { JSDOM } from 'jsdom';
 
-function hasUnsupportedFeatures(htmlText: string): boolean {
-  // Create a new DOMParser instance
-  const parser = new DOMParser();
+function htmlToWysiwyg(htmlString: string): string {
+    const dom = new JSDOM(htmlString);
+    const document = dom.window.document;
+    const elements = Array.from(document.body.childNodes);
 
-  // Parse the HTML string into a DOM document
-  const xmlDoc = parser.parseFromString(htmlText, "text/html");
+    // Sort elements by their position in the document
+    elements.sort((a, b) => {
+        const positionA = getPosition(a);
+        const positionB = getPosition(b);
+        return positionA - positionB;
+    });
 
-  // Check for unsupported features in the main content
-  const mainContent = xmlDoc.body; // Assuming the main content is in the <body> element
-
-  // Query only the main content for unsupported features
-  const unsupportedElements = mainContent.querySelectorAll(':not(style):not(script):not(template):not(iframe):not(link):not(object):not(embed)');
-
-  // If unsupported elements are found in the main content, return true
-  return unsupportedElements.length > 0;
+    // Reconstruct the HTML in WYSIWYG format
+    const wysiwygHtml = elements.map(element => element.outerHTML).join('');
+    
+    return wysiwygHtml;
 }
 
+function getPosition(node: Node): number {
+    let position = 0;
+    while (node !== null) {
+        position += node.sourcepos || 0; // You may need to adjust this based on your HTML structure
+        node = node.parentNode;
+    }
+    return position;
+}
+'''
 
