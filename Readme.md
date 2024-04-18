@@ -37,27 +37,25 @@ Help: https://algo.monster/flowchart
 
 ```
 
-preserveHtmlContent(htmlString: string): string {
-    // Create a document fragment to preserve entire HTML structure
-    const fragment = document.createDocumentFragment();
-
-    // Create a temporary div to parse the HTML string
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlString;
-
-    // Append the child nodes of the temporary div to the document fragment
-    Array.from(tempDiv.childNodes).forEach(childNode => {
-        fragment.appendChild(childNode.cloneNode(true)); // cloneNode ensures that the original nodes are not removed from the temporary div
-    });
-
-    // Create a wrapper div to ensure that the fragment is properly rendered
-    const wrapperDiv = document.createElement('div');
-    wrapperDiv.appendChild(fragment);
-
-    // Return the innerHTML of the wrapper div
-    return wrapperDiv.innerHTML;
-}
-
+onContentChange(element: HTMLElement): void {
+    let html = '';
+    if (this.modeVisual) {
+      html = element.innerHTML;
+    } else {
+      html = element.innerText;
+    }
+    if ((!html || html === '<br>')) {
+      html = '';
+    }
+    if (typeof this.onChange === 'function') {
+      this.onChange(this.config.sanitize || this.config.sanitize === undefined ?
+        this.sanitizer.sanitize(SecurityContext.HTML, html) : html);
+      if ((!html) !== this.showPlaceholder) {
+        this.togglePlaceholder(this.showPlaceholder);
+      }
+    }
+    this.changed = true;
+  }
 
 
 
