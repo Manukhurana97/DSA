@@ -37,29 +37,29 @@ Help: https://algo.monster/flowchart
 
 ```
 
-import { Renderer2 } from '@angular/core';
-
-function preserveHtmlContent(htmlString: string, renderer: Renderer2): string {
+preserveHtmlContent(htmlString: string): string {
     // Create a document fragment to preserve entire HTML structure
-    const fragment = renderer.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
     // Create a temporary div to parse the HTML string
-    const tempDiv = renderer.createElement('div');
+    const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlString;
 
     // Append the child nodes of the temporary div to the document fragment
     Array.from(tempDiv.childNodes).forEach(childNode => {
-        renderer.appendChild(fragment, childNode);
+        fragment.appendChild(childNode.cloneNode(true)); // cloneNode ensures that the original nodes are not removed from the temporary div
     });
 
-    // Return the HTML content of the document fragment
-    return fragment.innerHTML;
+    // Create a wrapper div to ensure that the fragment is properly rendered
+    const wrapperDiv = document.createElement('div');
+    wrapperDiv.appendChild(fragment);
+
+    // Return the innerHTML of the wrapper div
+    return wrapperDiv.innerHTML;
 }
 
-// Example usage:
-const htmlString = '<html><head></head><body><h1>Title</h1><p>Paragraph</p><div style="position: relative"><br><table><tbody><tr><td>1</td></tr>#if($key && $key!=null)<tr><td>2</td></tr>#elseif($key && $key!=null)<tr><td>3</td></tr>#else<tr><td>4</td></tr>#end</tbody></table></div></body></html>';
-const wysiwygOutput = preserveHtmlContent(htmlString, renderer2Instance);
-console.log(wysiwygOutput); // Output the HTML content as is
+
+
 
 
 ```
