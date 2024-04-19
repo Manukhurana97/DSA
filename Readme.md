@@ -37,7 +37,7 @@ Help: https://algo.monster/flowchart
 
 ```
 
-function preserveHtmlContent(htmlString: string): string {
+preserveHtmlContent(htmlString: string): string {
     // Create a temporary <html> element to parse the HTML string
     const tempHtml = document.createElement('html');
 
@@ -54,14 +54,18 @@ function preserveHtmlContent(htmlString: string): string {
     const wrapperDiv = document.createElement('div');
     wrapperDiv.appendChild(tempHtml.cloneNode(true));
 
+    // Convert to WYSIWYG format by setting styles
+    const bodyNode = wrapperDiv.querySelector('body');
+    if (bodyNode) {
+        bodyNode.style.fontFamily = 'Arial, sans-serif'; // Example font family
+        bodyNode.style.fontSize = '16px'; // Example font size
+        bodyNode.style.lineHeight = '1.5'; // Example line height
+        // Add more style adjustments as needed
+    }
+
     // Return the innerHTML of the wrapper div
     return wrapperDiv.innerHTML;
 }
-
-// Example usage:
-const htmlString = '<html xmlns:v="urn:schemes-microsoft.com:vml" xmlns:o="urn:schemes-microsoft.com:office:office"><head></head><body><h1>Title</h1><p>Paragraph</p></body></html>';
-const wysiwygOutput = preserveHtmlContent(htmlString);
-console.log(wysiwygOutput); // Output the HTML content as is, preserving attributes on <html> tag and without HTML encoding
 
 
 
