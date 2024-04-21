@@ -37,34 +37,30 @@ Help: https://algo.monster/flowchart
 
 ```
 
-preserveHtmlContent(htmlString: string): string {
-    // Create a temporary <html> element to parse the HTML string
-    const tempHtml = document.createElement('html');
+openDialog(config?: any): Observable<any> {
+    this.dialogRef = this.matDialog.open(AppWorkflowComponent, config);
 
-    // Use a regular expression to find and preserve specific attributes on the <html> tag
-    const preservedHtmlString = htmlString.replace(/<html([^>]*)>/i, (match, p1) => {
-        return `<html${p1}>`;
+    const afterClosed$ = this.dialogRef.afterClosed();
+
+    afterClosed$.subscribe(() => {
+      // Clear the dialog reference when it's closed
+      this.dialogRef = null;
     });
 
-    // Create a text node with the preserved HTML string
-    const htmlTextNode = document.createTextNode(preservedHtmlString);
-    tempHtml.appendChild(htmlTextNode);
+    return this.closeDialogSubject.asObservable();
+  }
 
-    // Create a wrapper div to ensure that the HTML is properly rendered
-    const wrapperDiv = document.createElement('div');
-    wrapperDiv.appendChild(tempHtml.cloneNode(true));
-
-    // Convert to WYSIWYG format by setting styles
-    const bodyNode = wrapperDiv.querySelector('body');
-    if (bodyNode) {
-        bodyNode.style.fontFamily = 'Arial, sans-serif'; // Example font family
-        bodyNode.style.fontSize = '16px'; // Example font size
-        bodyNode.style.lineHeight = '1.5'; // Example line height
-        // Add more style adjustments as needed
+  closeDialog(): void {
+    if (this.dialogRef) {
+      this.dialogRef.close();
     }
+  }
 
-    // Return the innerHTML of the wrapper div
-    return wrapperDiv.innerHTML;
+  // Call this method to emit an event and close the dialog
+  emitAndCloseDialog(data: any): void {
+    this.closeDialogSubject.next(data);
+    this.closeDialog();
+  }
 }
 
 
