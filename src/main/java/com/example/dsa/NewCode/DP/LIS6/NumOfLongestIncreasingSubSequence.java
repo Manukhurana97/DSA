@@ -25,8 +25,8 @@ public class NumOfLongestIncreasingSubSequence {
             }
         }
 
-        int max = 0
-        for(int i: count){
+        int max = 0;
+        for (int i : count) {
             max = Math.max(max, i);
         }
 
