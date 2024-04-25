@@ -37,31 +37,25 @@ Help: https://algo.monster/flowchart
 
 ```
 
-openDialog(config?: any): Observable<any> {
-    this.dialogRef = this.matDialog.open(AppWorkflowComponent, config);
-
-    const afterClosed$ = this.dialogRef.afterClosed();
-
-    afterClosed$.subscribe(() => {
-      // Clear the dialog reference when it's closed
-      this.dialogRef = null;
-    });
-
-    return this.closeDialogSubject.asObservable();
-  }
-
-  closeDialog(): void {
-    if (this.dialogRef) {
-      this.dialogRef.close();
+onContentChange(element: HTMLElement): void {
+    let html = '';
+    if (this.modeVisual) {
+      html = element.innerHTML;
+    } else {
+      html = element.innerText;
     }
+    if ((!html || html === '<br>')) {
+      html = '';
+    }
+    if (typeof this.onChange === 'function') {
+      this.onChange(this.config.sanitize || this.config.sanitize === undefined ?
+        this.sanitizer.sanitize(SecurityContext.HTML, html) : html);
+      if ((!html) !== this.showPlaceholder) {
+        this.togglePlaceholder(this.showPlaceholder);
+      }
+    }
+    this.changed = true;
   }
-
-  // Call this method to emit an event and close the dialog
-  emitAndCloseDialog(data: any): void {
-    this.closeDialogSubject.next(data);
-    this.closeDialog();
-  }
-}
 
 
 
