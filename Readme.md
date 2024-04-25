@@ -37,25 +37,26 @@ Help: https://algo.monster/flowchart
 
 ```
 
-onContentChange(element: HTMLElement): void {
-    let html = '';
-    if (this.modeVisual) {
-      html = element.innerHTML;
-    } else {
-      html = element.innerText;
-    }
-    if ((!html || html === '<br>')) {
-      html = '';
-    }
-    if (typeof this.onChange === 'function') {
-      this.onChange(this.config.sanitize || this.config.sanitize === undefined ?
-        this.sanitizer.sanitize(SecurityContext.HTML, html) : html);
-      if ((!html) !== this.showPlaceholder) {
-        this.togglePlaceholder(this.showPlaceholder);
-      }
-    }
-    this.changed = true;
-  }
+<table mat-table [dataSource]="data">
+  <ng-container *ngFor="let column of displayedColumns; let i = index" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+    <td mat-cell *matCellDef="let element">{{ element[i] }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<table mat-table [dataSource]="data">
+  <ng-container *ngFor="let column of displayedColumns; let i = index" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+    <td mat-cell *matCellDef="let element">{{ element[i] }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
 
 
 
