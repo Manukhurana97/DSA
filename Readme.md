@@ -37,6 +37,10 @@ Help: https://algo.monster/flowchart
 
 ```
 
+const oPre = this.r.createElement('pre');
+      this.r.setStyle(oPre, 'margin', '0');
+      this.r.setStyle(oPre, 'outline', 'none');
+
 const oCode = this.r.createElement('code');
       this.r.setProperty(oCode, 'id', 'sourceText' + this.id);
       this.r.setStyle(oCode, 'display', 'block');
