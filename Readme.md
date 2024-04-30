@@ -37,26 +37,15 @@ Help: https://algo.monster/flowchart
 
 ```
 
-<table mat-table [dataSource]="data">
-  <ng-container *ngFor="let column of displayedColumns; let i = index" [matColumnDef]="column">
-    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
-    <td mat-cell *matCellDef="let element">{{ element[i] }}</td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-
-<table mat-table [dataSource]="data">
-  <ng-container *ngFor="let column of displayedColumns; let i = index" [matColumnDef]="column">
-    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
-    <td mat-cell *matCellDef="let element">{{ element[i] }}</td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+const oCode = this.r.createElement('code');
+      this.r.setProperty(oCode, 'id', 'sourceText' + this.id);
+      this.r.setStyle(oCode, 'display', 'block');
+      this.r.setStyle(oCode, 'white-space', 'pre-wrap');
+      this.r.setStyle(oCode, 'word-break', 'keep-all');
+      this.r.setStyle(oCode, 'outline', 'none');
+      this.r.setStyle(oCode, 'margin', '0');
+      this.r.setStyle(oCode, 'background-color', '#fff5b9');
+      this.r.setProperty(oCode, 'contentEditable', true);
 
 
 
