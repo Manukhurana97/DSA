@@ -37,6 +37,23 @@ Help: https://algo.monster/flowchart
 
 ```
 
+DECLARE
+    v_new_encoded_string CLOB := 'new_encoded_string';  -- Your new encoded string of length 61000
+BEGIN
+    UPDATE email_templates
+    SET template = DBMS_LOB.SUBSTR(template, 4000, 1) || 
+                   REGEXP_REPLACE(DBMS_LOB.SUBSTR(template, DBMS_LOB.GETLENGTH(template), 4001),
+                                  'data:image/jpeg; base64, [^">]+',
+                                  'data:image/png; base64, ' || v_new_encoded_string,
+                                  1,
+                                  0,
+                                  'n')
+    WHERE id = :id;
+
+    COMMIT;
+END;
+/
+
 const oPre = this.r.createElement('pre');
       this.r.setStyle(oPre, 'margin', '0');
       this.r.setStyle(oPre, 'outline', 'none');
