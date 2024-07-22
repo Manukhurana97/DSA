@@ -37,36 +37,7 @@ Help: https://algo.monster/flowchart
 
 ```
 
-DECLARE
-    v_new_encoded_string CLOB := 'new_encoded_string';  -- Your new encoded string of length 61000
-BEGIN
-    UPDATE email_templates
-    SET template = DBMS_LOB.SUBSTR(template, 4000, 1) || 
-                   REGEXP_REPLACE(DBMS_LOB.SUBSTR(template, DBMS_LOB.GETLENGTH(template), 4001),
-                                  'data:image/jpeg; base64, [^">]+',
-                                  'data:image/png; base64, ' || v_new_encoded_string,
-                                  1,
-                                  0,
-                                  'n')
-    WHERE id = :id;
-
-    COMMIT;
-END;
-/
-
-const oPre = this.r.createElement('pre');
-      this.r.setStyle(oPre, 'margin', '0');
-      this.r.setStyle(oPre, 'outline', 'none');
-
-const oCode = this.r.createElement('code');
-      this.r.setProperty(oCode, 'id', 'sourceText' + this.id);
-      this.r.setStyle(oCode, 'display', 'block');
-      this.r.setStyle(oCode, 'white-space', 'pre-wrap');
-      this.r.setStyle(oCode, 'word-break', 'keep-all');
-      this.r.setStyle(oCode, 'outline', 'none');
-      this.r.setStyle(oCode, 'margin', '0');
-      this.r.setStyle(oCode, 'background-color', '#fff5b9');
-      this.r.setProperty(oCode, 'contentEditable', true);
+/style\s*=\s*['"][^'"]*['"]/i;
 
 
 
