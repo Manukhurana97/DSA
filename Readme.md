@@ -37,28 +37,6 @@ Help: https://algo.monster/flowchart
 
 ```
 
-def generate_update_queries(old_image, new_image, table_name, column_name):
-    queries = []
-    old_parts = [old_image[i:i+len(old_image)//16] for i in range(0, len(old_image), len(old_image)//16)]
-    new_parts = [new_image[i:i+len(new_image)//16] for i in range(0, len(new_image), len(new_image)//16)]
-    
-    for i in range(16):
-        query = f"UPDATE {table_name} SET {column_name} = REPLACE({column_name}, '{old_parts[i]}', '{new_parts[i]}');"
-        queries.append(query)
-    
-    return queries
-
-# Example usage
-old_image = "old_image_string_divided_into_16_parts"
-new_image = "new_image_string_divided_into_16_parts"
-table_name = "your_table"
-column_name = "template"
-
-queries = generate_update_queries(old_image, new_image, table_name, column_name)
-for query in queries:
-    print(query)
-
-
 
 
 
