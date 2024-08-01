@@ -37,32 +37,25 @@ Help: https://algo.monster/flowchart
 
 ```
 
-def divide_into_chunks(image_string, chunk_size):
-    return [image_string[i:i + chunk_size] for i in range(0, len(image_string), chunk_size)]
+function checkForTabs(placeholder: string): boolean {
+    // Define the regular expression to match $<anyTag>... any tabs ...</anyTag>
+    const tabRegex = /\$<\w+>[^\S\r\n]*\w+[^\S\r\n]*<\/\w+>/;
 
-def create_update_scripts(table, update_date_column, template_column, old_image, new_image, chunk_size=4000):
-    old_image_chunks = divide_into_chunks(old_image, chunk_size)
-    new_image_chunks = divide_into_chunks(new_image, chunk_size)
+    if (tabRegex.test(placeholder)) {
+        console.log("Warning: The placeholder contains a tab character.");
+        return true;
+    }
 
-    update_scripts = []
-    for old_chunk, new_chunk in zip(old_image_chunks, new_image_chunks):
-        script = (f"UPDATE {table} SET {update_date_column} = SYSDATE, "
-                  f"{template_column} = REPLACE({template_column}, '{old_chunk}', '{new_chunk}');")
-        update_scripts.append(script)
-    
-    return update_scripts
+    return false;
+}
 
-# Example usage
-old_image = "your_old_image_string_here"
-new_image = "your_new_image_string_here"
-table = "ALERTS_COMMUNICATION_DATA"
-update_date_column = "UPDATE_DATE"
-template_column = "EMAIL_TEMPLATE"
+// Example usage:
+const placeholder = "$<span>word </span>";
+const hasTabs = checkForTabs(placeholder);
 
-update_scripts = create_update_scripts(table, update_date_column, template_column, old_image, new_image)
-for script in update_scripts:
-    print(script)
-
+if (hasTabs) {
+    console.log("Please remove the tab character from the placeholder.");
+}
 
 ```
 
