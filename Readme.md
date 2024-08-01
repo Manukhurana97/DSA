@@ -37,25 +37,7 @@ Help: https://algo.monster/flowchart
 
 ```
 
-function checkForTabs(placeholder: string): boolean {
-    // Define the regular expression to match $<anyTag>... any tabs ...</anyTag>
-    const tabRegex = /\$<\w+>[^\S\r\n]*\w+[^\S\r\n]*<\/\w+>/;
-
-    if (tabRegex.test(placeholder)) {
-        console.log("Warning: The placeholder contains a tab character.");
-        return true;
-    }
-
-    return false;
-}
-
-// Example usage:
-const placeholder = "$<span>word </span>";
-const hasTabs = checkForTabs(placeholder);
-
-if (hasTabs) {
-    console.log("Please remove the tab character from the placeholder.");
-}
+const tabRegex : RegExp = /\$\<\w+>. *\s+. *\<\/\w+>/;
 
 ```
 
