@@ -37,7 +37,34 @@ Help: https://algo.monster/flowchart
 
 ```
 
-const tabRegex : RegExp = /\$\<\w+>. *\s+. *\<\/\w+>/;
+DECLARE
+    v_clob      CLOB;
+    v_new_clob  CLOB;
+BEGIN
+    FOR rec IN (SELECT requestdata, primary_key_column 
+                FROM your_table 
+                WHERE some_condition 
+                AND ROWNUM <= 10) -- Limits to 10 rows
+    LOOP
+        -- Convert BLOB to CLOB
+        v_clob := DBMS_LOB.CONVERTTOCLOB(rec.requestdata);
+
+        -- Perform the replacement
+        v_new_clob := REPLACE(v_clob, 'old_text', 'new_text');
+        
+        -- Optionally update the modified CLOB back to the table
+        UPDATE your_table 
+        SET requestdata = DBMS_LOB.CONVERTTOBLOB(v_new_clob)
+        WHERE primary_key_column = rec.primary_key_column;
+        
+        -- Add COMMIT if you want to commit after each update
+        -- COMMIT;
+    END LOOP;
+    
+    -- Final COMMIT to save all changes if not committed in the loop
+    COMMIT;
+END;
+/
 
 ```
 
