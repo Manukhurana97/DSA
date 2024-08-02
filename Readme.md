@@ -38,33 +38,34 @@ Help: https://algo.monster/flowchart
 ```
 
 DECLARE
-    v_clob      CLOB;
-    v_new_clob  CLOB;
+    v_clob CLOB;
+    v_blob BLOB;
+    v_varchar VARCHAR2(32767); -- Maximum size for VARCHAR2 in PL/SQL
 BEGIN
-    FOR rec IN (SELECT requestdata, primary_key_column 
-                FROM your_table 
-                WHERE some_condition 
-                AND ROWNUM <= 10) -- Limits to 10 rows
-    LOOP
-        -- Convert BLOB to CLOB
-        v_clob := DBMS_LOB.CONVERTTOCLOB(rec.requestdata);
+    FOR r IN (SELECT id, blob_column FROM your_table) LOOP
+        v_blob := r.blob_column;
 
-        -- Perform the replacement
-        v_new_clob := REPLACE(v_clob, 'old_text', 'new_text');
-        
-        -- Optionally update the modified CLOB back to the table
-        UPDATE your_table 
-        SET requestdata = DBMS_LOB.CONVERTTOBLOB(v_new_clob)
-        WHERE primary_key_column = rec.primary_key_column;
-        
-        -- Add COMMIT if you want to commit after each update
-        -- COMMIT;
+        -- Initialize the CLOB
+        DBMS_LOB.CREATETEMPORARY(v_clob, TRUE);
+
+        -- Convert BLOB to CLOB by chunking
+        FOR i IN 0 .. CEIL(DBMS_LOB.GETLENGTH(v_blob) / 32767) - 1 LOOP
+            v_varchar := UTL_RAW.CAST_TO_VARCHAR2(DBMS_LOB.SUBSTR(v_blob, 32767, i * 32767 + 1));
+            DBMS_LOB.WRITEAPPEND(v_clob, LENGTH(v_varchar), v_varchar);
+        END LOOP;
+
+        -- Update the table with the CLOB
+        UPDATE your_table
+        SET clob_column = v_clob
+        WHERE id = r.id;
+
+        -- Free the temporary CLOB
+        DBMS_LOB.FREETEMPORARY(v_clob);
     END LOOP;
-    
-    -- Final COMMIT to save all changes if not committed in the loop
-    COMMIT;
 END;
 /
+
+
 
 ```
 
