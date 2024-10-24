@@ -103,5 +103,7 @@ process_files(html_file_path, css_file_path)
 
 
 
+re.compile(r'styleUrls:\s*\[\s*[\'"](.*?)[\'"]')
+
 ```
 
