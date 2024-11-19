@@ -37,22 +37,77 @@ Help: https://algo.monster/flowchart
 
 ```
 
-# Regex to find the @Component decorator block
-    component_pattern = re.compile(r'@Component\(\{([\s\S]*?)\}\)', re.MULTILINE)
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Base64;
 
-    # Create the styleUrls line to insert
-    style_urls_line = f"styleUrls: ['{style_url}'],\n"
+public class EmailEncryptionUtility {
 
-    # Insert the styleUrls line right before the closing bracket of the @Component decorator
-    updated_content = component_pattern.sub(r"@Component({\1" + style_urls_line + "})", content)
+    private static final String ALGORITHM = "AES";
 
-    # Write the updated content back to the file
-    with open(file_path, 'w') as file:
-        file.write(updated_content)
+    // Encrypt the email
+    public static String encrypt(String email, SecretKey key) throws Exception {
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        cipher.init(Cipher.ENCRYPT_MODE, key);
+        byte[] encryptedBytes = cipher.doFinal(email.getBytes());
+        return Base64.getEncoder().encodeToString(encryptedBytes);
+    }
 
+    // Decrypt the email
+    public static String decrypt(String input, SecretKey key) throws Exception {
+        if (isEncrypted(input)) {
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] decodedBytes = Base64.getDecoder().decode(input);
+            return new String(cipher.doFinal(decodedBytes));
+        }
+        return input; // Return input as is if not encrypted
+    }
 
+    // Check if the email is encrypted
+    public static boolean isEncrypted(String input) {
+        try {
+            // Try decoding base64; if it fails, it is not encrypted
+            Base64.getDecoder().decode(input);
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false; // Not a valid base64-encoded string
+        }
+    }
 
-re.compile(r'styleUrls:\s*\[\s*[\'"](.*?)[\'"]')
+    // Generate a key (for demonstration; in production, use a securely stored key)
+    public static SecretKey generateKey() throws Exception {
+        KeyGenerator keyGen = KeyGenerator.getInstance(ALGORITHM);
+        keyGen.init(256); // AES-256
+        return keyGen.generateKey();
+    }
 
+    public static void main(String[] args) {
+        try {
+            SecretKey key = generateKey();
+
+            String email = "user@example.com";
+            System.out.println("Original Email: " + email);
+
+            // Encrypt the email
+            String encryptedEmail = encrypt(email, key);
+            System.out.println("Encrypted Email: " + encryptedEmail);
+
+            // Decrypt the email
+            String decryptedEmail = decrypt(encryptedEmail, key);
+            System.out.println("Decrypted Email: " + decryptedEmail);
+
+            // Handle non-encrypted email
+            String plainEmail = "anotheruser@example.com";
+            String result = decrypt(plainEmail, key);
+            System.out.println("Result for Non-Encrypted Email: " + result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
