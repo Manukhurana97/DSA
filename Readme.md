@@ -35,33 +35,49 @@ Help: https://algo.monster/flowchart
 
 
 
-```
-
+``
+        
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.security.spec.KeySpec;
 import java.util.Base64;
 
 public class EmailEncryptionUtility {
 
     private static final String ENCRYPTION_ALGORITHM = "AES";
     private static final String HMAC_ALGORITHM = "HmacSHA256";
+    private static final String KDF_ALGORITHM = "PBKDF2WithHmacSHA256";
 
-    // Encrypt the email with HMAC for tamper-proofing
-    public static String encrypt(String email, SecretKey encryptionKey, SecretKey hmacKey) throws Exception {
-        // Encrypt the email
+    private static final String MASTER_SECRET = "SuperSecureMasterSecret"; // Never expose this!
+    private static final byte[] SALT = "UniqueSaltValue".getBytes(); // Ensure this is unique but consistent
+
+    // Derive a key using PBKDF2
+    private static SecretKey deriveKey(String input, int keyLength, String purpose) throws Exception {
+        String combinedInput = input + "|" + purpose; // Use input and purpose to create unique keys
+        KeySpec spec = new PBEKeySpec(MASTER_SECRET.toCharArray(), SALT, 10000, keyLength);
+        SecretKeyFactory factory = SecretKeyFactory.getInstance(KDF_ALGORITHM);
+        byte[] keyBytes = factory.generateSecret(spec).getEncoded();
+        return new SecretKeySpec(keyBytes, ENCRYPTION_ALGORITHM);
+    }
+
+    // Encrypt the email
+    public static String encrypt(String email, String uniqueIdentifier) throws Exception {
+        SecretKey encryptionKey = deriveKey(uniqueIdentifier, 256, "ENCRYPTION");
+        SecretKey hmacKey = deriveKey(uniqueIdentifier, 256, "HMAC");
+
         Cipher cipher = Cipher.getInstance(ENCRYPTION_ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, encryptionKey);
         byte[] encryptedBytes = cipher.doFinal(email.getBytes());
 
-        // Compute HMAC for the encrypted data
         Mac mac = Mac.getInstance(HMAC_ALGORITHM);
         mac.init(hmacKey);
         byte[] hmac = mac.doFinal(encryptedBytes);
 
-        // Combine encrypted data and HMAC, then Base64 encode
         byte[] combined = new byte[encryptedBytes.length + hmac.length];
         System.arraycopy(encryptedBytes, 0, combined, 0, encryptedBytes.length);
         System.arraycopy(hmac, 0, combined, encryptedBytes.length, hmac.length);
@@ -69,12 +85,12 @@ public class EmailEncryptionUtility {
         return Base64.getEncoder().encodeToString(combined);
     }
 
-    // Decrypt the email and verify HMAC
-    public static String decrypt(String input, SecretKey encryptionKey, SecretKey hmacKey) throws Exception {
-        // Decode Base64
-        byte[] combined = Base64.getDecoder().decode(input);
+    // Decrypt the email
+    public static String decrypt(String input, String uniqueIdentifier) throws Exception {
+        SecretKey encryptionKey = deriveKey(uniqueIdentifier, 256, "ENCRYPTION");
+        SecretKey hmacKey = deriveKey(uniqueIdentifier, 256, "HMAC");
 
-        // Separate encrypted data and HMAC
+        byte[] combined = Base64.getDecoder().decode(input);
         int hmacLength = Mac.getInstance(HMAC_ALGORITHM).getMacLength();
         int encryptedLength = combined.length - hmacLength;
 
@@ -84,7 +100,6 @@ public class EmailEncryptionUtility {
         System.arraycopy(combined, 0, encryptedBytes, 0, encryptedLength);
         System.arraycopy(combined, encryptedLength, receivedHmac, 0, hmacLength);
 
-        // Verify HMAC
         Mac mac = Mac.getInstance(HMAC_ALGORITHM);
         mac.init(hmacKey);
         byte[] calculatedHmac = mac.doFinal(encryptedBytes);
@@ -93,49 +108,27 @@ public class EmailEncryptionUtility {
             throw new SecurityException("Tampered or corrupted encrypted email detected!");
         }
 
-        // Decrypt the email
         Cipher cipher = Cipher.getInstance(ENCRYPTION_ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, encryptionKey);
         return new String(cipher.doFinal(encryptedBytes));
     }
 
-    // Generate a key (for demonstration; in production, store keys securely)
-    public static SecretKey generateKey(String algorithm, int keySize) throws Exception {
-        KeyGenerator keyGen = KeyGenerator.getInstance(algorithm);
-        keyGen.init(keySize);
-        return keyGen.generateKey();
-    }
-
     public static void main(String[] args) {
         try {
-            // Generate encryption and HMAC keys
-            SecretKey encryptionKey = generateKey(ENCRYPTION_ALGORITHM, 256);
-            SecretKey hmacKey = generateKey(HMAC_ALGORITHM, 256);
-
             String email = "user@example.com";
-            System.out.println("Original Email: " + email);
+            String uniqueIdentifier = "user123"; // Can be user ID, email, etc.
 
-            // Encrypt the email
-            String encryptedEmail = encrypt(email, encryptionKey, hmacKey);
+            String encryptedEmail = encrypt(email, uniqueIdentifier);
             System.out.println("Encrypted Email: " + encryptedEmail);
 
-            // Decrypt the email (valid case)
-            String decryptedEmail = decrypt(encryptedEmail, encryptionKey, hmacKey);
+            String decryptedEmail = decrypt(encryptedEmail, uniqueIdentifier);
             System.out.println("Decrypted Email: " + decryptedEmail);
-
-            // Simulate tampering
-            String tamperedEmail = encryptedEmail.substring(0, encryptedEmail.length() - 1) + "X";
-            try {
-                decrypt(tamperedEmail, encryptionKey, hmacKey);
-            } catch (SecurityException e) {
-                System.err.println("Error: " + e.getMessage());
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
+    
 
 
 ```
