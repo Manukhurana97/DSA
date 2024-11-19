@@ -113,6 +113,41 @@ public class EmailEncryptionUtility {
         return new String(cipher.doFinal(encryptedBytes));
     }
 
+
+public static boolean isEncrypted(String input, String uniqueIdentifier) {
+    try {
+        // Decode Base64
+        byte[] combined = Base64.getDecoder().decode(input);
+
+        // Validate combined length
+        int hmacLength = Mac.getInstance(HMAC_ALGORITHM).getMacLength();
+        if (combined.length <= hmacLength) {
+            return false; // Not enough data for both encrypted bytes and HMAC
+        }
+
+        // Separate encrypted bytes and HMAC
+        int encryptedLength = combined.length - hmacLength;
+        byte[] encryptedBytes = new byte[encryptedLength];
+        byte[] receivedHmac = new byte[hmacLength];
+        System.arraycopy(combined, 0, encryptedBytes, 0, encryptedLength);
+        System.arraycopy(combined, encryptedLength, receivedHmac, 0, hmacLength);
+
+        // Validate HMAC
+        SecretKey hmacKey = deriveKey(uniqueIdentifier, 256, "HMAC");
+        Mac mac = Mac.getInstance(HMAC_ALGORITHM);
+        mac.init(hmacKey);
+        byte[] calculatedHmac = mac.doFinal(encryptedBytes);
+
+        return MessageDigest.isEqual(receivedHmac, calculatedHmac);
+    } catch (Exception e) {
+        return false; // If any exception occurs, treat as not encrypted
+    }
+}
+
+
+
+    
+
     public static void main(String[] args) {
         try {
             String email = "user@example.com";
