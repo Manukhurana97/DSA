@@ -37,8 +37,8 @@ Help: https://algo.monster/flowchart
 
 ```
         
-
-          FilterChainProxy filterChainProxy = (FilterChainProxy) http.build();
+public static void logSecurityFilters(HttpSecurity http) throws Exception {
+    FilterChainProxy filterChainProxy = (FilterChainProxy) http.build();
     List<SecurityFilterChain> filterChains = filterChainProxy.getFilterChains();
 
     System.out.println("=== Registered Security Filters ===");
@@ -48,7 +48,6 @@ Help: https://algo.monster/flowchart
         }
     }
 }
-
     
 
 
