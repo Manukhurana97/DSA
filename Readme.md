@@ -37,17 +37,15 @@ Help: https://algo.monster/flowchart
 
 ```
         
-public static void logSecurityFilters(HttpSecurity http) throws Exception {
-    FilterChainProxy filterChainProxy = (FilterChainProxy) http.build();
-    List<SecurityFilterChain> filterChains = filterChainProxy.getFilterChains();
-
-    System.out.println("=== Registered Security Filters ===");
-    for (SecurityFilterChain chain : filterChains) {
-        for (Filter filter : chain.getFilters()) {
-            System.out.println("Filter: " + filter.getClass().getName());
+FilterChainProxy filterChainProxy = context.getBean(FilterChainProxy.class);
+        List<SecurityFilterChain> filterChains = filterChainProxy.getFilterChains();
+        
+        System.out.println("=== Security Filter Chains ===");
+        for (SecurityFilterChain chain : filterChains) {
+            for (Filter filter : chain.getFilters()) {
+                System.out.println(filter.getClass().getName());
+            }
         }
-    }
-}
     
 
 
