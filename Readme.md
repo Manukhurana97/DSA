@@ -37,15 +37,16 @@ Help: https://algo.monster/flowchart
 
 ```
         
-FilterChainProxy filterChainProxy = context.getBean(FilterChainProxy.class);
-        List<SecurityFilterChain> filterChains = filterChainProxy.getFilterChains();
-        
-        System.out.println("=== Security Filter Chains ===");
-        for (SecurityFilterChain chain : filterChains) {
-            for (Filter filter : chain.getFilters()) {
-                System.out.println(filter.getClass().getName());
-            }
-        }
+public static void printHttpSecurityConfig(HttpSecurity http) {
+    try {
+        Field requestMatcherField = http.getClass().getDeclaredField("requestMatcher");
+        requestMatcherField.setAccessible(true);
+        Object requestMatcher = requestMatcherField.get(http);
+        System.out.println("Configured Request Matcher: " + requestMatcher);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
     
 
 
