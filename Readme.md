@@ -37,16 +37,65 @@ Help: https://algo.monster/flowchart
 
 ```
         
-public static void printHttpSecurityConfig(HttpSecurity http) {
-    try {
-        Field requestMatcherField = http.getClass().getDeclaredField("requestMatcher");
-        requestMatcherField.setAccessible(true);
-        Object requestMatcher = requestMatcherField.get(http);
-        System.out.println("Configured Request Matcher: " + requestMatcher);
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+::ng-deep .mat-dialog-container {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for better UI */
 }
+
+h1.mat-dialog-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Dark text */
+    text-align: center;
+}
+
+.jsonPayload {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[color="primary"] {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+button[color="primary"]:hover {
+    background-color: #218838;
+}
+
+button[color="secondary"] {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+button[color="secondary"]:hover {
+    background-color: #c82333;
+}
+
     
 
 
