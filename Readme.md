@@ -37,63 +37,54 @@ Help: https://algo.monster/flowchart
 
 ```
         
-::ng-deep .mat-dialog-container {
-    background-color: #f8f9fa; /* Light gray background */
-    border-radius: 12px; /* Rounded corners */
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for better UI */
-}
-
-h1.mat-dialog-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333; /* Dark text */
-    text-align: center;
-}
-
-.jsonPayload {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    color: #333;
-    font-family: 'Courier New', Courier, monospace;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.mat-dialog-actions {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-}
-
-button {
-    padding: 8px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button[color="primary"] {
-    background-color: #28a745; /* Green */
-    color: white;
-}
 
 button[color="primary"]:hover {
-    background-color: #218838;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-button[color="secondary"] {
-    background-color: #dc3545; /* Red */
-    color: white;
+/* Animation for button merging */
+button[color="primary"].merging {
+  animation: mergeAnimation 1s ease-in-out infinite;
 }
 
-button[color="secondary"]:hover {
-    background-color: #c82333;
+@keyframes mergeAnimation {
+  0% {
+    background-color: #4CAF50; /* Normal state color */
+    transform: scale(1);
+  }
+  50% {
+    background-color: #FFC107; /* Merging state color */
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: #4CAF50; /* Back to normal color */
+    transform: scale(1);
+  }
+}
+
+/* Optional: Add a loading spinner or animation inside the button */
+button[color="primary"].merging::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
     
